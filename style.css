@@ -1,0 +1,35 @@
+#map{
+    height:800px;
+    border:1px solid black 
+  }
+  
+  .mytaxiIcon{
+    text-align: center;
+    /* Horizontally center the text (icon) */
+    line-height: 20px;
+    /* Vertically center the text (icon) */
+    font-size: 20px
+  }
+  
+  
+  .myhawkerIcon {
+    color: goldenrod;
+    text-align: center;
+    /* Horizontally center the text (icon) */
+    line-height: 20px;
+    /* Vertically center the text (icon) */
+    font-size: 20px;
+  }
+  
+  .myhotelIcon{
+  color:grey;
+  text-align: center;
+    /* Horizontally center the text (icon) */
+  line-height: 20px;
+    /* Vertically center the text (icon) */
+    font-size: 20px;
+  }
+  
+  #container{
+    position: relative;
+  }
