@@ -33,3 +33,40 @@
   #container{
     position: relative;
   }
+
+  #toggle{
+    position: absolute;
+    z-index: 314159;
+    max-width:200px; 
+    max-height:800px;
+    /* background-color: rgba(217, 210, 210, 0.82); */
+    top: 5px;
+    left: 50px;
+    
+  }
+  
+  #search_container{
+    position: absolute;
+    z-index: 314159;
+    max-width:190px; 
+    max-height:800px;
+    background-color: lightgrey;
+    top: 50px;
+    left: 50px;
+    
+    
+  }
+  
+  #search-results{
+    overflow-y: scroll;
+    max-height:400px;
+  }
+  
+  #textinput{
+    width:190px;
+    border: 2px solid black;
+  }
+  
+  /* #button{
+    /* background-color: rgba(217, 210, 210, 0.82); */
+  /* }  */
