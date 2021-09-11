@@ -221,7 +221,7 @@ searchresultsinfo.innerHTML="";
     let searchcoordinates=[results.venue.location.lat, results.venue.location.lng]
     // console.log(coordinates)
 
-    marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
+    marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
     marker.addTo(searchCluster)
     searchCluster.addTo(map)
   // console.log(searchCluster)
