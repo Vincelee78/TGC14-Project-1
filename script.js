@@ -101,8 +101,9 @@ async function getHawkers() {
     })
 
     marker.addTo(hawkerGroup)
-
-
+    marker.addEventListener('click', function () {
+      map.flyTo(hawkerActualCoordinates, 14)
+    })
     let hawkerLayer = L.geoJson(response.data, {
       onEachFeature: function (feature, layer) {
         let newdoc = document.createElement('div');
@@ -115,10 +116,11 @@ async function getHawkers() {
         let postalCode = td1[26].innerHTML;
         let establishedDate = td1[2].innerHTML
 
-        marker.bindPopup(`<h5>Name of Hawker Center: ${name}</h5><h3>Established Date: ${establishedDate}</h3><h3>Postal Code: ${postalCode}</h3>`);
+        marker.bindPopup(`<h6>Name of Hawker Center: ${name}</h6><h6>Established Date: ${establishedDate}</h6><h6>Postal Code: ${postalCode}</h6>`);
       }
     })
   }
+  
 }
 
 getHawkers()
@@ -147,6 +149,9 @@ async function getHotels() {
     })
     marker.addTo(hotelGroup)
 
+    marker.addEventListener('click', function () {
+      map.flyTo(hotelsActualCoordinates, 14)
+    })
 
     marker.bindPopup(`<h3>Name of Hotel: ${hotelName}</h3><h3>Total Rooms: ${totalRooms}</h3><h3>Address: ${address}</h3>`);
   }
@@ -216,7 +221,7 @@ searchresultsinfo.innerHTML="";
     let searchcoordinates=[results.venue.location.lat, results.venue.location.lng]
     // console.log(coordinates)
 
-    marker.bindPopup(`<h3>Reason for recommendation: ${results.reasons.items[0].summary}</h3><h3>Name of recommended venue: ${results.venue.name}</h3><h3>Address: ${results.venue.location.address}</h3>`)
+    marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
     marker.addTo(searchCluster)
     searchCluster.addTo(map)
   // console.log(searchCluster)

@@ -13,7 +13,7 @@
   
   
   .myhawkerIcon {
-    color: goldenrod;
+    color: rgb(255, 183, 3);
     text-align: center;
     /* Horizontally center the text (icon) */
     line-height: 20px;
@@ -22,7 +22,7 @@
   }
   
   .myhotelIcon{
-  color:grey;
+  color:rgb(251, 133, 0) ;
   text-align: center;
     /* Horizontally center the text (icon) */
   line-height: 20px;
