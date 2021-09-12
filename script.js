@@ -51,9 +51,9 @@ async function gettaxi(map) {
 
     marker.addTo(cluster)
     cluster.addTo(taxiGroup);
-    // for (let a of actualcoordinates){
-    // taxiCoordinates.push(a);
-    // }
+    for (let a of actualcoordinates){
+    taxiCoordinates.push(a);
+    }
 
     marker.addEventListener('click', function () {
       map.flyTo(actualcoordinates, 15)
@@ -66,7 +66,8 @@ gettaxi(map)
 
 async function getaddress(taxiCoordinates) {
   let arrayLength = taxiCoordinates.length;
-
+  // console.log(taxiCoordinates)
+  // console.log(taxiCoordinates.length)
   for (let i = 0; i < taxiCoordinates.length; i++) {
     let coordi = taxiCoordinates[i]
     console.log(coordi)
@@ -76,10 +77,10 @@ async function getaddress(taxiCoordinates) {
     //     token: accessToken}
     // })
     //   let address = response1.data.GeocodeInfo[0];
-    // //  /onsole.log(address)
+    // //  console.log(address)
   };
 }
-
+getaddress(taxiCoordinates)
 // extract geojson from gov website for hawker centers
 let hawkerGroup = L.layerGroup()
 async function getHawkers() {
