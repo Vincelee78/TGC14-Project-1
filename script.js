@@ -1,3 +1,13 @@
+
+
+  document.querySelector("#btn-search-home").addEventListener('click', function(){
+    document.querySelector('#container').style.display = "block";
+    document.querySelector('#carouselExampleIndicators').style.display = "none"
+  })
+  
+
+window.addEventListener('DOMContentLoaded', function(){
+
 let singapore = [1.29, 103.85];
 let changiairport = [1.3644, 103.9915];
 let map = L.map('map')
@@ -11,7 +21,7 @@ map.setView(singapore, 12)
 setTimeout("location.reload();", 300000)
 
 // OneMap Authentication
-let accessToken = axios.post('https://developers.onemap.sg/privateapi/auth/post/getToken', { email: 'leeweixg2001@yahoo.com', password: 'Scatyim777' }).then(response => accessToken = response.data.access_token)
+// let accessToken = axios.post('https://developers.onemap.sg/privateapi/auth/post/getToken', { email: 'leeweixg2001@yahoo.com', password: 'Scatyim777' }).then(response => accessToken = response.data.access_token)
 
 // setup the tile layers from leaflet
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -81,6 +91,7 @@ async function getaddress(taxiCoordinates) {
   };
 }
 getaddress(taxiCoordinates)
+
 // extract geojson from gov website for hawker centers
 let hawkerGroup = L.layerGroup()
 async function getHawkers() {
@@ -239,4 +250,6 @@ searchresultsinfo.innerHTML="";
 })
   
   }
+})
+
 })
