@@ -2,7 +2,41 @@
     height:800px;
     border:1px solid black 
   }
+
+  #singaporelogo{
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  #carouselExampleIndicators{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items: center
+  }
+
+  #carouselimage{
+    background-color: black;
+  }
+
+#carouselimage3{
+  opacity:0.5
   
+  
+}
+
+#btn-search-home{
+  font-size: 30px;
+  color:rgb(0, 53, 102)
+}
+
+  #home-search-container{
+    position:absolute;
+    z-index: 314159;
+    /* top: 200px;
+    left: 500px; */
+
+  }
+
   .mytaxiIcon{
     text-align: center;
     /* Horizontally center the text (icon) */
@@ -70,3 +104,5 @@
   /* #button{
     /* background-color: rgba(217, 210, 210, 0.82); */
   /* }  */
+
+

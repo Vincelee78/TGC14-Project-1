@@ -19,6 +19,52 @@
 </head>
 
 <body>
+  <!-- <div id='home-page' class="m-0 p-0 mx-auto" style="background-image: url("images/bg_image1-m.jpg")"></div> -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class='home row align-items-center ml-0' id='home-search-container'>
+      <div class='mx-auto text-center px-0'>
+        <img src='singapore-logo.jpg' width='140' id='singaporelogo'>
+        <div class='mt-3 px-3'>
+          <h1 class='text-white text-shadow'>Your map guide of Singapore</h1>
+          <p class='text-white text-shadow'>One stop map search of Singapore</p>
+          <div class="input-group mb-2 mx-auto text-shadow">
+						<input type="text" class="form-control rounded-left border-white" id="query-home" placeholder="Start searching">
+						<div class="input-group-append">
+							<button class="input-group-text border-white" id="btn-search-home" role="link"><i class="fas fa-search" ></i></button>
+						</div>
+					</div>
+      </div>
+      </div>
+    </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" id='carouselimage'>
+      <div class="carousel-item active">
+        <img src="home-page1.jpg" class="d-block w-100" alt="..." style="width:100%; height:700px; background-size:center;">
+      </div>
+      <div class="carousel-item">
+        <img src="home-page2.jpg" class="d-block w-100" alt="..." style="width:100%; height:700px; background-position: center;">
+      </div>
+      <div class="carousel-item" id='carouselimage3'>
+        <img src="home-page3.jpg" class="d-block w-100" alt="..." style="width:100%; height:700px; background-position: center;">
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <br><br>
+
 	<div id='container'>
 		<button id='toggle' class="btn btn-primary" >Toggle Hawker Centers</button>
     <!-- the div will contain the map-->
@@ -38,6 +84,7 @@
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>
