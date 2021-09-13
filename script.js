@@ -17,8 +17,13 @@ window.addEventListener('DOMContentLoaded', function () {
   marker.bindPopup('Your location at Changi Airport')
   map.setView(singapore, 12)
 
-  map.locate({setView: true, maxZoom: 12});
-  let currentLocation=
+  map.locate({setView: true, maxZoom: 12})
+  let map_object = map.locate({setView: true, maxZoom: 12})
+  let currentLocation = map_object.attributionControl['_map']['_lastCenter']
+  let currentLat = currentLocation['lat']
+  let currentLng = currentLocation['lng']
+  console.log(currentLat, currentLng)
+  // let currentLocation=
 
   // Refresh the page every 5 minutes to get latest taxi locations
   setTimeout("location.reload();", 300000)
