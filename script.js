@@ -17,18 +17,21 @@ window.addEventListener('DOMContentLoaded', function () {
   marker.bindPopup('Your location at Changi Airport')
   map.setView(singapore, 12)
 
+  
   map.locate({setView: true, maxZoom: 12})
   
+
   function onLocationFound(e) {
-    var radius = e.accuracy.toFixed(2);
+    var radius = e.accuracy;
 
     L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+        .bindPopup("Your current location on the map").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
 }
 
 map.on('locationfound', onLocationFound);
+
 
   // let currentLocation = map_object.attributionControl['_map']['_lastCenter']
   // let currentLat = currentLocation['lat']
