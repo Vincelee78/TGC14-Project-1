@@ -19,16 +19,16 @@ window.addEventListener('DOMContentLoaded', function () {
 
   map.locate({setView: true, maxZoom: 12})
   
-//   function onLocationFound(e) {
-//     var radius = e.accuracy.toFixed(2);
+  function onLocationFound(e) {
+    var radius = e.accuracy.toFixed(2);
 
-//     L.marker(e.latlng).addTo(map)
-//         .bindPopup("You are within " + radius + " meters from this point").openPopup();
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are within " + radius + " meters from this point").openPopup();
 
-//     L.circle(e.latlng, radius).addTo(map);
-// }
+    L.circle(e.latlng, radius).addTo(map);
+}
 
-// map.on('locationfound', onLocationFound);
+map.on('locationfound', onLocationFound);
 
   // let currentLocation = map_object.attributionControl['_map']['_lastCenter']
   // let currentLat = currentLocation['lat']
