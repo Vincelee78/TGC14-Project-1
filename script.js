@@ -18,15 +18,28 @@ window.addEventListener('DOMContentLoaded', function () {
   map.setView(singapore, 12)
 
   map.locate({setView: true, maxZoom: 12})
-  let map_object = map.locate({setView: true, maxZoom: 12})
-  let currentLocation = map_object.attributionControl['_map']['_lastCenter']
-  let currentLat = currentLocation['lat']
-  let currentLng = currentLocation['lng']
-  console.log(currentLat, currentLng)
-  // let currentLocation=
+  
+//   function onLocationFound(e) {
+//     var radius = e.accuracy.toFixed(2);
+
+//     L.marker(e.latlng).addTo(map)
+//         .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+//     L.circle(e.latlng, radius).addTo(map);
+// }
+
+// map.on('locationfound', onLocationFound);
+
+  // let currentLocation = map_object.attributionControl['_map']['_lastCenter']
+  // let currentLat = currentLocation['lat']
+  // let currentLng = currentLocation['lng']
+  // let currentCoordinates=(currentLat,currentLng)
+  // let currentmarker = L.marker(currentCoordinates)
+  // currentmarker.addTo(map)
+  
 
   // Refresh the page every 5 minutes to get latest taxi locations
-  setTimeout("location.reload();", 300000)
+  // setTimeout("location.reload();", 300000)
 
   // OneMap Authentication
   let accessToken = axios.post('https://developers.onemap.sg/privateapi/auth/post/getToken', { email: 'leeweixg2001@yahoo.com', password: 'Scatyim777' }).then(response => accessToken = response.data.access_token)
@@ -45,6 +58,9 @@ window.addEventListener('DOMContentLoaded', function () {
   taxiCoordinates = []
   let taxiGroup = L.layerGroup()
   async function gettaxi(map) {
+    // Refresh the taxi function coordinates every 5 minutes to get latest taxi locations
+    setTimeout("location.reload();", 300000)
+
     let response = await axios.get('https://api.data.gov.sg/v1/transport/taxi-availability')
     let coordinates = response.data.features[0].geometry.coordinates
     // create a cluster of markers for taxi coordinates
