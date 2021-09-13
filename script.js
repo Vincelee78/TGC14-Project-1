@@ -17,11 +17,14 @@ window.addEventListener('DOMContentLoaded', function () {
   marker.bindPopup('Your location at Changi Airport')
   map.setView(singapore, 12)
 
+  map.locate({setView: true, maxZoom: 12});
+  let currentLocation=
+
   // Refresh the page every 5 minutes to get latest taxi locations
   setTimeout("location.reload();", 300000)
 
   // OneMap Authentication
-  // let accessToken = axios.post('https://developers.onemap.sg/privateapi/auth/post/getToken', { email: 'leeweixg2001@yahoo.com', password: 'Scatyim777' }).then(response => accessToken = response.data.access_token)
+  let accessToken = axios.post('https://developers.onemap.sg/privateapi/auth/post/getToken', { email: 'leeweixg2001@yahoo.com', password: 'Scatyim777' }).then(response => accessToken = response.data.access_token)
 
   // setup the tile layers from leaflet
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -58,12 +61,12 @@ window.addEventListener('DOMContentLoaded', function () {
         icon: taxiIcon
       })
 
-
+      console.log()
       marker.addTo(cluster)
       cluster.addTo(taxiGroup);
-      for (let a of actualcoordinates) {
-        taxiCoordinates.push(a);
-      }
+      // console.log(actualcoordinates)
+      taxiCoordinates.push(actualcoordinates);
+      
 
       marker.addEventListener('click', function () {
         map.flyTo(actualcoordinates, 15)
@@ -71,7 +74,8 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   }
   gettaxi(map)
-  // console.log(taxiCoordinates)
+
+  console.log(taxiCoordinates)
 
 
   async function getaddress(taxiCoordinates) {
