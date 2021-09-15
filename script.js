@@ -11,10 +11,10 @@ let changiairport = [1.3644, 103.9915];
 let map = L.map('map')
 
 // Place a marker at Changi Airport for default location
-let marker = L.marker(changiairport)
-marker.addTo(map)
-marker.bindPopup('Your location at Changi Airport')
-map.setView(singapore, 12)
+// let marker = L.marker(changiairport)
+// marker.addTo(map)
+// marker.bindPopup('Your location at Changi Airport')
+// map.setView(singapore, 12)
 
 // Allow map to locate current location
 map.locate({ setView: true, maxZoom: 12 })
@@ -26,8 +26,52 @@ function onLocationFound(e) {
     .bindPopup("Your current location on the map").openPopup();
 
   L.circle(e.latlng, radius).addTo(map);
-}
+  // console.log(e.latlng)
+  let lat=e.latlng.lat
+  let lng=e.latlng.lng
 
+  let clusterhotels = L.layerGroup()
+async function gethotels1() {
+  // let ll=lat +','+ lng
+  let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
+    params: {
+      'll': lat + ','+ lng,
+      'client_id': 'AG5GPKHMNCXQMMBJ3OYZRJC5C5EVRPVN4XMUAVYJBJQOGN3H',
+      'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
+      'v': '20210903',
+      'categoryId':'4bf58dd8d48988d1fa931735',
+      'radius': 20000,
+
+    }
+    
+  })
+  
+  for (let results of response1.data.response.groups[0].items) {
+
+    let hotelIcon = L.divIcon({
+      html: '<i class="fas fa-hotel"></i>',
+      iconSize: [20, 20],
+      className: 'myhotelIcon'
+    });
+
+
+    let marker = L.marker([results.venue.location.lat, results.venue.location.lng],{
+      icon: hotelIcon,
+    })
+    
+    
+    marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
+    marker.addTo(clusterhotels)
+    clusterhotels.addTo(map)
+    
+
+  // return response1.data
+
+}
+}
+gethotels1()
+
+}
 map.on('locationfound', onLocationFound);
 
 
@@ -54,6 +98,7 @@ async function gettaxi(map) {
 
   let cluster = L.markerClusterGroup()
 
+  // added a custom taxi marker icon and positioned the popup just above the marker
   let taxiIcon = L.divIcon({
     html: '<i class="fas fa-taxi"></i>',
     iconSize: [200, 200],
@@ -70,8 +115,10 @@ async function gettaxi(map) {
     let marker = L.marker(actualcoordinates, {
       icon: taxiIcon
     })
+    // added a first popup to the marker to show the user that data is being called from the next API as it needs 1 second for it to get
     marker.bindPopup('Loading...')
 
+    // consume an external search API to get the taxi coordinates address when the marker is clicked
     marker.addEventListener('click', async function(){
     const API_BASE_URL="https://nominatim.openstreetmap.org/search"
     let response1 = await axios.get(API_BASE_URL, {
@@ -81,7 +128,7 @@ async function gettaxi(map) {
           'format': 'jsonv2'
       }
     })
-    
+    // display the address of the taxi in the marker popup 
     marker.bindPopup(response1.data[0].display_name)
   })
   marker.addTo(cluster)
