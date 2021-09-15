@@ -20,19 +20,23 @@ let map = L.map('map')
 map.locate({ setView: true, maxZoom: 12 })
 
 function onLocationFound(e) {
-  var radius = e.accuracy;
+  var radius=2000
 
   L.marker(e.latlng).addTo(map)
     .bindPopup("Your current location on the map").openPopup();
 
-  L.circle(e.latlng, radius).addTo(map);
+  L.circle(e.latlng, radius, {
+    opacity: 0.8,
+    weight: 1,  
+    fillOpacity: 0.2
+}).addTo(map);
   // console.log(e.latlng)
   let lat=e.latlng.lat
   let lng=e.latlng.lng
 
   let clusterhotels = L.layerGroup()
 async function gethotels1() {
-  // let ll=lat +','+ lng
+  
   let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
     params: {
       'll': lat + ','+ lng,
@@ -40,7 +44,7 @@ async function gethotels1() {
       'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
       'v': '20210903',
       'categoryId':'4bf58dd8d48988d1fa931735',
-      'radius': 20000,
+      'radius': '2000',
 
     }
     
@@ -64,8 +68,6 @@ async function gethotels1() {
     marker.addTo(clusterhotels)
     clusterhotels.addTo(map)
     
-
-  // return response1.data
 
 }
 }
