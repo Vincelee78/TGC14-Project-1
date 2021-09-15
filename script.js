@@ -31,10 +31,6 @@ function onLocationFound(e) {
 map.on('locationfound', onLocationFound);
 
 
-// OneMap Authentication
-const API_ENDPOINT_1 = 'https://developers.onemap.sg/privateapi/auth/post/getToken';
-let accessToken = axios.post(API_ENDPOINT_1,  {email: 'leeweixg2001@yahoo.com', password: 'Scatyim777'}).then(response => accessToken = response.data.access_token)
-
 // setup the tile layers from leaflet
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -46,7 +42,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(map);
 
 // consume API from gov website for taxicoordinates
-taxiCoordinates = []
+
 let taxiGroup = L.layerGroup()
 async function gettaxi(map) {
   // Refresh the real time taxi-coordinates every 5 minutes to get latest taxi locations
@@ -61,7 +57,8 @@ async function gettaxi(map) {
   let taxiIcon = L.divIcon({
     html: '<i class="fas fa-taxi"></i>',
     iconSize: [200, 200],
-    className: 'mytaxiIcon'
+    className: 'mytaxiIcon',
+    popupAnchor: [0, -100] 
   });
 
   // extract out each taxi coordinates
@@ -73,93 +70,26 @@ async function gettaxi(map) {
     let marker = L.marker(actualcoordinates, {
       icon: taxiIcon
     })
-    
-    marker.addTo(cluster)
-    cluster.addTo(taxiGroup);
-    
-    // let arrayLength = actualcoordinates.length;
-    // for (let i = 0; i < arrayLength; i++) {
-    //   let coordi = actualcoordinates[i]
-    //   // console.log(coordi)
-    //   taxiCoordinates.push(coordi)
-    //   console.log(taxiCoordinates)
+    marker.bindPopup('Loading...')
 
-    //   for (let a of taxiCoordinates){
-    //     let lat1=a[0]
-    //     let lng1=a[1]
-    //     let finalcoordinates=[lat1,lng1]
-    //   //   console.log(finalcoordinates)
-        
-    //     let response1 = await axios.get('https://developers.onemap.sg//privateapi/commonsvc/revgeocode', {params:{
-    //           location: coorString,
-    //           token: accessToken}
-    //       })
-          
-    //         let address = response1.data.GeocodeInfo[0];
-    //         console.log(address)
-      
-    //   }
-          
-      
-      // let coorString = [for + ',' + String(coordi(1))]
-          // console.log(coorString)
-          
-          // console.log(coorString)
-      //     let response1 = await axios.get('https://developers.onemap.sg//privateapi/commonsvc/revgeocode', {params:{
-      //     location: coorString,
-      //     token: accessToken}
-      // })
-      
-      //   let address = response1.data.GeocodeInfo[0];
-      //   console.log(address)
-  //  };
+    marker.addEventListener('click', async function(){
+    const API_BASE_URL="https://nominatim.openstreetmap.org/search"
+    let response1 = await axios.get(API_BASE_URL, {
+      'params': {
+          'q':lat+' '+ lng,
+          'countrycodes': 'sg',
+          'format': 'jsonv2'
+      }
+    })
+    
+    marker.bindPopup(response1.data[0].display_name)
+  })
+  marker.addTo(cluster)
+  cluster.addTo(taxiGroup);
 }
 }
 gettaxi(map)
 
-
-    // var map = L.map('map').setView([40.725, -73.985], 13);
-
-    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //   attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-    // }).addTo(map);
-
-    // var geocodeService = L.esri.Geocoding.geocodeService({
-    //   apikey: AAPKa44cc3d9e4ae4facae3db37598891536u8VcocjPLyXxxaguleDVkZdePzQo7nEOjYWuzaKIfZfzB0QumPr6svIIJ-IBz8b8 // replace with your api key - https://developers.arcgis.com
-    // });
-
-    // map.on('click', function (e) {
-    //   let latlng=[1.4043,103.7930]
-    //   geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
-    //     if (error) {
-    //       return;
-    //     }
-
-    //     L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
-    //   });
-    // });
-
-
-// console.log(taxiCoordinates)
-
-
-// async function getaddress(taxiCoordinates) {
-// let arrayLength = taxiCoordinates.length;
-// console.log(taxiCoordinates)
-// console.log(taxiCoordinates.length)
-// for (let i = 0; i < taxiCoordinates.length; i++) {
-//   let coordi = taxiCoordinates[i]
-//   console.log(coordi)
-//       let coorString = String(coordi[0]) + ',' + String(coordi[1]);
-//       let response1 = await axios.get('https://developers.onemap.sg//privateapi/commonsvc/revgeocode', {params:{
-//       location: coorString,
-//       token: accessToken}
-//   })
-//     let address = response1.data.GeocodeInfo[0];
-// //  console.log(address)
-//   };
-// }
-// getaddress(taxiCoordinates)
 
 
 // extract geojson from gov website for hawker centers
@@ -333,7 +263,7 @@ document.querySelector('#button').addEventListener('click', async function () {
     })
 
   }
-
+  
 
 })
 
