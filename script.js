@@ -303,7 +303,8 @@ document.querySelector('#button').addEventListener('click', async function () {
 
     document.querySelector('#remove-search').addEventListener('click', function () {
       if (searchresultsinfo.contains(resultname)) {
-        document.querySelector('#search-results').style.display = 'none'
+        document.querySelector('#search-results').style.display = 'none',
+        searchCluster.clearLayers()
       }
       else {
         document.querySelector('#search-results').style.display = 'block'
