@@ -7,14 +7,8 @@
 
 // Set the map location to Singapore
 let singapore = [1.29, 103.85];
-let changiairport = [1.3644, 103.9915];
-let map = L.map('map')
+let map = L.map('map').setView(singapore, 13);
 
-// Place a marker at Changi Airport for default location
-// let marker = L.marker(changiairport)
-// marker.addTo(map)
-// marker.bindPopup('Your location at Changi Airport')
-// map.setView(singapore, 12)
 
 // Allow map to locate current location
 map.locate({ setView: true, maxZoom: 12 })
@@ -318,7 +312,24 @@ document.querySelector('#button').addEventListener('click', async function () {
 })
 
 
+// ESRI Leaflet API Token
+let apiToken = 'AAPKa44cc3d9e4ae4facae3db37598891536u8VcocjPLyXxxaguleDVkZdePzQo7nEOjYWuzaKIfZfzB0QumPr6svIIJ-IBz8b8'
 
+
+// ESRI Geocoding Service
+let geocodeService = L.esri.Geocoding.geocodeService({
+  apikey: apiToken // 
+})
+
+map.on('click', function (e) {
+  geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
+    if (error) {
+      return;
+    }
+
+    L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
+  });
+});
 
 
 
