@@ -320,14 +320,20 @@ let apiToken = 'AAPKa44cc3d9e4ae4facae3db37598891536u8VcocjPLyXxxaguleDVkZdePzQo
 let geocodeService = L.esri.Geocoding.geocodeService({
   apikey: apiToken // 
 })
-
+let geocooding = L.layerGroup()
 map.on('click', function (e) {
+  geocooding.clearLayers();
   geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
     if (error) {
       return;
     }
 
-    L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
+    let marker=L.marker(result.latlng);
+    marker.addTo(geocooding);
+    marker.bindPopup(result.address.Match_addr);
+    marker.openPopup();
+    geocooding.addTo(map);
+    
   });
 });
 
