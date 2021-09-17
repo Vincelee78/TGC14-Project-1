@@ -321,8 +321,10 @@ let geocodeService = L.esri.Geocoding.geocodeService({
   apikey: apiToken // 
 })
 let geocooding = L.layerGroup()
+let resturants = L.layerGroup()
 map.on('click', function (e) {
   geocooding.clearLayers();
+  resturants.clearLayers();
   geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
     if (error) {
       return;
@@ -334,6 +336,47 @@ map.on('click', function (e) {
     marker.openPopup();
     geocooding.addTo(map);
     
+    
+  let lat=result.latlng.lat
+  let lng=result.latlng.lng
+
+  
+async function getresturants() {
+  
+  let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
+    params: {
+      'll': lat + ','+ lng,
+      'client_id': 'AG5GPKHMNCXQMMBJ3OYZRJC5C5EVRPVN4XMUAVYJBJQOGN3H',
+      'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
+      'v': '20210903',
+      'categoryId':'4d4b7105d754a06374d81259',
+      'radius': '2000',
+
+    }
+    
+  })
+  for (let results of response1.data.response.groups[0].items) {
+
+    let hotelIcon = L.divIcon({
+      html: '<i class="fas fa-hotel"></i>',
+      iconSize: [20, 20],
+      className: 'myhotelIcon'
+    });
+
+
+    let marker = L.marker([results.venue.location.lat, results.venue.location.lng],{
+      icon: hotelIcon,
+    })
+    
+    
+    marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
+    marker.addTo(resturants)
+    resturants.addTo(map)
+    
+}
+}
+getresturants()
+  
   });
 });
 
