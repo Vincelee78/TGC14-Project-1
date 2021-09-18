@@ -1,7 +1,7 @@
 
 
 #map{
-    height:800px;
+    height:100vh;
     border:1px solid black ;
     position:relative
     
@@ -46,7 +46,7 @@
 #info-tab{
   position:absolute;
     z-index: 315000;
-    bottom:200px;
+    bottom: 30px;
     left:10px
 
 }
@@ -54,7 +54,7 @@
   #remove-search{
     position:absolute;
     z-index: 315000;
-    bottom:300px;
+    bottom:100px;
     right:10px
 
   }
