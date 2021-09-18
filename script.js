@@ -47,7 +47,7 @@ async function gethotels1() {
   for (let results of response1.data.response.groups[0].items) {
 
     let hotelIcon = L.divIcon({
-      html: '<i class="fas fa-hotel"></i>',
+      html: '<i class="fas fa-bed"></i>',
       iconSize: [20, 20],
       className: 'myhotelIcon'
     });
@@ -146,7 +146,7 @@ async function getHawkers() {
     let hawkerActualCoordinates = [lat, lng]
 
     let hawkerIcon = L.divIcon({
-      html: '<i class="fas fa-utensils"></i>',
+      html: "<span class='fa-stack fa-lg'><i class='fas fa-circle fa-stack-2x'></i><i class='fas fa-utensils fa-stack-1x fa-inverse'></i></i></span>",
       iconSize: [40, 40],
       className: 'myhawkerIcon'
     });
@@ -193,14 +193,13 @@ async function getHotels() {
     let totalRooms = points.properties.TOTALROOMS
     let address = points.properties.ADDRESS
 
-    let hotelIcon = L.divIcon({
-      html: '<i class="fas fa-hotel"></i>',
-      iconSize: [20, 20],
-      className: 'myhotelIcon'
+    let allhotelIcon = L.divIcon({
+      html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x fa-inverse'></i><i class='fas fa-hotel fa-stack-1x'></i></span>",
+      className: 'allhotelsIcon'
     });
 
     let marker = L.marker(hotelsActualCoordinates, {
-      icon: hotelIcon,
+      icon: allhotelIcon,
     })
     marker.addTo(hotelGroup)
 
@@ -274,11 +273,19 @@ document.querySelector('#button').addEventListener('click', async function () {
   let searchresultsinfo = document.querySelector('#search-results')
   searchresultsinfo.innerHTML = "";
 
+  let attractionsIcon = L.divIcon({
+    html: "<span class='fa-stack fa-lg'><i class='fas fa-map-marker fa-stack-2x'></i><i class='fas fa-camera-retro fa-stack-1x fa-inverse'></i></i></span>",
+    className: 'myattractionsIcon'
+  });
+
 
   for (let results of response2.response.groups[0].items) {
-    let marker = L.marker([results.venue.location.lat, results.venue.location.lng])
+    let marker = L.marker([results.venue.location.lat, results.venue.location.lng],{
+      icon: attractionsIcon,
+    })
     let searchcoordinates = [results.venue.location.lat, results.venue.location.lng]
     // console.log(coordinates)
+
 
     marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
     marker.addTo(searchCluster)
@@ -350,22 +357,22 @@ async function getresturants() {
       'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
       'v': '20210903',
       'categoryId':'4d4b7105d754a06374d81259',
-      'radius': '2000',
+      'radius': '1000',
 
     }
     
   })
   for (let results of response1.data.response.groups[0].items) {
 
-    let hotelIcon = L.divIcon({
-      html: '<i class="fas fa-hotel"></i>',
+    let resturantsIcon = L.divIcon({
+      html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x'></i><i class='fas fa-hamburger fa-stack-1x fa-inverse'></i></span>",
       iconSize: [20, 20],
-      className: 'myhotelIcon'
+      className: 'myresturantsIcon'
     });
 
 
     let marker = L.marker([results.venue.location.lat, results.venue.location.lng],{
-      icon: hotelIcon,
+      icon: resturantsIcon,
     })
     
     

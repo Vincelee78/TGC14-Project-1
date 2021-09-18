@@ -74,7 +74,8 @@
     /* Horizontally center the text (icon) */
     line-height: 20px;
     /* Vertically center the text (icon) */
-    font-size: 20px;
+    /* font-size: 20px; */
+    
   }
   
   .myhotelIcon{
@@ -83,9 +84,34 @@
     /* Horizontally center the text (icon) */
   line-height: 20px;
     /* Vertically center the text (icon) */
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .allhotelsIcon{
+  color:green ;
+  text-align: center;
+    /* Horizontally center the text (icon) */
+  line-height: 20px;
+    /* Vertically center the text (icon) */
+    font-size: 10px;
+}
+
+  .myresturantsIcon{
+    color:orangered;
+    text-align: center;
+      /* Horizontally center the text (icon) */
+    line-height: 20px;
+      /* Vertically center the text (icon) */
+      font-size: 8px;
+
   }
   
+  .myattractionsIcon{
+    color:darkmagenta ;
+    text-align: center;
+      /* Horizontally center the text (icon) */
+    line-height: 20px;
+  }
 
 
   #toggle{
