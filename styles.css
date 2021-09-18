@@ -51,6 +51,20 @@
 
 }
 
+.nav-item{
+  
+  /* background-color: white */
+}
+
+.fa-search{
+  padding-left: 5px;
+
+}
+
+.fa-taxi{
+  padding-left: 5px;
+}
+
   #remove-search{
     position:absolute;
     z-index: 315000;
@@ -137,7 +151,9 @@
     
     
   }
-  
+  .col{
+    background-color: mediumslateblue;
+  }
   #search-results{
     overflow-y: scroll;
     max-height:300px;
