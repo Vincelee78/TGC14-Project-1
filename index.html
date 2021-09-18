@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>repl.it</title>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" 
         integrity="sha256-EFpFyBbuttUJtoocYzsBnERPWee2JYz4cn5nkUBjW0A=" 
         crossorigin="anonymous" />
@@ -111,16 +111,16 @@ crossorigin=""></script>
     <div id='map'></div>
 
 
-    <!-- <div id="info-tab" class="pr-0 rounded">
-      <ul class="nav nav-tabs shadow" id="myTab" role="tablist">
+    <div id="info-tab" class="pr-0 rounded">
+      <ul class="nav nav-tabs lightblue-text" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link py-3 px-2 active" id="search-results" data-toggle="tab" href="#search" role="tab"
-            aria-controls="search" aria-selected="true">Search <i class="fas fa-search lightgreen-text pl-2"
+          <a class="nav-link py-3 px-2 active" id="search-icon" data-toggle="tab" href="#search" role="tab"
+            aria-controls="search" aria-selected="true">Search Results <i class="fas fa-search lightblue-text pl-2"
               aria-hidden="true"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link py-3 px-2" id="filters" data-toggle="tab" href="#filter" role="tab" aria-controls="filter"
-            aria-selected="false">Explore <i class="fas fa-filter lightbrown-text pl-2" aria-hidden="true"></i></a>
+          <a class="nav-link py-3 px-2" id="filters" data-toggle="tab" href='#taxiGroup' role="tab" aria-controls="filter"
+            aria-selected="false">Taxi Locations <i class="fas fa-taxi lightblue-text pl-2" aria-hidden="true"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link py-3 px-2" id="weather-info" data-toggle="tab" href="#weather" role="tab"
@@ -136,23 +136,20 @@ crossorigin=""></script>
         <div class="tab-pane fade show active" id="search" role="tabpanel" aria-labelledby="search-tab">
           <div class="row lightgreen-bg mx-0" id="search-bar-wrapper">
             <div class="col bg-light px-0">
-              <div class="input-group mb-2 mt-3 mx-auto  px-3" id="search-bar">
-                <input type="text" class="form-control rounded-left border-white" id="query"
-                  placeholder="Search for a park e.g. Telok Blangah">
+              <div class="input-group mb-2 mt-3 mx-auto  px-3" id="search-results">
+                
                 <div class="input-group-append">
-                  <button class="input-group-text lightbrown lighten-3 rounded-right border-white" id="btn-search"><i
-                      class="fas fa-search text-white" aria-hidden="true"></i></button>
+                  <button class="input-group-text blue lighten-3 rounded-right border-white" id="btn-search"><i
+                      class="fas fa-search text-shadow" aria-hidden="true"></i></button>
 
                 </div>
               </div>
             </div>
           </div>
           <div id="search-result-header" class="m-0 p-0">
-            <p class="p-3"> 0 Search Results for <strong></strong></p>
-
+            <p class="p-1"> Search Results</p>
           </div>
 
-          <div id="details" class="py-2 px-4"></div>
         </div>
         <div class="tab-pane fade" id="filter" role="tabpanel" aria-labelledby="filter-tab">
 
@@ -213,16 +210,16 @@ crossorigin=""></script>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
 
     <button id='remove-search' class="btn btn-secondary">Remove Search Results</button>
-    <button id="toggle-search-btn">Search</button>
+    
 
     <div id='search_container'>
       <button id='button' class="btn btn-success">Search For Recommendations!</button>
       <input type='text' id='textinput' placeholder='Enter keywords' />
-      <div id="search-results"></div>
+      <!-- <div id="search-results"></div> -->
     </div>
   </div>
   <!-- the leaflet JS -->

@@ -365,7 +365,7 @@ async function getresturants() {
   for (let results of response1.data.response.groups[0].items) {
 
     let resturantsIcon = L.divIcon({
-      html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x'></i><i class='fas fa-hamburger fa-stack-1x fa-inverse'></i></span>",
+      html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x'></i><i class='fas fa-utensils fa-stack-1x fa-inverse'></i></span>",
       iconSize: [20, 20],
       className: 'myresturantsIcon'
     });
