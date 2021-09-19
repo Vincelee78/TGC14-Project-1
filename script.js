@@ -1,6 +1,6 @@
 
 // One page application
-  document.querySelector("#btn-search-home").addEventListener('click', function () {
+document.querySelector("#btn-search-home").addEventListener('click', function () {
   document.querySelector('#container').style.display = "block";
   document.querySelector('#carouselExampleIndicators').style.display = "none"
 })
@@ -14,58 +14,58 @@ let map = L.map('map').setView(singapore, 13);
 map.locate({ setView: true, maxZoom: 12 })
 
 function onLocationFound(e) {
-  var radius=2000
+  var radius = 2000
 
   L.marker(e.latlng).addTo(map)
     .bindPopup("Your current location on the map").openPopup();
 
   L.circle(e.latlng, radius, {
     opacity: 0.8,
-    weight: 1,  
+    weight: 1,
     fillOpacity: 0.2
-}).addTo(map);
+  }).addTo(map);
   // console.log(e.latlng)
-  let lat=e.latlng.lat
-  let lng=e.latlng.lng
+  let lat = e.latlng.lat
+  let lng = e.latlng.lng
 
   let clusterhotels = L.layerGroup()
-async function gethotels1() {
-  
-  let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
-    params: {
-      'll': lat + ','+ lng,
-      'client_id': 'AG5GPKHMNCXQMMBJ3OYZRJC5C5EVRPVN4XMUAVYJBJQOGN3H',
-      'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
-      'v': '20210903',
-      'categoryId':'4bf58dd8d48988d1fa931735',
-      'radius': '2000',
+  async function gethotels1() {
+
+    let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
+      params: {
+        'll': lat + ',' + lng,
+        'client_id': 'AG5GPKHMNCXQMMBJ3OYZRJC5C5EVRPVN4XMUAVYJBJQOGN3H',
+        'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
+        'v': '20210903',
+        'categoryId': '4bf58dd8d48988d1fa931735',
+        'radius': '2000',
+
+      }
+
+    })
+
+    for (let results of response1.data.response.groups[0].items) {
+
+      let hotelIcon = L.divIcon({
+        html: '<i class="fas fa-bed"></i>',
+        iconSize: [20, 20],
+        className: 'myhotelIcon'
+      });
+
+
+      let marker = L.marker([results.venue.location.lat, results.venue.location.lng], {
+        icon: hotelIcon,
+      })
+
+
+      marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
+      marker.addTo(clusterhotels)
+      clusterhotels.addTo(map)
+
 
     }
-    
-  })
-  
-  for (let results of response1.data.response.groups[0].items) {
-
-    let hotelIcon = L.divIcon({
-      html: '<i class="fas fa-bed"></i>',
-      iconSize: [20, 20],
-      className: 'myhotelIcon'
-    });
-
-
-    let marker = L.marker([results.venue.location.lat, results.venue.location.lng],{
-      icon: hotelIcon,
-    })
-    
-    
-    marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
-    marker.addTo(clusterhotels)
-    clusterhotels.addTo(map)
-    
-
-}
-}
-gethotels1()
+  }
+  gethotels1()
 
 }
 map.on('locationfound', onLocationFound);
@@ -99,7 +99,7 @@ async function gettaxi(map) {
     html: '<i class="fas fa-taxi"></i>',
     iconSize: [200, 200],
     className: 'mytaxiIcon',
-    popupAnchor: [0, -100] 
+    popupAnchor: [0, -100]
   });
 
   // extract out each taxi coordinates
@@ -107,7 +107,7 @@ async function gettaxi(map) {
     let lng = points[0]
     let lat = points[1]
     let actualcoordinates = [lat, lng]
-    
+
     let marker = L.marker(actualcoordinates, {
       icon: taxiIcon
     })
@@ -115,21 +115,23 @@ async function gettaxi(map) {
     marker.bindPopup('Loading...')
 
     // consume an external search API to get the taxi coordinates address when the marker is clicked
-    marker.addEventListener('click', async function(){
-    const API_BASE_URL="https://nominatim.openstreetmap.org/search"
-    let response1 = await axios.get(API_BASE_URL, {
-      'params': {
-          'q':lat+' '+ lng,
+    marker.addEventListener('click', async function () {
+      const API_BASE_URL = "https://nominatim.openstreetmap.org/search"
+      let response1 = await axios.get(API_BASE_URL, {
+        'params': {
+          'q': lat + ' ' + lng,
           'countrycodes': 'sg',
           'format': 'jsonv2'
-      }
+        }
+      })
+      // display the address of the taxi in the marker popup 
+      marker.bindPopup(response1.data[0].display_name)
     })
-    // display the address of the taxi in the marker popup 
-    marker.bindPopup(response1.data[0].display_name)
-  })
-  marker.addTo(cluster)
-  cluster.addTo(taxiGroup);
-}
+    marker.addTo(cluster)
+    cluster.addTo(taxiGroup);
+
+    document.querySelector('')
+  }
 }
 gettaxi(map)
 
@@ -228,7 +230,7 @@ let overlay = {
 
 L.control.layers(baseLayers, overlay).addTo(map)
 
-
+// Toggle locations of hawker centers on and off
 document.querySelector('#toggle').addEventListener('click', function () {
   if (map.hasLayer(hawkerGroup)) {
     map.removeLayer(hawkerGroup)
@@ -280,7 +282,7 @@ document.querySelector('#button').addEventListener('click', async function () {
 
 
   for (let results of response2.response.groups[0].items) {
-    let marker = L.marker([results.venue.location.lat, results.venue.location.lng],{
+    let marker = L.marker([results.venue.location.lat, results.venue.location.lng], {
       icon: attractionsIcon,
     })
     let searchcoordinates = [results.venue.location.lat, results.venue.location.lng]
@@ -302,10 +304,11 @@ document.querySelector('#button').addEventListener('click', async function () {
       marker.openPopup()
     })
 
+    // Remove search results and markers
     document.querySelector('#remove-search').addEventListener('click', function () {
       if (searchresultsinfo.contains(resultname)) {
         document.querySelector('#search-results').style.display = 'none',
-        searchCluster.clearLayers()
+          searchCluster.clearLayers()
       }
       else {
         document.querySelector('#search-results').style.display = 'block'
@@ -313,9 +316,16 @@ document.querySelector('#button').addEventListener('click', async function () {
 
     })
 
-  }
-  
 
+    // Collapse search results
+    document.querySelector('#tab-toggle').addEventListener('click', function () {
+      if (searchresultsinfo.contains(resultname)) {
+        document.querySelector('#search-results').style.display = 'none'
+      } else {
+        document.querySelector('#search-results').style.display = 'block'
+      }
+    })
+  }
 })
 
 
@@ -337,55 +347,57 @@ map.on('click', function (e) {
       return;
     }
 
-    let marker=L.marker(result.latlng);
+    let marker = L.marker(result.latlng);
     marker.addTo(geocooding);
     marker.bindPopup(result.address.Match_addr);
     marker.openPopup();
     geocooding.addTo(map);
-    
-    
-  let lat=result.latlng.lat
-  let lng=result.latlng.lng
 
-  
-async function getresturants() {
-  
-  let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
-    params: {
-      'll': lat + ','+ lng,
-      'client_id': 'AG5GPKHMNCXQMMBJ3OYZRJC5C5EVRPVN4XMUAVYJBJQOGN3H',
-      'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
-      'v': '20210903',
-      'categoryId':'4d4b7105d754a06374d81259',
-      'radius': '1000',
 
+    let lat = result.latlng.lat
+    let lng = result.latlng.lng
+
+
+    async function getresturants() {
+
+      let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
+        params: {
+          'll': lat + ',' + lng,
+          'client_id': 'AG5GPKHMNCXQMMBJ3OYZRJC5C5EVRPVN4XMUAVYJBJQOGN3H',
+          'client_secret': 'JN0CP4TS12X4V3IIJEV3DII5SUAUJJJ53V3NARHFYKRDMOFB',
+          'v': '20210903',
+          'categoryId': '4d4b7105d754a06374d81259',
+          'radius': '1000',
+
+        }
+
+      })
+      for (let results of response1.data.response.groups[0].items) {
+
+        let resturantsIcon = L.divIcon({
+          html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x'></i><i class='fas fa-utensils fa-stack-1x fa-inverse'></i></span>",
+          iconSize: [20, 20],
+          className: 'myresturantsIcon'
+        });
+
+
+        let marker = L.marker([results.venue.location.lat, results.venue.location.lng], {
+          icon: resturantsIcon,
+        })
+
+
+        marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
+        marker.addTo(resturants)
+        resturants.addTo(map)
+
+      }
     }
-    
-  })
-  for (let results of response1.data.response.groups[0].items) {
+    getresturants()
 
-    let resturantsIcon = L.divIcon({
-      html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x'></i><i class='fas fa-utensils fa-stack-1x fa-inverse'></i></span>",
-      iconSize: [20, 20],
-      className: 'myresturantsIcon'
-    });
-
-
-    let marker = L.marker([results.venue.location.lat, results.venue.location.lng],{
-      icon: resturantsIcon,
-    })
-    
-    
-    marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
-    marker.addTo(resturants)
-    resturants.addTo(map)
-    
-}
-}
-getresturants()
-  
   });
 });
+
+
 
 
 

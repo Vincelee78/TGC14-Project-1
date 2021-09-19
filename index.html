@@ -106,28 +106,26 @@ crossorigin=""></script>
   <br><br>
 
   <div id='container'>
-    <button id='toggle' class="btn btn-primary">Toggle Hawker Centers</button>
-    <!-- the div will contain the map-->
+    <!-- the div will contain the map -->
     <div id='map'></div>
 
 
     <div id="info-tab">
-      <ul class="nav nav-tabs lightblue-text pr-3 rounded bg-light" id="myTab" role="tablist">
+      <ul class="nav nav-tabs purple-text pr-3 rounded bg-light" id="myTab" role="tablist">
         <li class="nav-item">
           <button class="nav-link py-3 px-2 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Search Results<i class="fas fa-search pl-2"
             aria-hidden="true"></i></button>
         </li>
         <li class="nav-item">
-          <button class="nav-link py-3 px-2 bg-light" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Taxi Locations<i class="fas fa-taxi lightblue-text pl-2" aria-hidden="true"></i></button>
+          <button class="nav-link py-3 px-2 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Taxi Locations<i class="fas fa-taxi lightblue-text pl-2" aria-hidden="true"></i></button>
         </li>
         <li class="nav-item">
-          <a class="nav-link py-3 px-2 bg-light " id="weather-info" data-toggle="tab" href="#weather" role="tab"
-            aria-controls="weather" aria-selected="false">Weather <i class="fas fa-cloud-sun lightblue-text pl-2"
-              aria-hidden="true"></i></a>
+          <button class="nav-link py-3 px-2" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Hawker Centers <i class="fas fa-utensils lightblue-text pl-2"
+            aria-hidden="true"></i></button>
         </li>
         <li class="nav-item">
-          <a class="nav-link py-3 pl-4 pr-2" id="tab-toggle" data-toggle="tab" href="#" role="tab"
-            aria-controls="tab-toggle" aria-selected="false"><i class="fas fa-caret-down" aria-hidden="true"></i></a>
+          <button class="nav-link py-3 pl-4 pr-2" id="tab-toggle" data-toggle="tab" href="#" role="tab"
+            aria-controls="tab-toggle" aria-selected="false"><i class="fas fa-caret-down" aria-hidden="true"></i></button>
         </li>
       </ul>
       <div class="tab-content shadow " id="myTabContent">
@@ -149,26 +147,14 @@ crossorigin=""></script>
         </div>
         <div class="tab-pane fade " id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-          <div class="px-5 pt-5 pb-3">
-            <h5 class="bluetext">Toggle Search Results</h5>
-            <div class="pt-1">
-              <input type="radio" name="show-park" value="marker" checked=""> <img src="images/tree_icon.png" width="18"
-                class="px-1"> Parks Locations <br>
-            </div>
-            <div class="pt-2">
-              <input type="radio" name="show-park" value="area"> <img src="images/legend_park_area.png" width="20"
-                class="px-1"> Park Areas
-            </div>
+          <!-- <div class="px-5 pt-1 pb-1 col">
+            <h5 class="whitetext">Toggle Hawker Centers Locations On and Off</h5>
           </div>
-          <hr class="mx-3">
-          
-            
-        </div>
-        <div class="tab-pane fade" id="weather" role="tabpanel" aria-labelledby="weather-tab">
-          <div id="forecast24hr" class="pt-3 px-5 pb-0">
-            <h3 class="bluetext mb-0 mt-3">24 Hours Forecast</h3>
-
-            <p class="weatherText mt-0 pt-0 pb-0 mb-0">Partly Cloudy (Day) </p>
+            <div id="toggle1" class="px-5 pt-0 col">
+            <button id='toggle' class="btn btn-primary lightbrown border-white text-white mb-2">Toggle Hawker Centers</button>
+          </div> -->
+          <div id="forecast24hr" class="pt-1 px-3 pb-0 col">
+            <h5 class="bluetext mb-0 mt-3">Taxi Coordinates are updated every 5 minutes</h5>
             <img src="images/icons/cloudy_day.png" class="ml-2 pt-2">
 
             <p class="highlow mt-3">
@@ -181,6 +167,18 @@ crossorigin=""></script>
             <button id="btn-forecast" class="btn btn-primary lightbrown border-white text-white">2-hour
               Forecast</button>
           </div>
+    
+        </div>
+
+        <div class="tab-pane fade col" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <div class="mx-5">
+            <span class="text-white py-2 mx-2 fs-5 fluid">Toggle All Hawker Centers<button id='toggle' class="btn btn-primary border-white text-white m-2">Toggle Locations</button></span>
+          </div>
+
+            <!-- <div id="toggle1" class="px-5 pt-1">
+            <button id='toggle' class="btn btn-primary border-white text-white mb-2">Toggle Hawker Centers</button>
+          </div> -->
+
         </div>
       </div>
     </div>
