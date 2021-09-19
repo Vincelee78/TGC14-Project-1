@@ -354,7 +354,7 @@ let geocodeService = L.esri.Geocoding.geocodeService({
 })
 let geocooding = L.layerGroup()
 let resturants = L.layerGroup()
-map.on('click', function (e) {
+map.on('dblclick', function (e) {
   geocooding.clearLayers();
   resturants.clearLayers();
   geocodeService.reverse().latlng(e.latlng).run(function (error, result) {
