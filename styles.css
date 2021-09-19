@@ -184,7 +184,7 @@
       max-width:190px; 
       max-height:800px;
       background-color: lightgrey;
-      top: 80px;
+      top: 10px;
       left: 5px;
       cursor: pointer;
 
@@ -192,7 +192,7 @@
       #remove-search{
         position:absolute;
         z-index: 315000;
-        top: 180px;
+        top: 110px;
         left: 5px
     
       }
