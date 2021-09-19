@@ -33,8 +33,7 @@
   #home-search-container{
     position:absolute;
     z-index: 314159;
-    /* /* top: 200px; */
-    /* left: 500px; */ */
+    
 
   }
 
@@ -51,10 +50,10 @@
 
 }
 
-.nav-item{
+/* .nav-item{ */
   
   /* background-color: white */
-}
+/* } */
 
 .fa-search{
   padding-left: 5px;
@@ -139,7 +138,6 @@
     z-index: 314159;
     max-width:200px; 
     max-height:800px;
-    /* background-color: rgba(217, 210, 210, 0.82); */
     top: 5px;
     left: 50px;
     
@@ -172,11 +170,17 @@
     border: 2px solid black;
   }
   
-  /* #button{
-    /* background-color: rgba(217, 210, 210, 0.82); */
-  /* }  */
+  #taxibutton{
+    text-align: center;
+  }
 
+#taxiTitleTabText{
+text-align: center;
+}
 
+#nav-contact{
+  text-align: center;
+}
   @media screen and (max-width:320px){
     #search_container{
       position: absolute;

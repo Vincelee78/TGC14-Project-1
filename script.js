@@ -130,10 +130,25 @@ async function gettaxi(map) {
     marker.addTo(cluster)
     cluster.addTo(taxiGroup);
 
-    document.querySelector('')
-  }
+  //   document.querySelector('#taxiresults').addEventListener('click', function () {
+  //     taxiGroup.addTo(map);
+      
+  // })
+
+  
+
+}
 }
 gettaxi(map)
+
+document.querySelector('#taxiresults').addEventListener('click', function () {
+  if (map.hasLayer(taxiGroup)) {
+    map.removeLayer(taxiGroup)
+  }
+  else {
+    map.addLayer(taxiGroup)
+  }
+})
 
 
 
