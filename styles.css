@@ -201,6 +201,7 @@ text-align: center;
 
 .dropdown-item{
   color: whitesmoke;
+  cursor: pointer;
 }
 
   @media screen and (max-width:320px){
