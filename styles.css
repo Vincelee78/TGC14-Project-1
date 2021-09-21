@@ -79,6 +79,14 @@
 
   }
 
+  #remove-georesturants{
+    position:absolute;
+    z-index: 315000;
+    top: 150px;
+    left: 50px
+
+  }
+
   .mytaxiIcon{
     text-align: center;
     /* Horizontally center the text (icon) */

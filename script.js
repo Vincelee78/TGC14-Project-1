@@ -401,12 +401,30 @@ map.on('dblclick', function (e) {
 
       }
     }
+    document.querySelector('#remove-georesturants').addEventListener('click', function () {
+      if (map.hasLayer(resturants)) {
+        map.removeLayer(resturants)
+      }
+      else {
+        map.addLayer(resturants)
+      }
+    })
+    
     getresturants()
 
   });
 });
 
+// document.querySelector('#remove-georesturants').addEventListener('click', function () {
+//   if (searchresultsinfo.contains(resturantsIcon)) {
+//     document.querySelector('#remove-georesturants').style.display = 'none',
+//       resturants.clearLayers()
+//   }
+//   else {
+//     document.querySelector('#remove-georesturants').style.display = 'block'
+//   }
 
+// })
 
 
 
