@@ -139,8 +139,8 @@ async function gettaxi() {
     marker.addTo(cluster)
     cluster.addTo(taxiGroup);
   }
-  // Refresh the real time taxi-coordinates every 5 minutes to get latest taxi locations
-  setInterval(() => gettaxi(), 300000)
+  // Refresh the real time taxi-coordinates every 2 minutes to get latest taxi locations
+  setInterval(() => gettaxi(), 120000)
 }
 
 gettaxi()
@@ -428,6 +428,24 @@ map.on('dblclick', function (e) {
 
   });
 });
+
+document.querySelector('#gardensAttraction').addEventListener('click', function(){
+  let gardensIcon = L.icon({
+    iconUrl: 'user-location1.png',
+    iconSize: [50, 50],
+    className: 'myuserIcon',
+    
+  })
+  
+  let marker = L.marker([1.2847, 103.8610], {
+    icon: gardensIcon,
+  })
+  marker.addTo(map);
+  marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><img src="thegardens-info.jpeg" height="300px" width="300px"/>`);
+  map.flyTo([1.2847, 103.8610], 16);
+  marker.openPopup()
+  
+})
 
 
 

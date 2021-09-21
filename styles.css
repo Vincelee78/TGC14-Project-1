@@ -50,10 +50,6 @@
 
 }
 
-/* .nav-item{ */
-  
-  /* background-color: white */
-/* } */
 
 .fa-search{
   padding-left: 5px;
@@ -85,6 +81,13 @@
     top: 150px;
     left: 50px
 
+  }
+
+  .dropdown{
+    position:absolute;
+    z-index: 315000;
+    top: 195px;
+    left: 50px
   }
 
   .mytaxiIcon{
@@ -189,6 +192,17 @@ text-align: center;
 #nav-contact{
   text-align: center;
 }
+
+.dropdown-menu{
+  background-color: rgb(255, 135, 0);
+  max-height: 250px;
+  overflow-y: scroll
+}
+
+.dropdown-item{
+  color: whitesmoke;
+}
+
   @media screen and (max-width:320px){
     #search_container{
       position: absolute;
@@ -208,4 +222,31 @@ text-align: center;
         left: 5px
     
       }
+
+      #remove-georesturants{
+        position:absolute;
+        z-index: 315000;
+        top: 150px;
+        left: 5px
+      }
+
+      .dropdown{
+        position:absolute;
+        z-index: 315000;
+        top: 200px;
+        left: 5px
+      }
+
+      .dropdown-menu{
+        background-color: rgb(255, 135, 0);
+        max-height: 80px;
+        overflow-y: scroll
+      }
+
+      #search-results{
+        
+        max-height:100px;
+        
+      }
+
     }

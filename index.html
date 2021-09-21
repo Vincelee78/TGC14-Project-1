@@ -103,7 +103,7 @@ crossorigin=""></script>
     </button>
   </div>
 
-  <br><br>
+  <br>
 
   <div id='container'>
     <!-- the div will contain the map -->
@@ -148,7 +148,7 @@ crossorigin=""></script>
         <div class="tab-pane fade col" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
           <div id="taxiTitleTabText" class="pt-1 pb-0">
-            <h5 class="bluetext mb-0 mt-3">Taxi Coordinates are updated every 5 minutes</h5>
+            <h5 class="bluetext mb-0 mt-3">Taxi Coordinates are updated every 2 minutes</h5>
             <i class="fas fa-taxi lightblue-text pl-2" class="ml-2 pt-2"></i>
 
           </div>
@@ -163,9 +163,6 @@ crossorigin=""></script>
             <span class="text-white py-2 mx-2 fs-5 fluid" id='hawkerTitleTab'>Toggle All Hawker Centers<button id='toggle' class="btn btn-primary border-white text-white m-2">Toggle Hawker Locations</button></span>
           </div>
 
-            <!-- <div id="toggle1" class="px-5 pt-1">
-            <button id='toggle' class="btn btn-primary border-white text-white mb-2">Toggle Hawker Centers</button>
-          </div> -->
 
         </div>
       </div>
@@ -173,7 +170,17 @@ crossorigin=""></script>
 
 
     <button id='remove-search' class="btn btn-secondary">Remove Search Results</button>
-    <button id='remove-georesturants' class="btn btn-warning border-white ">Remove Nearby Eateries</button>
+    <button id='remove-georesturants' class="btn btn-warning border-danger border-3 ">Toggle Nearby Eateries</button>
+    <div class="dropdown">
+      <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Top 3 attractions!
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item " id='gardensAttraction' ><img src="gardens-logo.png" style="width:150px; height:60px;"></a></li>
+        <li><a class="dropdown-item" id='mbsAttraction' href="#"><img src="marina-bay-sands-logo.png" style="width:150px; height:100px;"></a></li>
+        <li><a class="dropdown-item" id='universalAttraction' href="#"><img src="universal-logo.png" style="width:150px; height:80px;"></a></li>
+      </ul>
+    </div>
     
 
     <div id='search_container'>
