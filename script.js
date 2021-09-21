@@ -445,7 +445,8 @@ document.querySelector('#gardensAttraction').addEventListener('click',  function
   
   map.flyTo([1.2816, 103.8636])
   marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><img src="thegardens-info.jpeg" height="100px" width="150px"/></center>`, {
-    maxHeight: "auto"
+    maxHeight: "auto",
+    maxWidth: "auto"
   })
   marker.openPopup()
   
@@ -466,7 +467,8 @@ document.querySelector('#mbsAttraction').addEventListener('click', async functio
   
   map.flyTo([1.2847, 103.8610])
   marker.bindPopup(`<center><h4>Marina Bay Sands</h4>Marina Bay Sands® is a destination for those who appreciate luxury. An integrated resort notable for transforming Singapore’s city skyline, it comprises three 55-storey towers of extravagant hotel rooms and luxury suites with personal butler services. In addition, its architecture is made complete with the Sands SkyPark® which crowns the three towers. </center></br><center><img src="mbs-info-image.jpg" height="100px" width="200px"/></center>`, {
-    maxHeight: "auto"
+    maxHeight: "fit",
+    maxWidth: "fit"
   })
   marker.openPopup()
   
@@ -487,7 +489,8 @@ document.querySelector('#universalAttraction').addEventListener('click', async f
   
   map.flyTo([1.2540, 103.8238])
   marker.bindPopup(`<center><h4>Universal Studios Singapore</h4>As Southeast Asia’s first movie-themed park, Universal Studios Singapore offers a slew of exciting attractions, including 24 movie-themed rides, a festive walk, water park, marine life park and maritime experiential museum and aquarium. Opened in 2011 with director Steven Spielberg as a creative consultant, the kid-friendly park takes inspiration from some of Hollywood’s biggest hits, including Transformers, The Lost World, and Madagascar. </center></br><center><img src="universalstudios-info-image.jpg" height="100px" width="200px"/></center>`, {
-    maxHeight: "auto"
+    maxHeight: "fit",
+    maxWidth: "fit"
   })
   marker.openPopup()
   

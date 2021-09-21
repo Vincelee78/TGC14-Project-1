@@ -168,9 +168,14 @@ crossorigin=""></script>
       </div>
     </div>
 
+    <div id='search_container'>
+      <button id='button' class="btn btn-success">Search Recommendations!</button>
+      <input type='text' id='textinput' placeholder='Enter keywords' />
+      
+    </div>
 
     <button id='remove-search' class="btn btn-secondary">Remove Search Results</button>
-    <button id='remove-georesturants' class="btn btn-warning border-danger border-3 ">Remove Nearby Eateries</button>
+    <button id='remove-georesturants' class="btn btn-warning border-danger border-3 ">Remove Eateries</button>
     <div class="dropdown">
       <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         Top 3 attractions!
@@ -183,11 +188,7 @@ crossorigin=""></script>
     </div>
     
 
-    <div id='search_container'>
-      <button id='button' class="btn btn-success">Search For Recommendations!</button>
-      <input type='text' id='textinput' placeholder='Enter keywords' />
-      <!-- <div id="search-results"></div> -->
-    </div>
+
   </div>
   <!-- the leaflet JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"

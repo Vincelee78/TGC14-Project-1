@@ -1,6 +1,6 @@
 
 
-#map{
+  #map{
     height:100vh;
     border:1px solid black ;
     position:relative
@@ -22,13 +22,10 @@
     background-color: black;
   }
 
-.change{
+  .change{
   opacity:0.7
-}
-
+  }
   
-
-
 
   #home-search-container{
     position:absolute;
@@ -67,27 +64,20 @@
 .nav-link{
   color: mediumslateblue !important
 }
-  #remove-search{
-    position:absolute;
-    z-index: 315000;
-    top: 110px;
-    left: 50px
-
-  }
 
   #remove-georesturants{
     position:absolute;
     z-index: 315000;
-    top: 150px;
-    left: 50px
+    top: 80px;
+    right: 10px
 
   }
 
   .dropdown{
     position:absolute;
     z-index: 315000;
-    top: 195px;
-    left: 50px
+    top: 125px;
+    right: 10px
   }
 
   .mytaxiIcon{
@@ -157,18 +147,31 @@
   #search_container{
     position: absolute;
     z-index: 314159;
-    max-width:190px; 
+    width:212px; 
     max-height:800px;
-    background-color: lightgrey;
     top: 10px;
-    left: 50px;
+    left: 10px;
     cursor: pointer;
-    
-    
+
   }
+
+  #textinput{
+    width:212px;
+    border: 2px solid black;
+  }
+
+  #remove-search{
+    position:absolute;
+    z-index: 315000;
+    top: 110px;
+    left: 10px
+
+  }
+
   .col{
     background-color: mediumslateblue;
   }
+
   #search-results{
     overflow-y: scroll;
     max-height:300px;
@@ -176,10 +179,6 @@
     cursor: pointer;
   }
   
-  #textinput{
-    width:190px;
-    border: 2px solid black;
-  }
   
   #taxibutton{
     text-align: center;
@@ -204,11 +203,11 @@ text-align: center;
   cursor: pointer;
 }
 
-  @media screen and (max-width:320px){
+  @media screen and (max-width:376px){
     #search_container{
       position: absolute;
       z-index: 314159;
-      max-width:190px; 
+      max-width:212px; 
       max-height:800px;
       background-color: lightgrey;
       top: 10px;
@@ -227,14 +226,14 @@ text-align: center;
       #remove-georesturants{
         position:absolute;
         z-index: 315000;
-        top: 150px;
-        left: 5px
+        top: 60px;
+        right: 10px
       }
 
       .dropdown{
         position:absolute;
         z-index: 315000;
-        top: 200px;
+        top: 150px;
         left: 5px
       }
 
@@ -251,3 +250,60 @@ text-align: center;
       }
 
     }
+
+    @media screen and (max-width:320px){
+      #search_container{
+        position: absolute;
+        z-index: 314159;
+        max-width:212px; 
+        max-height:800px;
+        background-color: lightgrey;
+        top: 10px;
+        left: 5px;
+        cursor: pointer;
+  
+      }   
+
+      #textinput{
+        width:212px;
+        border: 2px solid black;
+      }
+      
+        #remove-search{
+          position:absolute;
+          z-index: 315000;
+          top: 105px;
+          left: 5px
+      
+        }
+  
+        #remove-georesturants{
+          position:absolute;
+          z-index: 315000;
+          top: 65px;
+          right: 2px;
+          max-width:80px;
+          max-height:200px
+          
+        }
+  
+        .dropdown{
+          position:absolute;
+          z-index: 315000;
+          top: 145px;
+          left: 5px
+        }
+  
+        .dropdown-menu{
+          background-color: rgb(255, 135, 0);
+          max-height: 80px;
+          overflow-y: scroll
+        }
+  
+        #search-results{
+          
+          max-height:100px;
+          
+        }
+  
+      }
