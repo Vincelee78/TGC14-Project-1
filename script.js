@@ -16,8 +16,19 @@ map.locate({ setView: true, maxZoom: 12 })
 function onLocationFound(e) {
   var radius = 2000
 
-  L.marker(e.latlng).addTo(map)
-    .bindPopup("Your current location on the map").openPopup();
+  let userIcon = L.icon({
+    iconUrl: 'user-location1.png',
+    iconSize: [50, 50],
+    className: 'myuserIcon',
+    popupAnchor: [0, -12]
+    
+  })
+
+  let marker = L.marker(e.latlng, {
+    icon: userIcon
+  })
+
+  marker.addTo(map).bindPopup("Your current location on the map").openPopup();
 
   L.circle(e.latlng, radius, {
     opacity: 0.8,
@@ -402,12 +413,12 @@ map.on('dblclick', function (e) {
       }
     }
     document.querySelector('#remove-georesturants').addEventListener('click', function () {
-      if (map.hasLayer(resturants)) {
+      // if (map.hasLayer(resturants)) {
         map.removeLayer(resturants)
-      }
-      else {
-        map.addLayer(resturants)
-      }
+      // }
+      // else {
+      //   map.addLayer(resturants)
+      // }
     })
 
     getresturants()
