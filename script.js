@@ -96,9 +96,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 let taxiGroup = L.layerGroup()
 async function gettaxi() {
-  // Refresh the real time taxi-coordinates every 5 minutes to get latest taxi locations
-  setTimeout("location.reload();", 300000)
-
+  
   let response = await axios.get('https://api.data.gov.sg/v1/transport/taxi-availability')
   let coordinates = response.data.features[0].geometry.coordinates
   // create a cluster of markers for taxi coordinates
@@ -140,11 +138,16 @@ async function gettaxi() {
     })
     marker.addTo(cluster)
     cluster.addTo(taxiGroup);
+  }
+  // Refresh the real time taxi-coordinates every 5 minutes to get latest taxi locations
+  setInterval(() => gettaxi(), 300000)
+}
+
+gettaxi()
 
 
-}
-}
-gettaxi(map)
+
+
 
 document.querySelector('#taxiresults').addEventListener('click', function () {
   if (map.hasLayer(taxiGroup)) {
