@@ -84,7 +84,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // consume API from gov website for taxicoordinates
 
 let taxiGroup = L.layerGroup()
-async function gettaxi(map) {
+async function gettaxi() {
   // Refresh the real time taxi-coordinates every 5 minutes to get latest taxi locations
   setTimeout("location.reload();", 300000)
 
@@ -130,12 +130,6 @@ async function gettaxi(map) {
     marker.addTo(cluster)
     cluster.addTo(taxiGroup);
 
-  //   document.querySelector('#taxiresults').addEventListener('click', function () {
-  //     taxiGroup.addTo(map);
-      
-  // })
-
-  
 
 }
 }
