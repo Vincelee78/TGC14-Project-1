@@ -81,7 +81,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
 }).addTo(map);
 
-// consume API from gov website for taxicoordinates
+// consume 1st API from gov website for taxicoordinates
 
 let taxiGroup = L.layerGroup()
 async function gettaxi() {
@@ -114,7 +114,7 @@ async function gettaxi() {
     // added a first popup to the marker to show the user that data is being called from the next API as it needs 1 second for it to get
     marker.bindPopup('Loading...')
 
-    // consume an external search API to get the taxi coordinates address when the marker is clicked
+    // Consume a 2nd API for an external search to get the taxi coordinates address when the marker is clicked
     marker.addEventListener('click', async function () {
       const API_BASE_URL = "https://nominatim.openstreetmap.org/search"
       let response1 = await axios.get(API_BASE_URL, {
@@ -250,7 +250,7 @@ document.querySelector('#toggle').addEventListener('click', function () {
 
 })
 
-
+// Consume a 3rd API for search recommended venues in Singapore
 let baseURL = 'https://api.foursquare.com/v2/venues/explore'
 async function search(query) {
   // let ll=lat +','+ lng
@@ -366,7 +366,7 @@ map.on('dblclick', function (e) {
     let lat = result.latlng.lat
     let lng = result.latlng.lng
 
-
+// Consume a 4th API for all eateries within 1km on clicked location in Singapore
     async function getresturants() {
 
       let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
@@ -409,22 +409,13 @@ map.on('dblclick', function (e) {
         map.addLayer(resturants)
       }
     })
-    
+
     getresturants()
 
   });
 });
 
-// document.querySelector('#remove-georesturants').addEventListener('click', function () {
-//   if (searchresultsinfo.contains(resturantsIcon)) {
-//     document.querySelector('#remove-georesturants').style.display = 'none',
-//       resturants.clearLayers()
-//   }
-//   else {
-//     document.querySelector('#remove-georesturants').style.display = 'block'
-//   }
 
-// })
 
 
 
