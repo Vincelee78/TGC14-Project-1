@@ -213,8 +213,15 @@ text-align: center;
       top: 10px;
       left: 5px;
       cursor: pointer;
-
     }   
+
+    #info-tab{
+      position:absolute;
+        z-index: 315000;
+        bottom: 5px;
+        left:20px
+    
+    }
       #remove-search{
         position:absolute;
         z-index: 315000;
@@ -262,7 +269,15 @@ text-align: center;
         left: 5px;
         cursor: pointer;
   
-      }   
+      }  
+
+      #info-tab{
+        position:absolute;
+          z-index: 315000;
+          bottom: 5px;
+          left:2px
+      
+      } 
 
       #textinput{
         width:212px;
