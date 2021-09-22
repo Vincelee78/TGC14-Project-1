@@ -300,7 +300,8 @@ document.querySelector('#button').addEventListener('click', async function () {
 
   let attractionsIcon = L.divIcon({
     html: "<span class='fa-stack fa-lg'><i class='fas fa-map-marker fa-stack-2x'></i><i class='fas fa-camera-retro fa-stack-1x fa-inverse'></i></i></span>",
-    className: 'myattractionsIcon'
+    className: 'myattractionsIcon',
+    popupAnchor: [15, 0]
   });
 
 
@@ -444,8 +445,8 @@ document.querySelector('#gardensAttraction').addEventListener('click',  function
   marker.addTo(map);
   
   map.flyTo([1.2816, 103.8636])
-  marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><img src="thegardens-info.jpeg" height="100px" width="150px"/></center>`, {
-    maxHeight: "auto",
+  marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><img src="thegardens-info.jpeg" height="100px" width="200px"/></center>`, {
+    // maxHeight: "auto",
     maxWidth: "auto"
   })
   marker.openPopup()

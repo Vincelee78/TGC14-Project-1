@@ -307,3 +307,13 @@ text-align: center;
         }
   
       }
+
+      /* Style the popup marker box */
+  .leaflet-popup-content-wrapper {
+    background-color: grey ;
+    color:white;
+        
+}
+  .leaflet-popup-tip {
+  background: rgb(228, 179, 99);
+}
