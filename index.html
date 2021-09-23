@@ -109,8 +109,9 @@ crossorigin=""></script>
     <!-- the div will contain the map -->
     <div id='map'></div>
 
-
-    <div id="info-tab">
+    <button id="toggle-info">Toggle</button>
+    <!-- <div class="slide-out from-left"> -->
+    <div id="info-tab" class="slide-in slide-in-content">
       <ul class="nav nav-tabs purple-text pr-3 rounded bg-light" id="myTab" role="tablist">
         <li class="nav-item">
           <button class="nav-link py-3 px-1 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Search Results<i class="fas fa-search"
@@ -142,9 +143,8 @@ crossorigin=""></script>
               </div>
             </div>
           </div>
-          
-
         </div>
+
         <div class="tab-pane fade col" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
           <div id="taxiTitleTabText" class="pt-1 pb-0">
@@ -167,6 +167,7 @@ crossorigin=""></script>
         </div>
       </div>
     </div>
+  
 
     <div id='search_container'>
       <button id='button' class="btn btn-success">Search Recommendations!</button>
@@ -186,9 +187,7 @@ crossorigin=""></script>
         <li><a class="dropdown-item" id='universalAttraction'><img src="universal-logo.png" style="width:160px; height:80px;"></a></li>
       </ul>
     </div>
-    
-
-
+  
   </div>
   <!-- the leaflet JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"

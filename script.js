@@ -352,6 +352,16 @@ document.querySelector('#button').addEventListener('click', async function () {
   }
 })
 
+  // Slide in the info tab
+  document.querySelector('#toggle-info').addEventListener('click', function () {
+  if (document.querySelector("#info-tab").classList.contains("slide-in")){
+    document.querySelector("#info-tab").classList.remove("slide-in")
+        document.querySelector("#info-tab").classList.add("slide-out")
+  } else {
+      
+      document.querySelector("#info-tab").classList.add("slide-in")
+  }
+})
 
 // ESRI Leaflet API Token
 let apiToken = 'AAPKa44cc3d9e4ae4facae3db37598891536u8VcocjPLyXxxaguleDVkZdePzQo7nEOjYWuzaKIfZfzB0QumPr6svIIJ-IBz8b8'

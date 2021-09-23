@@ -255,6 +255,14 @@ text-align: center;
         max-height:100px;
         
       }
+      
+      #toggle-info{
+        position:absolute;
+        z-index: 316000;
+        bottom: 20px;
+        right:5px
+      
+      }
 
     }
 
@@ -320,10 +328,18 @@ text-align: center;
           max-height:100px;
           
         }
-  
+
+        #toggle-info{
+          position:absolute;
+          z-index: 316000;
+          bottom: 20px;
+          right:5px
+        
+        }
       }
 
-      /* Style the popup marker box */
+
+  /* Style the popup marker box */
   .leaflet-popup-content-wrapper {
     background-color: grey ;
     color:white;
@@ -332,3 +348,24 @@ text-align: center;
   .leaflet-popup-tip {
   background: rgb(228, 179, 99);
 }
+
+
+.slide-in.from-left {
+  left: 0;
+}
+
+.slide-in-content {
+  transition: transform .5s ease; /* nice transition */
+}
+
+.slide-out {
+  transition: transform 1s;
+  transform: translateX(-100%);
+}
+
+.slide-in  {
+  transition: transform 1s;
+  transform: translateX(0);
+}
+
+
