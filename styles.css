@@ -255,8 +255,9 @@ text-align: center;
         max-height:100px;
         
       }
-      
+
       #toggle-info{
+        display: block;
         position:absolute;
         z-index: 316000;
         bottom: 20px;
@@ -330,6 +331,7 @@ text-align: center;
         }
 
         #toggle-info{
+          display: block;
           position:absolute;
           z-index: 316000;
           bottom: 20px;
@@ -368,4 +370,10 @@ text-align: center;
   transform: translateX(0);
 }
 
+#toggle-info{
+  position:absolute;
+  z-index: 316000;
+  bottom: 20px;
+  right:5px
 
+}
