@@ -61,6 +61,13 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 The project skeleton and structure (wireframes) can be found [here.](https:) 
 #### (iii) Design
 The bootstrap plugin was used in for the front-end development of the website as it allows for better visual design of buttons, an information tab and also an easy grid layout. 
-The general design of the website comprises a search bar as one of the main features and an information table which display the search results which is easy to read and navigate. There are tabs beside the search result tab for easy access to display the taxi markers and hawker center markers on the map.  
-The colour palette consist of a green search button which colour is universally associated with success(success in finding a location). The information tab is light purple as it is visually pleasing and not too glaring. I choose the search result text colour to be white against a grey background as it is easy to be read. The markers are typically a darker colour as it is more visible on a light background on the map. The attractions button is red in colour as it directs attention to the user to notice it. The layout of the webpage is not overly complex and easy to use. Custom markers were created according to the classification of the location and to enhance the visual experience of users. Font size is relatively large and easy to read.
-For a better user experience for mobile devices, I repositioned the buttons so that will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out so that it will not block the features displayed on the map. 
+The general design of the website comprises a search bar as one of the main features and an information table which displays the search results which is easy to read and navigate. There are tabs beside the search result tab for easy access to display the taxi markers and hawker center markers on the map.  
+
+The colour palette consist of a green search button which colour is universally associated with success(success in finding a location). 
+The information tab is light purple as it is visually pleasing and not too glaring. 
+I choose the search results text colour to be white against a grey background as it is easy to be read. 
+The markers are typically a darker colour as it is more visible on a light background on the map. 
+The attractions button is red in colour as it directs attention to the user to notice it. 
+The layout of the webpage is not overly complex and easy to use. Custom markers were created according to the classification of the location and to enhance the visual experience of users. 
+Font size is relatively large and easy to read.
+For a better user experience for mobile devices, I repositioned the buttons so that it will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out for less obstruction of the map.
