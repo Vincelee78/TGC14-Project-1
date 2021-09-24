@@ -1,4 +1,4 @@
-## TGC14-Project 1
+## TGC14 Project 1
 To create an interactive map guide for tourists in Singapore.
 
 ## Summary/User objectives: 
