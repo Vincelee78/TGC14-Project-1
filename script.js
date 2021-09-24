@@ -254,7 +254,7 @@ let overlay = {
 L.control.layers(baseLayers, overlay).addTo(map)
 
 // Toggle locations of hawker centers on and off
-document.querySelector('#toggle').addEventListener('click', function () {
+document.querySelector('#togglehawkers').addEventListener('click', function () {
   if (map.hasLayer(hawkerGroup)) {
     map.removeLayer(hawkerGroup)
   }
@@ -287,7 +287,7 @@ async function search(query) {
 // console.log(search('tacos'))
 
 let searchCluster = L.layerGroup()
-document.querySelector('#button').addEventListener('click', async function () {
+document.querySelector('#searchContainerbutton').addEventListener('click', async function () {
   searchCluster.clearLayers()
   document.querySelector('#search-results').style.display = 'block'
   let searchresult = document.querySelector('#textinput').value;

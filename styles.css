@@ -135,7 +135,7 @@
   }
 
 
-  #toggle{
+  #togglehawkers{
     z-index: 314159;
     max-width:200px; 
     max-height:800px;
@@ -144,7 +144,7 @@
     
   }
   
-  #search_container{
+  #search-container{
     position: absolute;
     z-index: 314159;
     width:212px; 
@@ -204,7 +204,7 @@ text-align: center;
 }
 
   @media screen and (max-width:376px){
-    #search_container{
+    #search-container{
       position: absolute;
       z-index: 314159;
       max-width:212px; 
@@ -268,7 +268,7 @@ text-align: center;
     }
 
     @media screen and (max-width:320px){
-      #search_container{
+      #search-container{
         position: absolute;
         z-index: 314159;
         max-width:212px; 
