@@ -33,7 +33,7 @@ A live website server can be found on the Gitpod server.
 | Each possible search or filtering criteria in the user interface | 1) Use of a search bar to fiter keywords for recommendations, 2) Use of filtering feature to show all hotels within a 2km radius of current location, 3) Use of a filtering feature to show up all eateries within 1km of a clicked location on the map | 12 |
 | Each case of the map updating based on the user's actions | 1) Use of a refresh of taxi API every 2 minutes to update their coordinates/ refresh of all eateries markers when the remove eateries button is clicked, 2) Use of a refresh of searched markers whether a new search is done, 3) Use of a refresh of markers of eateries of 1km radius whenever a new location is clicked on the map| 12 |
 | Each group of layers in the Leaflet map | There are 1)hotels, 2)taxis, 3)hawkers, 4)Seached venues, 5)eateries, 6)neaby accommodation layers | 20 |
-| Each group of marker clustering | | Pass |
-| Each type of custom marker (using images or custom behaviour) | On the upload form, user selects a test image "Shepherd.jpg" from his local directory, inputs "Test photo" as the image caption, "#test" as the tag and selects 'Test' as the album upload destination. User clicks 'Upload'. Page refreshes and user should see a flash message 'Image has been uploaded successfully' if image upload has been successful.| Pass |
+| Each group of marker clustering | | There are 1)Taxi markercluster, 2)Hotel marker cluster, 3)Hawker marker cluster | 12 |
+| Each type of custom marker (using images or custom behaviour) | There are 1) Taxi custom markers, 2) Hotel custom markers, 3)Search results custom markers, 4)Eateries custom markers, 5) Nearby accommodation custom markers, 6)MBS custom markers, 7)Universal studios custom markers, 8) RWS custom markers | 20 |
 
 

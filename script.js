@@ -165,6 +165,8 @@ let hawkerGroup = L.layerGroup()
 async function getHawkers() {
   let response = await axios.get('geojson-files/hawker-centres.geojson');
 
+  let cluster = L.markerClusterGroup()
+
   for (let points of response.data.features) {
     let lng = points.geometry.coordinates[0]
     let lat = points.geometry.coordinates[1]
@@ -180,10 +182,9 @@ async function getHawkers() {
       icon: hawkerIcon,
     })
 
-    marker.addTo(hawkerGroup)
-    marker.addEventListener('click', function () {
-      map.flyTo(hawkerActualCoordinates, 14)
-    })
+    marker.addTo(cluster);
+    cluster.addTo(hawkerGroup)
+
     let hawkerLayer = L.geoJson(response.data, {
       onEachFeature: function (feature, layer) {
         let newdoc = document.createElement('div');
@@ -209,7 +210,8 @@ getHawkers()
 let hotelGroup = L.layerGroup()
 async function getHotels() {
   let response = await axios.get('geojson-files/hotels.geojson');
-
+  
+  let cluster = L.markerClusterGroup()
 
   for (let points of response.data.features) {
     let lng = points.geometry.coordinates[0]
@@ -227,11 +229,9 @@ async function getHotels() {
     let marker = L.marker(hotelsActualCoordinates, {
       icon: allhotelIcon,
     })
-    marker.addTo(hotelGroup)
+    marker.addTo(cluster)
+    cluster.addTo(hotelGroup)
 
-    marker.addEventListener('click', function () {
-      map.flyTo(hotelsActualCoordinates, 14)
-    })
 
     marker.bindPopup(`<h3>Name of Hotel: ${hotelName}</h3><h3>Total Rooms: ${totalRooms}</h3><h3>Address: ${address}</h3>`);
   }
