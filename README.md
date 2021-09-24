@@ -25,3 +25,8 @@ PROJECT NAME AND SUMMARY
 Project name: Interactive map guide for tourists in Singapore 
 
 Summary: To allow tourists to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability.
+
+Motivation: To provide tourists an one stop map guide for locations around Singapore
+
+Context:
+
