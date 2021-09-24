@@ -70,4 +70,5 @@ The markers are typically a darker colour as it is more visible on a light backg
 The attractions button is red in colour as it directs attention to the user to notice it. 
 The layout of the webpage is not overly complex and easy to use. Custom markers were created according to the classification of the location and to enhance the visual experience of users. 
 Font size is relatively large and easy to read.
+
 For a better user experience for mobile devices, I repositioned the buttons so that it will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out for less obstruction of the map.
