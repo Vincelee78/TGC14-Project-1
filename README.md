@@ -1,7 +1,5 @@
 # TGC14-Project-1
-
-# Project name: 
-Interactive map guide for tourists in Singapore.
+To create an interactive map guide for tourists in Singapore.
 
 # Summary: 
 To allow tourists to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability.
