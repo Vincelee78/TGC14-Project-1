@@ -21,7 +21,7 @@ function onLocationFound(e) {
     iconSize: [50, 50],
     className: 'myuserIcon',
     popupAnchor: [0, -12]
-    
+
   })
 
   let marker = L.marker(e.latlng, {
@@ -35,7 +35,7 @@ function onLocationFound(e) {
     weight: 1,
     fillOpacity: 0.2
   }).addTo(map);
-  // console.log(e.latlng)
+  
   let lat = e.latlng.lat
   let lng = e.latlng.lng
 
@@ -96,7 +96,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 let taxiGroup = L.layerGroup()
 async function gettaxi() {
-  
+
   let response = await axios.get('https://api.data.gov.sg/v1/transport/taxi-availability')
   let coordinates = response.data.features[0].geometry.coordinates
   // create a cluster of markers for taxi coordinates
@@ -242,8 +242,6 @@ getHotels()
 
 
 let baseLayers = {
-  // 'Hawker centers': hawkerGroup,
-
 }
 
 let overlay = {
@@ -267,7 +265,7 @@ document.querySelector('#togglehawkers').addEventListener('click', function () {
 // Consume a 3rd API for search recommended venues in Singapore
 let baseURL = 'https://api.foursquare.com/v2/venues/explore'
 async function search(query) {
-  // let ll=lat +','+ lng
+
   let response = await axios.get(baseURL, {
     params: {
       'near': 'singapore',
@@ -284,7 +282,7 @@ async function search(query) {
   return response.data
 
 }
-// console.log(search('tacos'))
+
 
 let searchCluster = L.layerGroup()
 document.querySelector('#searchContainerbutton').addEventListener('click', async function () {
@@ -352,14 +350,14 @@ document.querySelector('#searchContainerbutton').addEventListener('click', async
   }
 })
 
-  // Slide in the info tab
-  document.querySelector('#toggle-info').addEventListener('click', function () {
-  if (document.querySelector("#info-tab").classList.contains("slide-in")){
+// Slide in the info tab
+document.querySelector('#toggle-info').addEventListener('click', function () {
+  if (document.querySelector("#info-tab").classList.contains("slide-in")) {
     document.querySelector("#info-tab").classList.remove("slide-in")
-        document.querySelector("#info-tab").classList.add("slide-out")
+    document.querySelector("#info-tab").classList.add("slide-out")
   } else {
-      
-      document.querySelector("#info-tab").classList.add("slide-in")
+
+    document.querySelector("#info-tab").classList.add("slide-in")
   }
 })
 
@@ -391,7 +389,7 @@ map.on('dblclick', function (e) {
     let lat = result.latlng.lat
     let lng = result.latlng.lng
 
-// Consume a 4th API for all eateries within 1km on clicked location in Singapore
+    // Consume a 4th API for all eateries within 1km on clicked location in Singapore
     async function getresturants() {
 
       let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
@@ -428,7 +426,7 @@ map.on('dblclick', function (e) {
     }
     document.querySelector('#remove-georesturants').addEventListener('click', function () {
       // if (map.hasLayer(resturants)) {
-        map.removeLayer(resturants)
+      map.removeLayer(resturants)
       // }
       // else {
       //   map.addLayer(resturants)
@@ -440,70 +438,69 @@ map.on('dblclick', function (e) {
   });
 });
 
-document.querySelector('#gardensAttraction').addEventListener('click',  function(){
-  
+document.querySelector('#gardensAttraction').addEventListener('click', function () {
+
   let gardensIcon = L.icon({
     iconUrl: 'images/gardensicon.png',
     iconSize: [50, 50],
     className: 'gardensIcon',
-    
+
   })
-  
+
   let marker = L.marker([1.2816, 103.8636], {
     icon: gardensIcon,
   })
   marker.addTo(map);
-  
+
   map.flyTo([1.2816, 103.8636])
   marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><a href="https://ticket.gardensbythebay.com.sg/product/listing" target="_blank"><img src="images/thegardens-info.jpeg" height="100px" width="200px"/></a></center>`, {
-    // maxHeight: "auto",
     maxWidth: "auto"
   })
   marker.openPopup()
-  
+
 })
 
-document.querySelector('#mbsAttraction').addEventListener('click', async function(){
+document.querySelector('#mbsAttraction').addEventListener('click', async function () {
   let mbsIcon = L.icon({
     iconUrl: 'images/mbs-marker.png',
     iconSize: [50, 50],
     className: 'mbsIcon',
-    
+
   })
-  
+
   let marker = L.marker([1.2847, 103.8610], {
     icon: mbsIcon,
   })
   marker.addTo(map);
-  
+
   map.flyTo([1.2847, 103.8610])
   marker.bindPopup(`<center><h4>Marina Bay Sands</h4>Marina Bay Sands® is a destination for those who appreciate luxury. An integrated resort notable for transforming Singapore’s city skyline, it comprises three 55-storey towers of extravagant hotel rooms and luxury suites with personal butler services. In addition, its architecture is made complete with the Sands SkyPark® which crowns the three towers. </center></br><center><a href="https://www.marinabaysands.com/" target="_blank"><img src="images/mbs-info-image.jpg" height="100px" width="200px"/></a></center>`, {
     maxHeight: "fit",
     maxWidth: "fit"
   })
   marker.openPopup()
-  
+
 })
 
-document.querySelector('#universalAttraction').addEventListener('click', async function(){
+document.querySelector('#universalAttraction').addEventListener('click', async function () {
   let universalStudiosIcon = L.icon({
     iconUrl: 'images/universal-studios-singapore-marker.png',
     iconSize: [100, 50],
     className: 'universalStudiosIcon',
-    
+
   })
-  
+
   let marker = L.marker([1.2540, 103.8238], {
     icon: universalStudiosIcon,
   })
   marker.addTo(map);
-  
+
   map.flyTo([1.2540, 103.8238])
   marker.bindPopup(`<center><h4>Universal Studios Singapore</h4>As Southeast Asia’s first movie-themed park, Universal Studios Singapore offers a slew of exciting attractions, including 24 movie-themed rides, a festive walk, water park, marine life park and maritime experiential museum and aquarium. Opened in 2011 with director Steven Spielberg as a creative consultant, the kid-friendly park takes inspiration from some of Hollywood’s biggest hits, including Transformers, The Lost World, and Madagascar. </center></br><center><a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/tickets" target="_blank"><img src="images/universalstudios-info-image.jpg" height="100px" width="200px"/></a></center>`, {
     maxHeight: "fit",
     maxWidth: "fit"
   })
   marker.openPopup()
-  
+
 })
 
