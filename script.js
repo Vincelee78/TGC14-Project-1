@@ -205,6 +205,7 @@ async function getHawkers() {
 
 getHawkers()
 
+// extract geojson from gov website for all hotels
 let hotelGroup = L.layerGroup()
 async function getHotels() {
   let response = await axios.get('geojson-files/hotels.geojson');
