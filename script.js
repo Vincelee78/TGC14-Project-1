@@ -163,7 +163,7 @@ document.querySelector('#taxiresults').addEventListener('click', function () {
 // extract geojson from gov website for hawker centers
 let hawkerGroup = L.layerGroup()
 async function getHawkers() {
-  let response = await axios.get('hawker_centres.geojson');
+  let response = await axios.get('geojson-files/hawker-centres.geojson');
 
   for (let points of response.data.features) {
     let lng = points.geometry.coordinates[0]
@@ -207,7 +207,7 @@ getHawkers()
 
 let hotelGroup = L.layerGroup()
 async function getHotels() {
-  let response = await axios.get('hotels.geojson');
+  let response = await axios.get('geojson-files/hotels.geojson');
 
 
   for (let points of response.data.features) {
