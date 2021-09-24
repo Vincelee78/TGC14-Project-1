@@ -1,8 +1,8 @@
 ## TGC14-Project 1
 To create an interactive map guide for tourists in Singapore.
 
-## Summary: 
-To allow tourists to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability.
+## Summary/User objectives: 
+To allow tourists to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability to locate nearby taxis.
 
 ## My goal/motivation for creating this project:
 To provide tourists an one stop map guide for locations around Singapore.
@@ -43,3 +43,24 @@ A live website server can be found on the Gitpod server.
 | Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button redirects the user to the interactive map | 15 | 
 
 ### UX/UI 
+#### (i) Project Strategy
+Based on the user's needs and objectives, these are the guidelines for the features that were implemented.
+| User Stories| Features|
+| ------ | ------ |
+| User wants locate current location on map| When starting the map, user can allow the device to locate current location and display user's current marker lcoation on map. |
+| User wants locate nearby accommodation from current location | Map displays all recommended accommodation locations with name,address and category of accommodation within a 2km radius from current user's location.|
+| User wants to locate all hotels in Singapore| On the top right corner of the screen, User is able to toggle on and off the location, name, address and number of rooms of all hotels in Singapore.|
+| User wants to locate all taxis in Singapore or around his current location| User is able to toggle on and off all avaliable taxis markers and their respective address name and also locate all taxis nearby his location. |
+| User wants to locate all nearby eateries from any clicked location on map| User can double tap anywhere on map and all eateries within a 1km radius from tapped location will appear with their name, address and category of eatery.|
+| User wants to search for a recommended category or place in Singapore.| User can enter in keywords in the search bar and all recommended venues containing the keywords will appear in the search results. Clicking on the results will bring the user to the location on the map and why it is recommended.|
+|User wants to explore the top 3 attractions in Singapore| Clicking on the top 3 attractions button on the right side of the map will bring down a drop-bar with the top 3 attractions based on traveller visits on Google. The popup will show a description and image of each attraction and clicking on the image will bring the user to the ticket booking of that attraction.|
+| User wants to locate all the hawkers centers| Map has a toogle button to show all hawker center locations and ones that are nearby to the user.|
+| User wants to slide the info bar away| There is a toggle button on the bottom right of the screen to allow the user to slide the infobar in and out of the screen to allow for more viewing of the map.|
+
+#### (ii) Project Scope
+The project skeleton and structure (wireframes) can be found [here.](https:) 
+#### (iii) Design
+The bootstrap plugin was used in for the front-end development of the website as it allows for better visual design of buttons and information tabs and also an easy grid layout. 
+The general design of the website comprises a search bar as one of the main features and a information table which display the search results which is easy to read and navigate. There are tabs beside the search result tab for easy access to display the taxi markers and hawker center markers on the map.  
+The colour palette consist of a green search button which colour is universally associated with success(success in finding a location). The information tab is light purple as it is visually pleasing and not too glaring. I choose the search result text colour to be white against a grey background as it is easy to be read. The markers are typically a darker colour as it is more visible on a light background on the map. The attractions button is red in colour as it directs attention to the user to notice it. The layout of the webpage is not overly complex and easy to use. Custom markers were created according to the classification of the location and to enhance the visual experience of users. Font size is relatively large and easy to read.
+For a better user experience for mobile devices, I repositioned the buttons so that will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out so that it will not block the features displayed on the map. 
