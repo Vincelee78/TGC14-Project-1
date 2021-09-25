@@ -22,7 +22,7 @@ A live website server can be found on the Gitpod server.
 6. Deployment
 7. Credits and Acknoledgement
 
-### Project Complexity Matrix 
+### 1.Project Complexity Matrix 
 | Feature/Item | Eligibility | Max Score Accorded
 | ------ | ------ | ------ |
 | Consume the GET endpoint of an API, or consume a CSV/JSON file | Consumed 4 GET API's and 2 geojson files (6 altogether) | 12 |
@@ -42,7 +42,7 @@ A live website server can be found on the Gitpod server.
 | Each extra feature| 1) Use of geocoding to find address of any clicked location of map, 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of gecoding to display address of taxis according to their coordinates | 15 |
 | Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button redirects the user to the interactive map | 15 | 
 
-### UX/UI 
+### 2.UX/UI 
 #### (i) Project Strategy
 Based on the user's needs and objectives, these are the guidelines for the features that were implemented.
 | User Stories| Features|
@@ -72,3 +72,23 @@ The layout of the webpage is not overly complex and easy to use. Custom markers 
 Font size is relatively large and easy to read.
 
 For a better user experience for mobile devices, I repositioned the buttons so that it will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out for less obstruction of the map.
+
+### 3. Technologies Used
+* [HTML 5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+<br> This project uses HTML5 to structure the content and to insert buttons and images.
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+<br> This project uses CSS to add visual colors, adjust the size of the features and also positioning and animation of the features, and ensure it is mobile responsive.
+* [Bootstrap 5.1.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+<br> This project uses Bootstrap to structure the layout of the website such as my Navtab and added features such as Carousel. It is also used in positioning the text and features.
+* [Awesomemarkers 2.0.2](https://github.com/lennardv2/Leaflet.awesome-markers) 
+<br> This project uses the awesome markers plugin for custom styling of markers.
+* [FontAwesome 5.15](https://fontawesome.com/v5/changelog/latest)
+<br> This project uses FontAwesome to add custom markers and icons on the map and to enhance the visual experience of users.  
+* [Leaflet 1.7.1](https://leafletjs.com/2020/09/04/leaflet-1.7.1.html) 
+<br> This project uses leaflet to render the map and for the insertion of default markers. 
+* [Esri Leaflet 3.0.2](https://www.npmjs.com/package/esri-leaflet) 
+<br> This project uses the esri leaflet for geocoding of the coordinates on the map and to display the address of coordinates.
+* [MarkerCluster 1.4.1](https://www.npmjs.com/package/leaflet.markercluster) 
+<br> This project uses the marker cluster plugin for Animated Marker Clustering for Leaflet.
+* [Axios 0.21.1](https://www.npmjs.com/package/axios/v/0.21.1) 
+<br> This project uses the axios plugin for Promise based HTTP client for the browser and make requests to an API, return data from the API.
