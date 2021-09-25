@@ -35,7 +35,7 @@ function onLocationFound(e) {
     weight: 1,
     fillOpacity: 0.2
   }).addTo(map);
-  
+
   let lat = e.latlng.lat
   let lng = e.latlng.lng
 
@@ -210,7 +210,7 @@ getHawkers()
 let hotelGroup = L.layerGroup()
 async function getHotels() {
   let response = await axios.get('geojson-files/hotels.geojson');
-  
+
   let cluster = L.markerClusterGroup()
 
   for (let points of response.data.features) {
@@ -426,12 +426,7 @@ map.on('dblclick', function (e) {
       }
     }
     document.querySelector('#remove-georesturants').addEventListener('click', function () {
-      // if (map.hasLayer(resturants)) {
       map.removeLayer(resturants)
-      // }
-      // else {
-      //   map.addLayer(resturants)
-      // }
     })
 
     getresturants()
