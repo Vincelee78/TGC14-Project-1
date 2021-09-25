@@ -94,8 +94,8 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 <br> This project uses the axios plugin for Promise based HTTP client for the browser and make requests to an API, return data from the API.
 
 # 4. Future Features To Implement
-- A feature for users to view a short video in the popup of the place/venue they have clicked on
-- A feature that allow users to jump to the search result based on voice input
+- A feature for users to view a short video in the popup of the place/venue they have clicked on.
+- A feature that allow users to jump to the search result based on voice input.
 
 # 5. Testing
 #### (i) HTML and CSS Validation
@@ -107,19 +107,19 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 | ------ | ------ | ------ |
 | 1 | On the landing page, user should see a Carousel feature with images and a button 'Get started' and asking the user to locate his location | Pass |
 | 2 | When user clicks on 'Get started' button on the landing page, the page should be directed to the interactive map | Pass |
-| 3 | Map is rendered with a user marker current location 'Your current location on the map' popup with hotels markers within a circular radius. clicking on the hotel markers shows their details | Pass |
-| 4 | Under the 'search recommendations!' textbox , user inputs keywords 'attractions' and click 'search recommendations!'. The search results container will appear 30 search results with 'Universal Studios Singapore' as its first result. Clicking on 'Universal Studios Singapore' will bring to user to Universal Studios Singapore location and the popup box with its details | Pass |
-| 5 | Clicking on remove search results removes all the search results and the respective markers. Clicking on the arrow down icon in the Navtab bar removes the search results with the markers still intact | Pass |
-| 6 | Clicking on the toggle button slides the Navtab out of the screen and clicking it again slides it in | Pass |
-| 7 | Clicking on the 'toggle for taxis avaliable now' in the Navtab creates cluster markers of the taxi locations. Clicking on the taxi icon shows a popup with the address of the current taxi. Clicking on the toggle button again removes the cluster markers | Pass |
+| 3 | Map is rendered with the user's marker current location and a popup 'Your current location on the map' with hotels markers within a circular radius. clicking on the hotel markers shows their details | Pass |
+| 4 | Under the 'Search Recommendations!' textbox , user inputs keywords 'attractions' and click 'Search Recommendations!'. The search results container will appear 30 search results with 'Universal Studios Singapore' as its first result. Clicking on 'Universal Studios Singapore' will bring to user to Universal Studios Singapore location and the popup box with its details | Pass |
+| 5 | Clicking on remove search results removes all the search results and the respective markers. Clicking on the arrow down icon in the top extreme right of the Navtab bar removes the search results with the markers still intact | Pass |
+| 6 | Clicking on the toggle button on the bottom right of the screen slides the Navtab out of the screen and clicking it again slides it in | Pass |
+| 7 | Clicking on the 'toggle for taxis avaliable now' in the Navtab creates cluster markers of the taxi locations. Clicking on the taxi icon opens a popup with the address of the current taxi. Clicking on the toggle button again removes the cluster markers | Pass |
 | 8 | Clicking on the 'Toggle Hawker Locations' in the Navtab creates cluster markers of the hawker centers. Clicking on the utensils icon shows a popup with the address of the current hawker center and its details. Clicking on the toggle button again removes the cluster markers | Pass |
 | 9 | Clicking on the 'Hotels' checkbox in the top right symbol of the screen creates cluster markers of all the hotels. Clicking on the hotel marker icon shows a popup with the address of the current hotel and its details. Unchecking the hotel checkbox again removes the cluster markers | Pass |
 | 10 | Double-Clicking on anywhere on the map will produce a marker at that location with its address in the popup. Eateries icon markers will appear within 1km of the clicked location. Clicking on the eateries markers will show its details. Clicking on the yellow button 'Remove Eateries' will remove all eateries markers that were created with this feature | Pass |
-| 11 | Clicking on the 'Top 3 attractions' will show 3 images of the attractions and it accessed by scrolling down the dropbox. Clicking on the 'Gardens by the Bay' logo will fly to the coordinates of the attraction and generate its custom marker. The popup will open showing the attraction details. Clicking on the image of the popup of Gardens by the Bay will open an external page and bring the user to the ticket booking page of Gardens by the Bay | Pass |
+| 11 | Clicking on the 'Top 3 attractions' will show 3 images of the attractions and they can be accessed by scrolling down the dropbox. Clicking on the 'Gardens by the Bay' logo will fly to the coordinates of the attraction and generate its custom marker. The popup will open showing the attraction details. Clicking on the image of the popup of Gardens by the Bay will open an external page and bring the user to the ticket booking page of Gardens by the Bay | Pass |
 
 #### (iii) Mobile Responsiveness
 - The test results can be found [here.](https://search.google.com/test/mobile-friendly?id=1IOIWddhWmSaneCjeHk0Mw)
-- The web application is mobile responsive
+- The web application is mobile responsive.
 
 <!-- # 6. Known Bugs
 - Changing an album name in the application will cause the existing photos in the album to not be displayed when the album is selected. 
