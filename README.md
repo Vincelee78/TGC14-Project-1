@@ -18,8 +18,8 @@ A live website server can be found on the Gitpod server.
 2. UX/UI
 3. Technologies used
 4. Use cases/ Future features to implement
-5. Known Bugs
-6. Deployment
+5. Testing
+6. Known Bugs
 7. Credits and Acknoledgement
 
 ### 1.Project Complexity Matrix 
@@ -97,7 +97,7 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 - A feature for users to view a short video in the popup of the place/venue they have clicked on
 - A feature that allow users to jump to the search result based on voice input
 
-# 4. Testing
+# 5. Testing
 #### (i) HTML and CSS Validation
 - Code from styles.css was validated on http://csslint.net/ (Pass)
 - Codes from the .html files were validated on https://www.freeformatter.com/html-validator.html (Pass)
@@ -105,22 +105,30 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 #### (ii) Manual Testing 
 | Test Case Number| Test Case Description| Results|
 | ------ | ------ | ------ |
-| 1 | On the landing page (https://tsw-photogallery.herokuapp.com), user should see 3 buttons on the landing page (i.e. 'Create an Album', 'Upload photos', and 'View Albums'). | Pass |
-| 2 | When user clicks on 'Create an Album' on the landing page, the URL should route to https://tsw-photogallery.herokuapp.com/albums/create_album_form | Pass |
-| 3 | On https://tsw-photogallery.herokuapp.com/albums/create_album_form, a form should be generated in the lower half of the screen and has 2 user input fields ('album name' and 'album description') and 2 buttons ('Create' and 'Back'). | Pass |
-| 4 | On https://tsw-photogallery.herokuapp.com/albums/create_album_form, user inputs 'Test' as the album name and 'Test uploads' as the album description and clicks 'Create'. The URL should route to https://tsw-photogallery.herokuapp.com/albums. User should see a flash message 'Album successfully created.' at the upper section of screen. User should also see the 'Test' album being added displayed. | Pass |
-| 5 | On https://tsw-photogallery.herokuapp.com/albums/create_album_form, user clicks on 'Back'. The URL should route to https://tsw-photogallery.herokuapp.com/albums. | Pass |
-| 6 | When user clicks on 'Upload Photos' on the landing page, the URL should route to https://tsw-photogallery.herokuapp.com/uploads | Pass |
-| 7 | On https://tsw-photogallery.herokuapp.com/uploads, a form should be generated in the lower half of the screen and has 4 user input fields ('choose file', 'image caption', 'tags', and 'select upload destination') and 1 buttons ('Upload'). | Pass |
-| 8 | On the upload form, when user clicks on 'Browse', a file-directory should pop up and prompts the user to select a file for uploading.| Pass |
-| 9 | On the upload form, when user clicks on 'Select Upload Destination', a dropdown list of albums names should appear and is selectable.| Pass |
-| 10 | On the upload form, when user selects a test image "Capture.PNG" from his local directory, inputs "Test photo" as the image caption, "#test" as the tag and selects 'Test' as the album upload destination. User clicks 'Upload'. Page refreshes and user should see a flash message 'Image has been uploaded successfully' if image upload has been successful.| Pass |
-| 11 | On the upload form, user selects a test image "Shepherd.jpg" from his local directory, inputs "Test photo" as the image caption, "#test" as the tag and selects 'Test' as the album upload destination. User clicks 'Upload'. Page refreshes and user should see a flash message 'Image has been uploaded successfully' if image upload has been successful.| Pass |
-| 12 | On the upload form, when user clicks 'Upload' without any file selected for uploading, user should see a pop-up prompting 'Please select a file'. | Pass |
-| 13 | When user clicks on 'View Albums' on the landing page, the URL should route to https://tsw-photogallery.herokuapp.com/albums. | Pass |
-| 14 | On https://tsw-photogallery.herokuapp.com/albums, user should see several albums cards being displayed in the lower-half of the screen. Each album card should have an album name, the album description, the last edited date & time, the date & time of album creation and 3 buttons ('View', 'Edit' and 'Delete').| Pass |
-| 15 | On https://tsw-photogallery.herokuapp.com/albums, user should see the only the 'Uploads' album have the 1 button - 'View'.| Pass |
-| 16 | On https://tsw-photogallery.herokuapp.com/albums, when user clicks on 'View' on the 'Test' album, the URL should route to https://tsw-photogallery.herokuapp.com/albums/5d6e567368755f885f7abe97. User should also see in the lower half of the screen, a 'Back' button, a image card with the name 'Shepherd', a caption - 'Test photo', a tag - '#Test', the upload time & date, the file extension and file size, and 2 buttons ('Edit' and 'Delete').| Pass |
-| 17 | On https://tsw-photogallery.herokuapp.com/albums/5d6e567368755f885f7abe97, when user clicks 'Back', the URL should route to https://tsw-photogallery.herokuapp.com/albums?albumid=5d6e567368755f885f7abe97 .| Pass |
-| 18 | On the 'Test' album page, when user clicks on 'Edit' on the image card - 'Shepherd', the URL should route to https://tsw-photogallery.herokuapp.com/photo/edit_form/5d6e80669098df04bb085968. User should also see in the lower half of the screen a form with 3 user inputs already filled up - 'Shepherd', 'Test photo', '#Test', and 2 buttons ('Update' and 'Back').| Pass |
-| 19 | On the edit form for the photo 'Shepherd' (in the 'Test' album), user edits image caption to 'Smart Shepherd' and clicks 'Update'. The URL reoutes to https://tsw-photogallery.herokuapp.com/photo/edit_form/5d6e80669098df04bb085968. User should see a flash message 'Successfully edited' at the top of the page. User should see the updated photo fields on the 'Test' album.| Pass |
+| 1 | On the landing page, user should see a Carousel feature with images and a button 'Get started' and asking the user to locate his location | Pass |
+| 2 | When user clicks on 'Get started' button on the landing page, the page should be directed to the interactive map | Pass |
+| 3 | Map is rendered with a user marker current location 'Your current location on the map' popup with hotels markers within a circular radius. clicking on the hotel markers shows their details | Pass |
+| 4 | Under the 'search recommendations!' textbox , user inputs keywords 'attractions' and click 'search recommendations!'. The search results container will appear 30 search results with 'Universal Studios Singapore' as its first result. Clicking on 'Universal Studios Singapore' will bring to user to Universal Studios Singapore location and the popup box with its details | Pass |
+| 5 | Clicking on remove search results removes all the search results and the respective markers. Clicking on the arrow down icon in the Navtab bar removes the search results with the markers still intact | Pass |
+| 6 | Clicking on the toggle button slides the Navtab out of the screen and clicking it again slides it in | Pass |
+| 7 | Clicking on the 'toggle for taxis avaliable now' in the Navtab creates cluster markers of the taxi locations. Clicking on the taxi icon shows a popup with the address of the current taxi. Clicking on the toggle button again removes the cluster markers | Pass |
+| 8 | Clicking on the 'Toggle Hawker Locations' in the Navtab creates cluster markers of the hawker centers. Clicking on the utensils icon shows a popup with the address of the current hawker center and its details. Clicking on the toggle button again removes the cluster markers | Pass |
+| 9 | Clicking on the 'Hotels' checkbox in the top right symbol of the screen creates cluster markers of all the hotels. Clicking on the hotel marker icon shows a popup with the address of the current hotel and its details. Unchecking the hotel checkbox again removes the cluster markers | Pass |
+| 10 | Double-Clicking on anywhere on the map will produce a marker at that location with its address in the popup. Eateries icon markers will appear within 1km of the clicked location. Clicking on the eateries markers will show its details. Clicking on the yellow button 'Remove Eateries' will remove all eateries markers that were created with this feature | Pass |
+| 11 | Clicking on the 'Top 3 attractions' will show 3 images of the attractions and it accessed by scrolling down the dropbox. Clicking on the 'Gardens by the Bay' logo will fly to the coordinates of the attraction and generate its custom marker. The popup will open showing the attraction details. Clicking on the image of the popup of Gardens by the Bay will open an external page and bring the user to the ticket booking page of Gardens by the Bay | Pass |
+
+#### (iii) Mobile Responsiveness
+- The test results can be found [here.](https://search.google.com/test/mobile-friendly?id=1IOIWddhWmSaneCjeHk0Mw)
+- The web application is mobile responsive
+
+<!-- # 6. Known Bugs
+- Changing an album name in the application will cause the existing photos in the album to not be displayed when the album is selected. 
+- As such it is recommended that users not edit an album's name after images have been uploaded into it.
+- As the database is a non-relational one, a change to the album name (i.e. User editing the album name) will only update the 'album' collection on MongoDB Atlas. - There is another collection called 'images' where the image's field 'uploaded_to' need to be updated as with new album's name as well.
+- This bug is currently not fixed yet.
+
+# 7. Credits and Acknowledgement
+- Credited to Pexel.com for the photos used for uploading
+- Credits to [Smiling Banana photo](https://www.msn.com/en-in/health/nutrition/why-you-should-never-eat-bananas-for-breakfast/ar-BBOoNFc) 
+- Credits to Giphy.com for the .gifs used for on the website -->
+
