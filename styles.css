@@ -197,7 +197,7 @@
     cursor: pointer;
 }
 
-@media screen and(max-width:376px) {
+@media only screen and (max-width:376px) {
     #search-container {
         position: absolute;
         z-index: 314159;
@@ -258,7 +258,7 @@
 
 }
 
-@media screen and(max-width:320px) {
+@media only screen and (max-width:320px) {
     #search-container {
         position: absolute;
         z-index: 314159;

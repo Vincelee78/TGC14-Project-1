@@ -92,3 +92,11 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 <br> This project uses the marker cluster plugin for Animated Marker Clustering for Leaflet.
 * [Axios 0.21.1](https://www.npmjs.com/package/axios/v/0.21.1) 
 <br> This project uses the axios plugin for Promise based HTTP client for the browser and make requests to an API, return data from the API.
+
+# 4. Future Features To Implement
+- A feature for users to view a short video in the popup of the place/venue they have clicked on
+- A feature that allow users to jump to the search result based on voice input
+# 4. Testing
+#### (i) HTML and CSS Validation
+- Code from styles.css was validated on http://csslint.net/ (Pass)
+- Codes from the .html files were validated on https://www.freeformatter.com/html-validator.html (Pass)
