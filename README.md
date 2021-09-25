@@ -96,7 +96,31 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 # 4. Future Features To Implement
 - A feature for users to view a short video in the popup of the place/venue they have clicked on
 - A feature that allow users to jump to the search result based on voice input
+
 # 4. Testing
 #### (i) HTML and CSS Validation
 - Code from styles.css was validated on http://csslint.net/ (Pass)
 - Codes from the .html files were validated on https://www.freeformatter.com/html-validator.html (Pass)
+
+#### (ii) Manual Testing 
+| Test Case Number| Test Case Description| Results|
+| ------ | ------ | ------ |
+| 1 | On the landing page (https://tsw-photogallery.herokuapp.com), user should see 3 buttons on the landing page (i.e. 'Create an Album', 'Upload photos', and 'View Albums'). | Pass |
+| 2 | When user clicks on 'Create an Album' on the landing page, the URL should route to https://tsw-photogallery.herokuapp.com/albums/create_album_form | Pass |
+| 3 | On https://tsw-photogallery.herokuapp.com/albums/create_album_form, a form should be generated in the lower half of the screen and has 2 user input fields ('album name' and 'album description') and 2 buttons ('Create' and 'Back'). | Pass |
+| 4 | On https://tsw-photogallery.herokuapp.com/albums/create_album_form, user inputs 'Test' as the album name and 'Test uploads' as the album description and clicks 'Create'. The URL should route to https://tsw-photogallery.herokuapp.com/albums. User should see a flash message 'Album successfully created.' at the upper section of screen. User should also see the 'Test' album being added displayed. | Pass |
+| 5 | On https://tsw-photogallery.herokuapp.com/albums/create_album_form, user clicks on 'Back'. The URL should route to https://tsw-photogallery.herokuapp.com/albums. | Pass |
+| 6 | When user clicks on 'Upload Photos' on the landing page, the URL should route to https://tsw-photogallery.herokuapp.com/uploads | Pass |
+| 7 | On https://tsw-photogallery.herokuapp.com/uploads, a form should be generated in the lower half of the screen and has 4 user input fields ('choose file', 'image caption', 'tags', and 'select upload destination') and 1 buttons ('Upload'). | Pass |
+| 8 | On the upload form, when user clicks on 'Browse', a file-directory should pop up and prompts the user to select a file for uploading.| Pass |
+| 9 | On the upload form, when user clicks on 'Select Upload Destination', a dropdown list of albums names should appear and is selectable.| Pass |
+| 10 | On the upload form, when user selects a test image "Capture.PNG" from his local directory, inputs "Test photo" as the image caption, "#test" as the tag and selects 'Test' as the album upload destination. User clicks 'Upload'. Page refreshes and user should see a flash message 'Image has been uploaded successfully' if image upload has been successful.| Pass |
+| 11 | On the upload form, user selects a test image "Shepherd.jpg" from his local directory, inputs "Test photo" as the image caption, "#test" as the tag and selects 'Test' as the album upload destination. User clicks 'Upload'. Page refreshes and user should see a flash message 'Image has been uploaded successfully' if image upload has been successful.| Pass |
+| 12 | On the upload form, when user clicks 'Upload' without any file selected for uploading, user should see a pop-up prompting 'Please select a file'. | Pass |
+| 13 | When user clicks on 'View Albums' on the landing page, the URL should route to https://tsw-photogallery.herokuapp.com/albums. | Pass |
+| 14 | On https://tsw-photogallery.herokuapp.com/albums, user should see several albums cards being displayed in the lower-half of the screen. Each album card should have an album name, the album description, the last edited date & time, the date & time of album creation and 3 buttons ('View', 'Edit' and 'Delete').| Pass |
+| 15 | On https://tsw-photogallery.herokuapp.com/albums, user should see the only the 'Uploads' album have the 1 button - 'View'.| Pass |
+| 16 | On https://tsw-photogallery.herokuapp.com/albums, when user clicks on 'View' on the 'Test' album, the URL should route to https://tsw-photogallery.herokuapp.com/albums/5d6e567368755f885f7abe97. User should also see in the lower half of the screen, a 'Back' button, a image card with the name 'Shepherd', a caption - 'Test photo', a tag - '#Test', the upload time & date, the file extension and file size, and 2 buttons ('Edit' and 'Delete').| Pass |
+| 17 | On https://tsw-photogallery.herokuapp.com/albums/5d6e567368755f885f7abe97, when user clicks 'Back', the URL should route to https://tsw-photogallery.herokuapp.com/albums?albumid=5d6e567368755f885f7abe97 .| Pass |
+| 18 | On the 'Test' album page, when user clicks on 'Edit' on the image card - 'Shepherd', the URL should route to https://tsw-photogallery.herokuapp.com/photo/edit_form/5d6e80669098df04bb085968. User should also see in the lower half of the screen a form with 3 user inputs already filled up - 'Shepherd', 'Test photo', '#Test', and 2 buttons ('Update' and 'Back').| Pass |
+| 19 | On the edit form for the photo 'Shepherd' (in the 'Test' album), user edits image caption to 'Smart Shepherd' and clicks 'Update'. The URL reoutes to https://tsw-photogallery.herokuapp.com/photo/edit_form/5d6e80669098df04bb085968. User should see a flash message 'Successfully edited' at the top of the page. User should see the updated photo fields on the 'Test' album.| Pass |
