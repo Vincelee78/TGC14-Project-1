@@ -8,7 +8,7 @@ To allow tourists to locate nearby hotels, eateries, hawkers, attractions from t
 To provide tourists an one stop map guide for locations around Singapore.
 
 ## Context: 
-Many of my overseas friends have commmented that Singapore is small and there is nothing to do here after a day. I created this map guide to encourage tourists to spend more time in Singapore and explore all the attractions and events despite the current COVID situation. Thus, in turn they will spend more and boost the local economy from tourism spending.
+Many of my overseas friends have commmented that Singapore is small and there is nothing to do here after a day. I created this map guide to encourage tourists to spend more time in Singapore and explore all the attractions and events Singapore has to offer despite the current COVID situation. Thus in turn, they will spend more and boost the local economy from tourism spending.
 
 ## Demo: 
 A live website server can be found on the Gitpod server.
