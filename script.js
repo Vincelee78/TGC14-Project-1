@@ -292,7 +292,6 @@ document.querySelector('#searchContainerbutton').addEventListener('click', async
   let searchresult = document.querySelector('#textinput').value;
 
   let response2 = await search(searchresult)
-  // console.log(search(searchresult))
 
   let searchresultsinfo = document.querySelector('#search-results')
   searchresultsinfo.innerHTML = "";

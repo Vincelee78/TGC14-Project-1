@@ -121,14 +121,14 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 - The test results can be found [here.](https://search.google.com/test/mobile-friendly?id=1IOIWddhWmSaneCjeHk0Mw)
 - The web application is mobile responsive.
 
-<!-- # 6. Known Bugs
-- Changing an album name in the application will cause the existing photos in the album to not be displayed when the album is selected. 
-- As such it is recommended that users not edit an album's name after images have been uploaded into it.
-- As the database is a non-relational one, a change to the album name (i.e. User editing the album name) will only update the 'album' collection on MongoDB Atlas. - There is another collection called 'images' where the image's field 'uploaded_to' need to be updated as with new album's name as well.
-- This bug is currently not fixed yet.
+# 6. Known Bugs
+- When double clicking on the map, the automatic marker popup might occasionally not display. 
+- If this happens, clicking on the marker itself will display its address.
+- The cuurent location marker of the user is sometimes not that accurate.
+-The exact location of user depends on the browser or phone location detection abilities.
 
 # 7. Credits and Acknowledgement
-- Credited to Pexel.com for the photos used for uploading
-- Credits to [Smiling Banana photo](https://www.msn.com/en-in/health/nutrition/why-you-should-never-eat-bananas-for-breakfast/ar-BBOoNFc) 
-- Credits to Giphy.com for the .gifs used for on the website -->
+- Credits to https://data.gov.sg/ for the geojson files used to hawkers and hotels.
+- Credits to  https://developer.foursquare.com/, https://nominatim.org/ for data on eateries,hotels and geocoding for taxi coordinates.
+- Credits to Giphy.com for the .gifs used for on the website
 
