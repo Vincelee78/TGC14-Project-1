@@ -30,12 +30,14 @@ function onLocationFound(e) {
 
   marker.addTo(map).bindPopup("Your current location on the map").openPopup();
 
+  // Create a circle radius from current user location of approximate 2km
   L.circle(e.latlng, radius, {
     opacity: 0.8,
     weight: 1,
     fillOpacity: 0.2
   }).addTo(map);
 
+  // Locate all hostels and hotels within 2km of current location
   let lat = e.latlng.lat
   let lng = e.latlng.lng
 
@@ -56,19 +58,19 @@ function onLocationFound(e) {
     })
 
     for (let results of response1.data.response.groups[0].items) {
-
+      // Custom hotel marker icon
       let hotelIcon = L.divIcon({
         html: '<i class="fas fa-bed"></i>',
         iconSize: [20, 20],
         className: 'myhotelIcon'
       });
 
-
+      // Coordinates of the nearby hostels and hotels
       let marker = L.marker([results.venue.location.lat, results.venue.location.lng], {
         icon: hotelIcon,
       })
 
-
+      // Details of popup of the hostels and hotels
       marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
       marker.addTo(clusterhotels)
       clusterhotels.addTo(map)
@@ -79,6 +81,7 @@ function onLocationFound(e) {
   gethotels1()
 
 }
+// Display the marker of the current location of user on map 
 map.on('locationfound', onLocationFound);
 
 
@@ -148,7 +151,7 @@ gettaxi()
 
 
 
-
+// Added a toggle button to turn on and off the coordinates of all taxis available
 document.querySelector('#taxiresults').addEventListener('click', function () {
   if (map.hasLayer(taxiGroup)) {
     map.removeLayer(taxiGroup)
@@ -164,14 +167,14 @@ document.querySelector('#taxiresults').addEventListener('click', function () {
 let hawkerGroup = L.layerGroup()
 async function getHawkers() {
   let response = await axios.get('geojson-files/hawker-centres.geojson');
-
+  // Created a cluster group for hawker centers
   let cluster = L.markerClusterGroup()
 
   for (let points of response.data.features) {
     let lng = points.geometry.coordinates[0]
     let lat = points.geometry.coordinates[1]
     let hawkerActualCoordinates = [lat, lng]
-
+    // Custom marker for hawker icons
     let hawkerIcon = L.divIcon({
       html: "<span class='fa-stack fa-lg'><i class='fas fa-circle fa-stack-2x'></i><i class='fas fa-utensils fa-stack-1x fa-inverse'></i></i></span>",
       iconSize: [40, 40],
@@ -184,7 +187,7 @@ async function getHawkers() {
 
     marker.addTo(cluster);
     cluster.addTo(hawkerGroup)
-
+    // Editing the inner html of geojson data of hawker centers
     let hawkerLayer = L.geoJson(response.data, {
       onEachFeature: function (feature, layer) {
         let newdoc = document.createElement('div');
@@ -210,7 +213,7 @@ getHawkers()
 let hotelGroup = L.layerGroup()
 async function getHotels() {
   let response = await axios.get('geojson-files/hotels.geojson');
-
+  // Create a cluster group for hotels
   let cluster = L.markerClusterGroup()
 
   for (let points of response.data.features) {
@@ -220,7 +223,7 @@ async function getHotels() {
     let hotelName = points.properties.Name
     let totalRooms = points.properties.TOTALROOMS
     let address = points.properties.ADDRESS
-
+    // Create custom hotel markers
     let allhotelIcon = L.divIcon({
       html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x fa-inverse'></i><i class='fas fa-hotel fa-stack-1x'></i></span>",
       className: 'allhotelsIcon'
@@ -232,7 +235,7 @@ async function getHotels() {
     marker.addTo(cluster)
     cluster.addTo(hotelGroup)
 
-
+    // Details of popup of the hotels
     marker.bindPopup(`<h3>Name of Hotel: ${hotelName}</h3><h3>Total Rooms: ${totalRooms}</h3><h3>Address: ${address}</h3>`);
   }
 
@@ -241,7 +244,7 @@ async function getHotels() {
 getHotels()
 
 
-
+// Create checkboxes for all hotels and taxi locations
 let baseLayers = {
 }
 
@@ -252,7 +255,7 @@ let overlay = {
 
 L.control.layers(baseLayers, overlay).addTo(map)
 
-// Toggle locations of hawker centers on and off
+// Toggle button for locations of hawker centers in the Navtab on and off
 document.querySelector('#togglehawkers').addEventListener('click', function () {
   if (map.hasLayer(hawkerGroup)) {
     map.removeLayer(hawkerGroup)
@@ -284,9 +287,10 @@ async function search(query) {
 
 }
 
-
+// Search result locations layer
 let searchCluster = L.layerGroup()
 document.querySelector('#searchContainerbutton').addEventListener('click', async function () {
+  // clear previous search results after new search
   searchCluster.clearLayers()
   document.querySelector('#search-results').style.display = 'block'
   let searchresult = document.querySelector('#textinput').value;
@@ -295,38 +299,38 @@ document.querySelector('#searchContainerbutton').addEventListener('click', async
 
   let searchresultsinfo = document.querySelector('#search-results')
   searchresultsinfo.innerHTML = "";
-
+  // custom search result marker icon
   let attractionsIcon = L.divIcon({
     html: "<span class='fa-stack fa-lg'><i class='fas fa-map-marker fa-stack-2x'></i><i class='fas fa-camera-retro fa-stack-1x fa-inverse'></i></i></span>",
     className: 'myattractionsIcon',
     popupAnchor: [15, 0]
   });
 
-
+  // Coordinates of search results
   for (let results of response2.response.groups[0].items) {
     let marker = L.marker([results.venue.location.lat, results.venue.location.lng], {
       icon: attractionsIcon,
     })
     let searchcoordinates = [results.venue.location.lat, results.venue.location.lng]
-    // console.log(coordinates)
 
 
+    // Popup details for search results
     marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
     marker.addTo(searchCluster)
     searchCluster.addTo(map)
-    // console.log(searchCluster)
 
+    // Append a newly created div with the name of the search result to the parent search-results block
     let resultname = document.createElement('div')
     resultname.innerHTML = results.venue.name
     searchresultsinfo.appendChild(resultname)
-    // console.log(searchresultsinfo)
 
+    // Allow clicking on the search results to fly to corresponding location
     resultname.addEventListener('click', function () {
       map.flyTo(searchcoordinates, 16);
       marker.openPopup()
     })
 
-    // Remove search results and markers
+    // Remove search results and markers button
     document.querySelector('#remove-search').addEventListener('click', function () {
       if (searchresultsinfo.contains(resultname)) {
         document.querySelector('#search-results').style.display = 'none',
@@ -339,7 +343,7 @@ document.querySelector('#searchContainerbutton').addEventListener('click', async
     })
 
 
-    // Collapse search results
+    // Collapse search results in the arrowdown icon of the Navtab
     document.querySelector('#tab-toggle').addEventListener('click', function () {
       if (searchresultsinfo.contains(resultname)) {
         document.querySelector('#search-results').style.display = 'none'
@@ -350,7 +354,7 @@ document.querySelector('#searchContainerbutton').addEventListener('click', async
   }
 })
 
-// Slide in the info tab
+// Slide in and out the info tab
 document.querySelector('#toggle-info').addEventListener('click', function () {
   if (document.querySelector("#info-tab").classList.contains("slide-in")) {
     document.querySelector("#info-tab").classList.remove("slide-in")
@@ -378,7 +382,7 @@ map.on('dblclick', function (e) {
     if (error) {
       return;
     }
-
+    // Reverse geocoding of the coordinates on the map
     let marker = L.marker(result.latlng);
     marker.addTo(geocooding);
     marker.bindPopup(result.address.Match_addr);
@@ -389,7 +393,7 @@ map.on('dblclick', function (e) {
     let lat = result.latlng.lat
     let lng = result.latlng.lng
 
-    // Consume a 4th API for all eateries within 1km on clicked location in Singapore
+    // Consume a 4th API for all eateries within 1km on double-clicked location in Singapore
     async function getresturants() {
 
       let response1 = await axios.get('https://api.foursquare.com/v2/venues/explore', {
@@ -405,25 +409,26 @@ map.on('dblclick', function (e) {
 
       })
       for (let results of response1.data.response.groups[0].items) {
-
+        // Custom eateries marker icons
         let resturantsIcon = L.divIcon({
           html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x'></i><i class='fas fa-utensils fa-stack-1x fa-inverse'></i></span>",
           iconSize: [20, 20],
           className: 'myresturantsIcon'
         });
 
-
+        // Create markers based on the coordinates of all nearby eateries within 1 km of double-clicked location
         let marker = L.marker([results.venue.location.lat, results.venue.location.lng], {
           icon: resturantsIcon,
         })
 
-
+        // Details of popup of the eateries
         marker.bindPopup(`<h5>Reason for recommendation: ${results.reasons.items[0].summary}</h5><h5>Name of recommended venue: ${results.venue.name}</h5><h5>Cateogory: ${results.venue.categories[0].name}</h5><h5>Address: ${results.venue.location.address}</h5>`)
         marker.addTo(resturants)
         resturants.addTo(map)
 
       }
     }
+    // Remove all nearby eateries button
     document.querySelector('#remove-georesturants').addEventListener('click', function () {
       map.removeLayer(resturants)
     })
@@ -432,21 +437,21 @@ map.on('dblclick', function (e) {
 
   });
 });
-
+// Gardens by the Bay dropdown button
 document.querySelector('#gardensAttraction').addEventListener('click', function () {
-
+  // Custom gardens by the bay icon
   let gardensIcon = L.icon({
     iconUrl: 'images/gardensicon.png',
     iconSize: [50, 50],
     className: 'gardensIcon',
 
   })
-
+  // Create Gardens by the Bay marker location
   let marker = L.marker([1.2816, 103.8636], {
     icon: gardensIcon,
   })
   marker.addTo(map);
-
+  // Gardens by the Bay popup details
   map.flyTo([1.2816, 103.8636])
   marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><a href="https://ticket.gardensbythebay.com.sg/product/listing" target="_blank"><img src="images/thegardens-info.jpeg" height="100px" width="200px"/></a></center>`, {
     maxWidth: "auto"
@@ -454,7 +459,7 @@ document.querySelector('#gardensAttraction').addEventListener('click', function 
   marker.openPopup()
 
 })
-
+// Marina Bay Sands dropdown button
 document.querySelector('#mbsAttraction').addEventListener('click', async function () {
   let mbsIcon = L.icon({
     iconUrl: 'images/mbs-marker.png',
@@ -462,12 +467,12 @@ document.querySelector('#mbsAttraction').addEventListener('click', async functio
     className: 'mbsIcon',
 
   })
-
+  // Create Marina Bay Sands marker location
   let marker = L.marker([1.2847, 103.8610], {
     icon: mbsIcon,
   })
   marker.addTo(map);
-
+  // Marina Bay Sands popup details
   map.flyTo([1.2847, 103.8610])
   marker.bindPopup(`<center><h4>Marina Bay Sands</h4>Marina Bay Sands® is a destination for those who appreciate luxury. An integrated resort notable for transforming Singapore’s city skyline, it comprises three 55-storey towers of extravagant hotel rooms and luxury suites with personal butler services. In addition, its architecture is made complete with the Sands SkyPark® which crowns the three towers. </center></br><center><a href="https://www.marinabaysands.com/" target="_blank"><img src="images/mbs-info-image.jpg" height="100px" width="200px"/></a></center>`, {
     maxHeight: "fit",
@@ -476,7 +481,7 @@ document.querySelector('#mbsAttraction').addEventListener('click', async functio
   marker.openPopup()
 
 })
-
+// Universal Studios Singapore dropdown button
 document.querySelector('#universalAttraction').addEventListener('click', async function () {
   let universalStudiosIcon = L.icon({
     iconUrl: 'images/universal-studios-singapore-marker.png',
@@ -484,12 +489,12 @@ document.querySelector('#universalAttraction').addEventListener('click', async f
     className: 'universalStudiosIcon',
 
   })
-
+  // Create Universal Studios Singapore marker location
   let marker = L.marker([1.2540, 103.8238], {
     icon: universalStudiosIcon,
   })
   marker.addTo(map);
-
+  // Universal Studios Singapore popup details
   map.flyTo([1.2540, 103.8238])
   marker.bindPopup(`<center><h4>Universal Studios Singapore</h4>As Southeast Asia’s first movie-themed park, Universal Studios Singapore offers a slew of exciting attractions, including 24 movie-themed rides, a festive walk, water park, marine life park and maritime experiential museum and aquarium. Opened in 2011 with director Steven Spielberg as a creative consultant, the kid-friendly park takes inspiration from some of Hollywood’s biggest hits, including Transformers, The Lost World, and Madagascar. </center></br><center><a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/tickets" target="_blank"><img src="images/universalstudios-info-image.jpg" height="100px" width="200px"/></a></center>`, {
     maxHeight: "fit",
