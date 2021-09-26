@@ -130,5 +130,18 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 # 7. Credits and Acknowledgement
 - Credits to https://data.gov.sg/ for the geojson files used to hawkers and hotels.
 - Credits to  https://developer.foursquare.com/, https://nominatim.org/ for data on eateries,hotels and geocoding for taxi coordinates.
-- Credits to Giphy.com for the .gifs used for on the website
+- Credits to 
+[Singapore Tourism Board]https://www.visitsingapore.com/
+https://www.thepoortraveler.net/2019/05/singapore-itinerary-things-to-do/
+https://www.kids-world-travel-guide.com/singapore-attractions.html
+https://www.iconfinder.com/icons/3138775/attractions_gardens_gardens_by_the_bay_landmarks_park_singapore_travel_icon 
+[Gardens by the Bay]https://www.gardensbythebay.com.sg/
+https://www.clipartmax.com/middle/m2i8H7K9N4b1d3b1_singapore-merlion-clip-art-singapore-merlion-clipart/
+[Marina Bay Sands]https://www.marinabaysands.com/
+https://thenounproject.com/term/singapore/668086/
+[Universal Studios Singapore]https://www.rwsentosa.com/en/attractions/universal-studios-singapore/explore
+https://seeklogo.com/vector-logo/258502/universal-studios-singapore
+http://getdrawings.com/get-icon#map-pin-icon-png-67.png
+for their images, icons and logos
+
 
