@@ -22,11 +22,11 @@ A live website server can be found on the Gitpod server.
 6. Known Bugs
 7. Credits and Acknoledgement
 
-### 1.Project Complexity Matrix 
+### 1. Project Complexity Matrix 
 | Feature/Item | Eligibility | Max Score Accorded
 | ------ | ------ | ------ |
 | Consume the GET endpoint of an API, or consume a CSV/JSON file | Consumed 4 GET API's and 2 geojson files (6 altogether) | 12 |
-| Adding or removing DOM elements to the display (map, DOM tree, game screen) based on user's actions |Added 1. Search feature, 2. toggle hawker centres,taxi coordinates, all hotels feature, 3. Top 3 attractions feature, 4. Remove search results and remove eateries feature, 5. Slide information bar in and out feature | 20 |
+| Adding or removing DOM elements to the display (map, DOM tree, game screen) based on user's actions |Added 1. Search feature,  2. toggle hawker centres,taxi coordinates, all hotels feature,   3. Top 3 attractions feature,  4. Remove search results and remove eateries feature,  5. Slide information bar in and out feature | 20 |
 | Modifying the CSS of DOM elements based on the user's actions | 1. Sliding in the information bar using transition and transform css, 2. Sliding out the information bar using transition and transform css, 3. Displaying the map and hiding the index( landing) page using css display= block or none, 4. Using css style display=block or nonoe for removing eateries and search results, 5. Using css style display for toggling taxi coordinates, 6. Using css style display for collapsing search results in info tab | 12 |
 | Use of 1D traversal of array | 1. Use of loop to extract out hotels,taxi,eateries and search coordinates within a 2km radius of current location, 2. Use of transversal of array to extract out names, address, number of rooms, cateogories of hotels,eateries,hawkers and search coordinates, 3. Use of loop to extract out all the resturants within a clicked location of map using geocoding, 4. Use of transveral of array to extract out all taxi coordinates and match it with the address of the respective coordinates| 15 |
 | Each use of CSS layout technique (Bootstrap columns, flex box, grid)| 1. Using bootstrap py, px, mt in my info-tab table, 2. Using a display flex on my Carousel home page to align the logo, buttons and items in it, 3. Using the position property: relative and absolute and z-index to allow the buttons and features to show up on top of map | 12 |
@@ -61,14 +61,20 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 The project skeleton and structure (wireframes) can be found [here.](https:) 
 #### (iii) Design
 The bootstrap plugin was used in for the front-end development of the website as it allows for better visual design of buttons, an information tab and also an easy grid layout.   
+
 The general design of the website comprises a search bar as one of the main features and an information table which displays the search results which is easy to read and navigate. There are tabs beside the search result tab for easy access to display the taxi markers and hawker center markers on the map.  
 
 The colour palette consist of a green search button which colour is universally associated with success(success in finding a location).  
 The information tab is light purple as it is visually pleasing and not too glaring.  
+
 I choose the search results text colour to be white against a grey background as it is easy to be read.  
+
 The markers are typically a darker colour as it is more visible on a light background on the map.  
+
 The attractions button is red in colour as it directs attention to the user to notice it.  
+
 The layout of the webpage is not overly complex and easy to use. Custom markers were created according to the classification of the location and to enhance the visual experience of users.  
+
 Font size is relatively large and easy to read.  
 
 For a better user experience for mobile devices, I repositioned the buttons so that it will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out for less obstruction of the map.
