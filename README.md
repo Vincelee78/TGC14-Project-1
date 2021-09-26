@@ -11,7 +11,7 @@ To provide tourists an one stop map guide for locations around Singapore.
 Many of my overseas friends have commmented that Singapore is small and there is nothing to do here after a day. I created this map guide to encourage tourists to spend more time in Singapore and explore all the attractions and events Singapore has to offer despite the current COVID situation. Thus in turn, they will spend more and boost the local economy from tourism spending.
 
 ## Demo: 
-A live website server can be found on the ]Gitpod server]https://5500-jade-sheep-jvr145gh.ws-us18.gitpod.io/
+A live website server can be found on the [Gitpod server](https://5500-jade-sheep-jvr145gh.ws-us18.gitpod.io/)
 
 ## Index:
 1. Project Complexity Matrix 
@@ -58,7 +58,7 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 | User wants to slide the info bar away| There is a toggle button on the bottom right of the screen to allow the user to slide the infobar in and out of the screen to allow for more viewing of the map.|
 
 #### (ii) Project Scope
-The project skeleton and structure (wireframes) can be found [here.](https:) 
+The project skeleton and structure (wireframes) can be found [here](https://docs.google.com/presentation/d/1GqyhQLMf-A_-2YCcyQbgSmhdlelVVPVr/edit?usp=sharing&ouid=100349503230330665538&rtpof=true&sd=true) 
 #### (iii) Design
 The bootstrap plugin was used in for the front-end development of the website as it allows for better visual design of buttons, an information tab and also an easy grid layout.   
 
