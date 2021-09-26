@@ -131,7 +131,7 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 - When double clicking on the map, the automatic marker popup might occasionally not display. 
 - If this happens, clicking on the marker itself will display its address.
 - The cuurent location marker of the user is sometimes not that accurate.
--The exact location of user depends on the browser or phone location detection abilities.
+- The exact location of user depends on the browser or phone location detection abilities.
 
 # 7. Credits and Acknowledgement
 - Credits to https://data.gov.sg/ for the geojson files used to hawkers and hotels.
