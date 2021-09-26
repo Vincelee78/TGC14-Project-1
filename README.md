@@ -26,8 +26,13 @@ A live website server can be found on the Gitpod server.
 | Feature/Item | Eligibility | Max Score Accorded
 | ------ | ------ | ------ |
 | Consume the GET endpoint of an API, or consume a CSV/JSON file | Consumed 4 GET API's and 2 geojson files (6 altogether) | 12 |
-| Adding or removing DOM elements to the display (map, DOM tree, game screen) based on user's actions |Added -Search feature, -toggle hawker centres, taxi coordinates, all hotels feature, -Top 3 attractions feature, -Remove search results and remove eateries feature, -Slide information bar in and out feature | 20 |
-| Modifying the CSS of DOM elements based on the user's actions | 1.  Sliding in the information bar using transition and transform css, 2.  Sliding out the information bar using transition and transform css, 3.  Displaying the map and hiding the index( landing) page using css display= block or none,  4. Using css style display=block or nonoe for removing eateries and search results,  5. Using css style display for toggling taxi coordinates,  6. Using css style display for collapsing search results in info tab | 12 |
+| Adding or removing DOM elements to the display (map, DOM tree, game screen) based on user's actions |Added 
+-Search feature 
+-Toggle hawker centres, taxi coordinates, all hotels feature, 
+-Top 3 attractions feature, 
+-Remove search results and remove eateries feature, 
+-Slide information bar in and out feature | 20 |
+| Modifying the CSS of DOM elements based on the user's actions | -Sliding in the information bar using transition and transform css, -Sliding out the information bar using transition and transform css, -Displaying the map and hiding the index( landing) page using css display= block or none,  - Using css style display=block or nonoe for removing eateries and search results,  -Using css style display for toggling taxi coordinates, -Using css style display for collapsing search results in info tab | 12 |
 | Use of 1D traversal of array | 1. Use of loop to extract out hotels,taxi,eateries and search coordinates within a 2km radius of current location, 2. Use of transversal of array to extract out names, address, number of rooms, cateogories of hotels,eateries,hawkers and search coordinates, 3. Use of loop to extract out all the resturants within a clicked location of map using geocoding, 4. Use of transveral of array to extract out all taxi coordinates and match it with the address of the respective coordinates| 15 |
 | Each use of CSS layout technique (Bootstrap columns, flex box, grid)| 1. Using bootstrap py, px, mt in my info-tab table, 2. Using a display flex on my Carousel home page to align the logo, buttons and items in it, 3. Using the position property: relative and absolute and z-index to allow the buttons and features to show up on top of map | 12 |
 | Each possible search or filtering criteria in the user interface | 1. Use of a search bar to fiter keywords for recommendations, 2. Use of filtering feature to show all hotels within a 2km radius of current location, 3. Use of a filtering feature to show up all eateries within 1km of a clicked location on the map | 12 |
