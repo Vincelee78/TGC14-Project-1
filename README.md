@@ -132,9 +132,9 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 - The web application is mobile responsive.
 
 # 6. Known Bugs
-- When double clicking on the map, the automatic marker popup might occasionally not display. 
+- When double clicking on the map, the automatic marker popup might occasionally not display its address. 
 - If this happens, clicking on the marker itself will display its address.
-- The cuurent location marker of the user is sometimes not that accurate.
+- The current location marker of the user is sometimes not that accurate.
 - The exact location of user depends on the browser or phone location detection abilities.
 
 # 7. Credits and Acknowledgement
