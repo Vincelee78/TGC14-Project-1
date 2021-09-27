@@ -101,7 +101,7 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 
 # 4. Future Features To Implement
 - A feature for users to view a short video in the popup of the place/venue they have clicked on.
-- A feature that allow users to jump to the search result based on voice input.
+- A feature that allows users to jump to the search result based on voice input.
 
 # 5. Testing
 #### (i) HTML and CSS Validation
