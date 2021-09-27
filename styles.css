@@ -202,7 +202,7 @@ background-color: rgb( 8, 99, 117);
     cursor: pointer;
 }
 
-@media only screen and (max-width:376px) {
+@media only screen and (min-width: 321px) and (max-width:376px) {
     #search-container {
         position: absolute;
         z-index: 314159;
