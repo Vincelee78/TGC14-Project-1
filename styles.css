@@ -367,7 +367,6 @@ background-color: rgb( 8, 99, 117);
 
 #toggle-info {
     position: absolute;
-    background-color: (rgb(239, 239, 239), rgb(59, 59, 59)) !important;
     z-index: 316000;
     bottom: 20px;
     right: 5px
