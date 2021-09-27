@@ -33,7 +33,9 @@ function onLocationFound(e) {
   // Create a circle radius from current user location of approximate 2km
   L.circle(e.latlng, radius, {
     opacity: 0.8,
-    weight: 1,
+    weight: 2,
+    fillColor: 'magenta',
+    color:'orange',
     fillOpacity: 0.2
   }).addTo(map);
 
