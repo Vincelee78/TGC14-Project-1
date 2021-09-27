@@ -34,7 +34,7 @@ function onLocationFound(e) {
   L.circle(e.latlng, radius, {
     opacity: 0.8,
     weight: 2,
-    fillColor: 'magenta',
+    fillColor: 'blue',
     color:'orange',
     fillOpacity: 0.2
   }).addTo(map);
