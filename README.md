@@ -55,7 +55,7 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 | User wants to search for a recommended category or place in Singapore.| User can enter in keywords in the search bar and all recommended venues containing the keywords will appear in the search results. Clicking on the results will bring the user to the location on the map and why it is recommended.|
 |User wants to explore the top 3 attractions in Singapore| Clicking on the top 3 attractions button on the right side of the map will bring down a drop-bar with the top 3 attractions based on traveller visits on Google. The popup will show a description and image of each attraction and clicking on the image will bring the user to the ticket booking of that attraction.|
 | User wants to locate all the hawkers centers| Clicking on the toggle button under the right tab of the Navtab will show all hawker center locations.|
-| User wants to slide the info bar away| There is a toggle button on the bottom right of the screen to allow the user to slide the infobar in and out of the screen to allow for more viewing of the map.|
+| User wants to slide the info bar away| There is a toggle button on the bottom right of the screen to allow the user to slide the infobar in and out of the screen for easier viewing of the map.|
 
 #### (ii) Project Scope
 The project skeleton and structure (wireframes) can be found [here](https://docs.google.com/presentation/d/1GqyhQLMf-A_-2YCcyQbgSmhdlelVVPVr/edit?usp=sharing&ouid=100349503230330665538&rtpof=true&sd=true) 
