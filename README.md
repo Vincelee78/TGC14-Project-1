@@ -20,7 +20,7 @@ A live website server can be found on the [Netlify server](https://awesome-bratt
 4. Use cases/ Future features to implement
 5. Testing
 6. Known Bugs
-7. Credits and Acknoledgement
+7. Credits and Acknowledgement
 
 ### 1. Project Complexity Matrix 
 | Feature/Item | Eligibility | Max Score Accorded
