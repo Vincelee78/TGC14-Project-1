@@ -39,15 +39,15 @@ A live website server can be found on the [Netlify server](https://awesome-bratt
 ### Bonus Scoring
  Feature/Item | Eligibility | Max Score Accorded
 | ------ | ------ | ------ |
-| Each extra feature| 1) Use of geocoding to find address of any clicked location of map, 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of gecoding to display address of taxis according to their coordinates | 15 |
-| Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button redirects the user to the interactive map | 15 | 
+| Each extra feature| 1) Use of geocoding to find address of any clicked location of map, 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates | 15 |
+| Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button to redirect the user to the interactive map | 15 | 
 
 ### 2.UX/UI 
 #### (i) Project Strategy
 Based on the user's needs and objectives, these are the guidelines for the features that were implemented.
 | User Stories| Features|
 | ------ | ------ |
-| User wants to locate current location on map| When starting the map, user can allow the device to locate current location and display user's current marker lcoation on map. |
+| User wants to locate current location on map| When starting the map, user can allow the device to locate current location and display user's current marker location on map. |
 | User wants to locate nearby accommodation from current location | Map displays all recommended accommodation locations with name,address and category of accommodation within a 2km radius from current user's location.|
 | User wants to locate all hotels in Singapore| On the top right corner of the screen, User is able to toggle on and off the location, name, address and number of rooms of all hotels in Singapore.|
 | User wants to locate all taxis in Singapore or around his current location| User is able to toggle on and off all avaliable taxis markers in the middle Navtab and their respective address name and also locate all taxis nearby his location. |
