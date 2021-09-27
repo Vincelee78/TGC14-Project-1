@@ -64,10 +64,10 @@ The bootstrap plugin was used in for the front-end development of the website as
 
 The general design of the website comprises a search bar as one of the main features and an information table which displays the search results which is easy to read and navigate. There are tabs beside the search result tab for easy access to display the taxi markers and hawker center markers on the map.  
 
-The colour palette consist of a green search button which colour is universally associated with success(success in finding a location).  
+The colour palette consist of a green search button which colour is universally associated with success (success in finding a location).  
 The information tab is light purple as it is visually pleasing and not too glaring.  
 
-I choose the search results text colour to be white against a grey background as it is easy to be read.  
+I choose the search results text colour to be black against a grey background as it is easy to be read.  
 
 The markers are typically a darker colour as it is more visible on a light background on the map.  
 
