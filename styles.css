@@ -8,6 +8,10 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
+#btn-search-home:hover {
+background-color: aquamarine;
+}
+
 #carouselExampleIndicators {
     position: relative;
     display: flex;
