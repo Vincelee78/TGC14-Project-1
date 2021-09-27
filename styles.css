@@ -326,7 +326,7 @@ background-color: rgb( 8, 99, 117);
 
     #toggle-info {
         display: block;
-        color: grey;
+        background-color: grey;
         position: absolute;
         z-index: 316000;
         bottom: 20px;
