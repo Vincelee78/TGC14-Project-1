@@ -435,9 +435,9 @@ map.on('dblclick', function (e) {
       }
     }
     // Remove all nearby eateries button
-    document.querySelector('#remove-georesturants').addEventListener('click', function () {
-      map.removeLayer(resturants)
-    })
+    // document.querySelector('#remove-georesturants').addEventListener('click', function () {
+    //   map.removeLayer(resturants)
+    // })
 
     getresturants()
 
