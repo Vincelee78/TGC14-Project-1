@@ -1,373 +1,378 @@
 #map {
-    height: 100vh;
-    border: 1px solid black;
-    position: relative
+  height: 100vh;
+  border: 1px solid black;
+  position: relative;
 }
 
-#singaporelogo {
-    background-color: rgba(0, 0, 0, 0);
+.page {
+  height: 100vh;
+  box-sizing: border-box;
+  position: absolute; 
 }
 
-#btn-search-home:hover {
-background-color: rgb( 8, 99, 117);
-}
-
-#carouselExampleIndicators {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-#carouselimage {
-    background-color: black;
-}
-
-.change {
-    opacity: 0.7
-}
-
-
-#home-search-container {
-    position: absolute;
-    z-index: 314159;
-
-
+#all-pages {
+  position: relative;
 }
 
 #container {
-    position: relative;
-
+  width:100%;
+  position: absolute; 
+  z-index: 315000;
 }
+
+
+ #carouselExampleIndicators {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 314159;
+ }
+
+.hidden {
+  transform: translateX(-100%);
+}
+
+.show {
+  transform: translateX(0);
+}
+
+
+#singaporelogo {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#btn-search-home:hover {
+  background-color: rgb(8, 99, 117);
+}
+
+/* #container {
+  position: relative;
+  
+} */
+
+
+/* #carouselExampleIndicators {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+#carouselimage {
+  background-color: black;
+}
+
+.change {
+  opacity: 0.7;
+}
+
+#home-search-container {
+  position: absolute;
+  z-index: 314159;
+}
+
 
 #info-tab {
-    position: absolute;
-    z-index: 315000;
-    bottom: 5px;
-    left: 3px
+  position: absolute;
+  z-index: 315000;
+  bottom: 5px;
+  left: 3px;
 }
 
-
 .fa-search {
-    padding-left: 5px;
-
+  padding-left: 5px;
 }
 
 .fa-taxi {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
-
 .input-group-text {
-    color: mediumslateblue;
+  color: mediumslateblue;
 }
 
 .nav-link {
-    color: mediumslateblue !important
+  color: mediumslateblue !important;
 }
 
 #remove-georesturants {
-    position: absolute;
-    z-index: 315000;
-    top: 80px;
-    right: 10px
+  position: absolute;
+  z-index: 315000;
+  top: 80px;
+  right: 10px;
 }
 
 .dropdown {
-    position: absolute;
-    z-index: 315000;
-    top: 125px;
-    right: 10px
+  position: absolute;
+  z-index: 315000;
+  top: 125px;
+  right: 10px;
 }
 
 .mytaxiIcon {
-    text-align: center;
-    /* Horizontally center the text (icon) */
-    line-height: 20px;
-    /* Vertically center the text (icon) */
-    font-size: 20px
+  text-align: center;
+  /* Horizontally center the text (icon) */
+  line-height: 20px;
+  /* Vertically center the text (icon) */
+  font-size: 20px;
 }
 
-
 .myhawkerIcon {
-    color: rgb(255, 183, 3);
-    text-align: center;
-    /* Horizontally center the text (icon) */
-    line-height: 20px;
-    /* Vertically center the text (icon) */
-    /* font-size: 20px; */
-
+  color: rgb(255, 183, 3);
+  text-align: center;
+  /* Horizontally center the text (icon) */
+  line-height: 20px;
+  /* Vertically center the text (icon) */
+  /* font-size: 20px; */
 }
 
 .myhotelIcon {
-    color: darkblue;
-    text-align: center;
-    /* Horizontally center the text (icon) */
-    line-height: 20px;
-    /* Vertically center the text (icon) */
-    font-size: 18px;
+  color: darkblue;
+  text-align: center;
+  /* Horizontally center the text (icon) */
+  line-height: 20px;
+  /* Vertically center the text (icon) */
+  font-size: 18px;
 }
 
 .allhotelsIcon {
-    color: green;
-    text-align: center;
-    /* Horizontally center the text (icon) */
-    line-height: 20px;
-    /* Vertically center the text (icon) */
-    font-size: 10px;
+  color: green;
+  text-align: center;
+  /* Horizontally center the text (icon) */
+  line-height: 20px;
+  /* Vertically center the text (icon) */
+  font-size: 10px;
 }
 
 .myresturantsIcon {
-    color: orangered;
-    text-align: center;
-    /* Horizontally center the text (icon) */
-    line-height: 20px;
-    /* Vertically center the text (icon) */
-    font-size: 12px;
-
+  color: orangered;
+  text-align: center;
+  /* Horizontally center the text (icon) */
+  line-height: 20px;
+  /* Vertically center the text (icon) */
+  font-size: 12px;
 }
 
 .myattractionsIcon {
-    color: darkmagenta;
-    text-align: center;
-    /* Horizontally center the text (icon) */
-    line-height: 20px;
+  color: darkmagenta;
+  text-align: center;
+  /* Horizontally center the text (icon) */
+  line-height: 20px;
 }
 
-
 #togglehawkers {
-    z-index: 314159;
-    max-width: 200px;
-    max-height: 800px;
-    top: 5px;
-    left: 50px;
-
+  z-index: 315000;
+  max-width: 200px;
+  max-height: 800px;
+  top: 5px;
+  left: 50px;
 }
 
 #search-container {
-    position: absolute;
-    z-index: 314159;
-    width: 212px;
-    max-height: 800px;
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-
+  position: absolute;
+  z-index: 315000;
+  width: 212px;
+  max-height: 800px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
 }
 
 #textinput {
-    width: 212px;
-    border: 2px solid black;
+  width: 212px;
+  border: 2px solid black;
 }
 
 #remove-search {
-    position: absolute;
-    z-index: 315000;
-    top: 110px;
-    left: 10px
+  position: absolute;
+  z-index: 315000;
+  top: 110px;
+  left: 10px;
 }
 
 .col {
-    background-color: mediumslateblue;
+  background-color: mediumslateblue;
 }
 
 #search-results {
-    overflow-y: scroll;
-    max-height: 300px;
-    background-color: lightgrey;
-    cursor: pointer;
+  overflow-y: scroll;
+  max-height: 300px;
+  background-color: lightgrey;
+  cursor: pointer;
 }
 
-
 #taxibutton {
-    text-align: center;
+  text-align: center;
 }
 
 #taxiTitleTabText {
-    text-align: center;
+  text-align: center;
 }
 
 #nav-contact {
-    text-align: center;
+  text-align: center;
 }
 
-.dropdown-menu {
-    background-color: rgb(255, 135, 0);
-    max-height: 250px;
-    overflow-y: scroll
-}
 
 .dropdown-item {
-    color: whitesmoke;
+  color: whitesmoke;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid mediumpurple;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  #search-container {
+    position: absolute;
+    z-index: 314159;
+    max-width: 212px;
+    max-height: 800px;
+    background-color: lightgrey;
+    top: 10px;
+    left: 5px;
     cursor: pointer;
-}
+  }
 
-@media only screen and (min-width: 321px) and (max-width:376px) {
-    #search-container {
-        position: absolute;
-        z-index: 314159;
-        max-width: 212px;
-        max-height: 800px;
-        background-color: lightgrey;
-        top: 10px;
-        left: 5px;
-        cursor: pointer;
-    }
+  #info-tab {
+    position: absolute;
+    z-index: 315000;
+    bottom: 5px;
+    left: 20px;
+  }
 
-    #info-tab {
-        position: absolute;
-        z-index: 315000;
-        bottom: 5px;
-        left: 20px
-    }
-    #remove-search {
-        position: absolute;
-        z-index: 315000;
-        top: 110px;
-        left: 5px
-    }
+  #remove-georesturants {
+    position: absolute;
+    z-index: 315000;
+    top: 60px;
+    right: 5px;
+  }
 
-    #remove-georesturants {
-        position: absolute;
-        z-index: 315000;
-        top: 60px;
-        right: 5px
-    }
+  .dropdown {
+    position: absolute;
+    z-index: 315000;
+    top: 150px;
+    left: 5px;
+  }
 
-    .dropdown {
-        position: absolute;
-        z-index: 315000;
-        top: 150px;
-        left: 5px
-    }
+  .dropdown-menu {
+    background-color: rgb(255, 135, 0);
+    max-height: 80px;
+    overflow-y: scroll;
+  }
 
-    .dropdown-menu {
-        background-color: rgb(255, 135, 0);
-        max-height: 80px;
-        overflow-y: scroll
-    }
+  #search-results {
+    max-height: 100px;
+  }
 
-    #search-results {
-
-        max-height: 100px;
-
-    }
-
-    #toggle-info {
-        display: block;
-        background-color: rgb(239, 239, 239), rgb(59, 59, 59) !important;
-        position: absolute;
-        z-index: 316000;
-        bottom: 20px;
-        right: 5px
-    }
-
-}
-
-@media only screen and (max-width:320px) {
-    #search-container {
-        position: absolute;
-        z-index: 314159;
-        max-width: 212px;
-        max-height: 800px;
-        background-color: lightgrey;
-        top: 10px;
-        left: 5px;
-        cursor: pointer;
-
-    }
-    
-
-    #info-tab {
-        position: absolute;
-        z-index: 315000;
-        bottom: 5px;
-        left: 1px
-    }
-
-    #textinput {
-        width: 212px;
-        border: 2px solid black;
-    }
-
-    #remove-search {
-        position: absolute;
-        z-index: 315000;
-        top: 105px;
-        left: 5px
-    }
-
-    #remove-georesturants {
-        position: absolute;
-        z-index: 315000;
-        top: 65px;
-        right: 2px;
-        max-width: 80px;
-        max-height: 200px
-    }
-
-    .dropdown {
-        position: absolute;
-        z-index: 315000;
-        top: 145px;
-        left: 5px
-    }
-
-    .dropdown-menu {
-        background-color: rgb(255, 135, 0);
-        max-height: 80px;
-        overflow-y: scroll
-    }
-
-    #search-results {
-
-        max-height: 100px;
-
-    }
-
-    #toggle-info {
-        display: block;
-        background-color: rgb(239, 239, 239), rgb(59, 59, 59) !important;
-        position: absolute;
-        z-index: 316000;
-        bottom: 20px;
-        right: 5px
-    }
-}
-
-
-/* Style the popup marker box */
-.leaflet-popup-content-wrapper {
-    background-color: grey;
-    color: white;
-
-}
-.leaflet-popup-tip {
-    background: rgb(228, 179, 99);
-}
-
-
-.slide-in.from-left {
-    left: 0;
-}
-
-.slide-in-content {
-    transition: transform 0.5s ease; /* nice transition */
-}
-
-.slide-out {
-    transition: transform 1s;
-    transform: translateX(-100%);
-}
-
-.slide-in {
-    transition: transform 1s;
-    transform: translateX(0);
-}
-
-#toggle-info {
+  #toggle-info {
+    display: block;
+    background-color: rgb(239, 239, 239), rgb(59, 59, 59) !important;
     position: absolute;
     z-index: 316000;
     bottom: 20px;
     right: 5px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #search-container {
+    position: absolute;
+    z-index: 314159;
+    max-width: 212px;
+    max-height: 800px;
+    background-color: lightgrey;
+    top: 10px;
+    left: 5px;
+    cursor: pointer;
+  }
+
+  #info-tab {
+    position: absolute;
+    z-index: 315000;
+    bottom: 5px;
+    left: 1px;
+  }
+
+  #textinput {
+    width: 212px;
+    border: 2px solid black;
+  }
+
+  #remove-search {
+    position: absolute;
+    z-index: 315000;
+    top: 105px;
+    left: 5px;
+  }
+
+  #remove-georesturants {
+    position: absolute;
+    z-index: 315000;
+    top: 65px;
+    right: 2px;
+    max-width: 80px;
+    max-height: 200px;
+  }
+
+  .dropdown {
+    position: absolute;
+    z-index: 315000;
+    top: 145px;
+    left: 5px;
+  }
+
+  .dropdown-menu {
+    background-color: rgb(255, 135, 0);
+    max-height: 80px;
+    overflow-y: scroll;
+  }
+
+  #search-results {
+    max-height: 100px;
+  }
+
+  #toggle-info {
+    display: block;
+    background-color: rgb(239, 239, 239), rgb(59, 59, 59) !important;
+    position: absolute;
+    z-index: 316000;
+    bottom: 20px;
+    right: 5px;
+  }
+}
+
+/* Style the popup marker box */
+.leaflet-popup-content-wrapper {
+  background-color: grey;
+  color: white;
+}
+.leaflet-popup-tip {
+  background: rgb(228, 179, 99);
+}
+
+.slide-in.from-left {
+  left: 0;
+}
+
+.slide-in-content {
+  transition: transform 0.5s ease; /* nice transition */
+}
+
+.slide-out {
+  transition: transform 1s;
+  transform: translateX(-100%);
+}
+
+.slide-in {
+  transition: transform 1s;
+  transform: translateX(0);
+}
+
+#toggle-info {
+  position: absolute;
+  z-index: 316000;
+  bottom: 20px;
+  right: 5px;
 }

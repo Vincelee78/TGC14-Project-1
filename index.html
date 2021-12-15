@@ -47,7 +47,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
-    <!-- Markercluster CSS -->
+  <!-- Markercluster CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
   <!-- my custom style css -->
@@ -55,157 +55,149 @@
 </head>
 
 <body>
-  <!-- Landing page carousel bootstrap feature -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class='home row align-items-center' id='home-search-container'>
-      <div class='mx-auto text-center px-0'>
-        <img src='images/home-logo.png' width='140' id='singaporelogo' alt="...">
-        <div class='mt-3 px-3'>
-          <h1 class='text-white text-shadow'>Your location guide of Singapore</h1>
-          <p class='text-white text-shadow'>One stop map search of Singapore</p>
-          <!--Get started button -->
-          <button class="btn btn-success" id="btn-search-home" role="link">Get started</button>
+  <div id='all-pages'>
+    <!-- Landing page carousel bootstrap feature -->
+    <div id="carouselExampleIndicators" class="carousel slide page" data-bs-ride="carousel">
+      <div class='home row align-items-center' id='home-search-container'>
+        <div class='mx-auto text-center px-0'>
+          <img src='images/home-logo.png' width='140' id='singaporelogo' alt="...">
+          <div class='mt-3 px-3'>
+            <h1 class='text-white text-shadow'>Your location guide of Singapore</h1>
+            <p class='text-white text-shadow'>One stop map search of Singapore</p>
+            <!--Get started button -->
+            <button class="btn btn-success" id="btn-search-home" role="link">Get started</button>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Carousel slides  -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner" id='carouselimage'>
-      <div class="carousel-item active change" id='carouselimage1'>
-        <img src="/images/frontimage1.jpg" class="d-block w-100" alt="..."
-          style="width:100%; height:700px; background-size:center;">
+      <!-- Carousel slides  -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-item" id='carouselimage2'>
-        <img src="images/frontimage2.jpg" class="d-block w-100" alt="..."
-          style="width:100%; height:700px; background-position: center;">
+      <div class="carousel-inner" id='carouselimage'>
+        <div class="carousel-item active change" id='carouselimage1'>
+          <img src="/images/frontimage1.jpg" class="d-block w-100" alt="..."
+            style="width:100%; height:700px; background-size:center;">
+        </div>
+        <div class="carousel-item" id='carouselimage2'>
+          <img src="images/frontimage2.jpg" class="d-block w-100" alt="..."
+            style="width:100%; height:700px; background-position: center;">
+        </div>
+        <div class="carousel-item change" id='carouselimage3'>
+          <img src="images/frontimage3.png" class="d-block w-100" alt="..."
+            style="width:100%; height:700px; background-position: center;">
+          <div class="overlay"></div>
+        </div>
       </div>
-      <div class="carousel-item change" id='carouselimage3'>
-        <img src="images/frontimage3.png" class="d-block w-100" alt="..."
-          style="width:100%; height:700px; background-position: center;">
-        <div class="overlay"></div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-  
-    <!-- coontainer of the interactive map -->
-  <div id='container'>
-    <!-- the div will contain the map -->
-    <div id='map'></div>
 
-    <!-- button for sliding the info and search table in and out  -->
-    <button class='rounded' id="toggle-info">Toggle</button>
+    <!-- container of the interactive map -->
+    <div class='page hidden' id='container'>
+      <!-- the div will contain the map -->
+      <div id='map'></div>
 
-    <!-- info and search table -->
-    <div id="info-tab" class="slide-in slide-in-content">
-      <ul class="nav nav-tabs purple-text pr-3 rounded bg-light" id="myTab" role="tablist">
-        <li class="nav-item">
-          <button class="nav-link py-3 px-1 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-            type="button" role="tab" aria-controls="nav-home" aria-selected="true">Search Results<i
-              class="fas fa-search" aria-hidden="true"></i></button>
-        </li>
-        <li class="nav-item">
-          <button class="nav-link py-3 px-1 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Taxis<i
-              class="fas fa-taxi lightblue-text " aria-hidden="true"></i></button>
-        </li>
-        <li class="nav-item">
-          <button class="nav-link py-3 px-1" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
-            type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Hawkers<i
-              class="fas fa-utensils lightblue-text ps-1" aria-hidden="true"></i></button>
-        </li>
-        <li class="nav-item">
-          <button class="nav-link py-3 ps-2" id="tab-toggle" data-toggle="tab" role="tab"
-            aria-controls="tab-toggle" aria-selected="false">
-            <i class="fas fa-caret-down" aria-hidden="true"></i>
-          </button>
-        </li>
-      </ul>
-      <div class="tab-content shadow " id="myTabContent">
+      <!-- button for sliding the info and search table in and out  -->
+      <button class='rounded' id="toggle-info">Toggle</button>
 
-        <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <div class="row mx-0" id="search-bar-wrapper">
-            <div class="col p-2">
-              <div class="input-group p-1 " id="search-results">
-                <div class="input-group-append">
-                  <button class="input-group-text blue lighten-3 rounded-right border-white"><i
-                      class="fas fa-search text-shadow" aria-hidden="true"></i></button>
+      <!-- info and search table -->
+      <div id="info-tab" class="slide-in slide-in-content ms-2 mb-2">
+        <ul class="nav nav-tabs purple-text pr-3 rounded bg-light" id="myTab" role="tablist">
+          <li class="nav-item">
+            <button class="nav-link py-3 px-1 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+              type="button" role="tab" aria-controls="nav-home" aria-selected="true">Search Results<i
+                class="fas fa-search" aria-hidden="true"></i></button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link py-3 px-2 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+              type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Top 3 attractions<i
+                class="fas fa-archway lightblue-text ps-1" aria-hidden="true"></i></button>
+          </li>
+          <!-- <li class="nav-item">
+            <button class="nav-link py-3 px-1" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+              type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Hawkers<i
+                class="fas fa-utensils lightblue-text ps-1" aria-hidden="true"></i></button>
+          </li> -->
+          <li class="nav-item">
+            <button class="nav-link py-3 px-1" id="nav-contact-removeSearch" type="button" role="tab"
+              aria-controls="nav-contact" aria-selected="false">Remove Searches</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link py-3 ps-2" id="tab-toggle" data-toggle="tab" role="tab" aria-controls="tab-toggle"
+              aria-selected="false">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content shadow " id="myTabContent">
+
+          <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row mx-0" id="search-bar-wrapper">
+              <div class="col p-2">
+                <div class="input-group p-1 " id="search-results">
+                  <div class="input-group-append">
+                    <button class="input-group-text blue lighten-3 rounded-right border-white"><i
+                        class="fas fa-search text-shadow" aria-hidden="true"></i></button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="tab-pane fade col" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="tab-pane fade col" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-          <div id="taxiTitleTabText" class="pt-1 pb-0">
-            <h5 class="bluetext mt-1 px-1">Coordinates updated every 2 minutes</h5>
-            <i class="fas fa-taxi pl-2 pt-2 ml-2" ></i>
+            <div id="taxiTitleTabText" class="">
+              <a class="dropdown-item " id='gardensAttraction'><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Gardens_by_the_Bay_logo.svg/1200px-Gardens_by_the_Bay_logo.svg.png" alt="..."
+                    style= "height:80px"></a>
+              <a class="dropdown-item" id='mbsAttraction'><img src="images/marina-bay-sands-logo.png" alt="..."
+                    style= "height:80px"></a>
+              <a class="dropdown-item" id='universalAttraction'><img src="images/universal-logo.png" alt="..."
+                    style=" height:80px;"></a>
+            </div>
+
+            <div id="taxibutton" class="px-5">
+              <span id="taxiresults"></span>
+            </div>
+
           </div>
 
-          <div id="taxibutton" class="px-5 pb-1">
-            <button id="taxiresults" class="btn btn-success border-white text-white">Toggle for taxis available
-              now</button>
+          <div class="tab-pane fade col" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+            <div>
+              <span class="text-white py-2 mx-2 fs-5 fluid" id='hawkerTitleTab'>Toggle All Hawker Centers</span>
+              <p><button id='togglehawkers' class="btn btn-primary border-white text-white m-2">Toggle Hawker
+                  Locations</button>
+              </p>
+            </div>
+
           </div>
-
-        </div>
-
-        <div class="tab-pane fade col" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-          <div>
-            <span class="text-white py-2 mx-2 fs-5 fluid" id='hawkerTitleTab'>Toggle All Hawker Centers</span>
-            <p><button id='togglehawkers' class="btn btn-primary border-white text-white m-2">Toggle Hawker
-                Locations</button>
-            </p>
-          </div>
-
         </div>
       </div>
-    </div>
 
-    <!-- button and text container for keying in search recommendations-->
-    <div id='search-container'>
-      <button id='searchContainerbutton' class="btn btn-success">Search Recommendations!</button>
-      <input type='text' id='textinput' placeholder='Enter keywords' />
-    </div>
+      <!-- button and text container for keying in search recommendations-->
+      <div id='search-container'>
+        <button id='searchContainerbutton' class="btn btn-success">Search Recommendations!</button>
+        <input type='text' id='textinput' placeholder='Enter keywords' />
+      </div>
 
-    <!-- button to remove search results -->
-    <button id='remove-search' class="btn btn-secondary">Remove Search Results</button>
-    <!-- button to remove eateries icons on double click on the map-->
-    <button id='remove-georesturants' class="btn btn-warning border-danger border-3 ">Remove Eateries</button>
-    <!-- drop down button for top 3 attractions -->
-    <div class="dropdown">
-      <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        Top 3 attractions
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item " id='gardensAttraction'><img src="images/gardens-logo.png" alt="..."
-              style="width:180px; height:60px;"></a></li>
-        <li><a class="dropdown-item" id='mbsAttraction'><img src="images/marina-bay-sands-logo.png" alt="..."
-              style="width:150px; height:100px;"></a></li>
-        <li><a class="dropdown-item" id='universalAttraction'><img src="images/universal-logo.png" alt="..."
-              style="width:160px; height:80px;"></a></li>
-      </ul>
-    </div>
+      <!-- button to remove eateries icons on double click on the map-->
+      <!-- <button id='remove-georesturants' class="btn btn-warning border-danger border-3 ">Remove Eateries</button> -->
 
+    </div>
   </div>
   <!-- the leaflet JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
