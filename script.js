@@ -1,18 +1,13 @@
 
 // One page application
-// document.querySelector("#btn-search-home").addEventListener('click', function () {
-//   document.querySelector('#container').style.display = "block";
-//   document.querySelector('#carouselExampleIndicators').style.display = "none"
-// })
-
 document.querySelector('#btn-search-home').addEventListener('click', function(){
-  // hide all the pages
+  // hide all the landing page
   let pages = document.querySelectorAll('.page');
   for (let section of pages) {
       section.classList.remove('show')
   }
 
-  // show page 1
+  // show map container
   document.querySelector('#container').classList.add('show')
 
 })
@@ -231,7 +226,7 @@ async function getHotels() {
   // Create a cluster group for hotels
   let cluster = L.markerClusterGroup()
 
-  for (let points of response.data.features) {
+  response.data.features.map((points)=>{
     let lng = points.geometry.coordinates[0]
     let lat = points.geometry.coordinates[1]
     let hotelsActualCoordinates = [lat, lng]
@@ -243,7 +238,7 @@ async function getHotels() {
       html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x fa-inverse'></i><i class='fas fa-hotel fa-stack-1x'></i></span>",
       className: 'allhotelsIcon'
     });
-
+    console.log(lng)
     let marker = L.marker(hotelsActualCoordinates, {
       icon: allhotelIcon,
     })
@@ -252,7 +247,32 @@ async function getHotels() {
 
     // Details of popup of the hotels
     marker.bindPopup(`<h3>Name of Hotel: ${hotelName}</h3><h3>Total Rooms: ${totalRooms}</h3><h3>Address: ${address}</h3>`);
-  }
+  
+  })
+
+
+  // for (let points of response.data.features) {
+  //   let lng = points.geometry.coordinates[0]
+  //   let lat = points.geometry.coordinates[1]
+  //   let hotelsActualCoordinates = [lat, lng]
+  //   let hotelName = points.properties.Name
+  //   let totalRooms = points.properties.TOTALROOMS
+  //   let address = points.properties.ADDRESS
+  //   // Create custom hotel markers
+  //   let allhotelIcon = L.divIcon({
+  //     html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x fa-inverse'></i><i class='fas fa-hotel fa-stack-1x'></i></span>",
+  //     className: 'allhotelsIcon'
+  //   });
+
+  //   let marker = L.marker(hotelsActualCoordinates, {
+  //     icon: allhotelIcon,
+  //   })
+  //   marker.addTo(cluster)
+  //   cluster.addTo(hotelGroup)
+
+  //   // Details of popup of the hotels
+  //   marker.bindPopup(`<h3>Name of Hotel: ${hotelName}</h3><h3>Total Rooms: ${totalRooms}</h3><h3>Address: ${address}</h3>`);
+  // }
 
 }
 
