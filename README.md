@@ -12,7 +12,8 @@ Many of my overseas friends have commmented that Singapore is small and there is
 
 ## Demo: 
 A live website server can be found on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
-A screenshot of the interactive map page of the project
+
+#### A screenshot of the interactive map page of the project
 ![Image](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639721848/images_hntzgp.jpg "Image")
 
 
