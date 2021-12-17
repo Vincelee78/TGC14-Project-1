@@ -11,10 +11,9 @@ To provide tourists an one stop map guide for locations around Singapore.
 Many of my overseas friends have commmented that Singapore is small and there is nothing to do here after a day. I created this map guide to encourage tourists to spend more time in Singapore and explore all the attractions and events Singapore has to offer despite the current COVID situation. Thus in turn, they will spend more and boost the local economy from tourism spending.
 
 ## Demo: 
-A live website server can be found on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
-
 #### A screenshot of the interactive map page of the project
 ![Image](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639721848/images_hntzgp.jpg "Image")
+A live website server can be found on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
 
 
 ## Index:
