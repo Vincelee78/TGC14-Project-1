@@ -12,9 +12,12 @@ Many of my overseas friends have commmented that Singapore is small and there is
 
 ## Demo: 
 A live website server can be found on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
+A screenshot of the interactive map page of the project
+(https://res.cloudinary.com/dtrwtlldr/image/upload/v1639721848/images_hntzgp.jpg)
+
 
 ## Index:
-1. Project Complexity Matrix 
+1. Project Design
 2. UX/UI
 3. Technologies used
 4. Use cases/ Future features to implement
