@@ -2,7 +2,7 @@
 To create an interactive map guide for tourists in Singapore.
 
 ## Summary/User objectives: 
-To allow tourists to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability to locate nearby taxis.
+The project is aimed at tourists in Singapore aged from 12 to 79 years old to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability to locate nearby taxis.
 
 ## My goal/motivation for creating this project:
 To provide tourists an one stop map guide for locations around Singapore.
@@ -11,10 +11,13 @@ To provide tourists an one stop map guide for locations around Singapore.
 Many of my overseas friends have commmented that Singapore is small and there is nothing to do here after a day. I created this map guide to encourage tourists to spend more time in Singapore and explore all the attractions and events Singapore has to offer despite the current COVID situation. Thus in turn, they will spend more and boost the local economy from tourism spending.
 
 ## Demo: 
+#### A screenshot of the interactive map page of the project
+![Image](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639721848/images_hntzgp.jpg "Image")
 A live website server can be found on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
 
+
 ## Index:
-1. Project Complexity Matrix 
+1. Project Design
 2. UX/UI
 3. Technologies used
 4. Use cases/ Future features to implement
