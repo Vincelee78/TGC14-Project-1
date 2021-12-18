@@ -25,7 +25,7 @@ function onLocationFound(e) {
   var radius = 2000
 
   let userIcon = L.icon({
-    iconUrl: 'images/user-location.png',
+    iconUrl: 'images/userLocation.png',
     iconSize: [50, 50],
     className: 'myuserIcon',
     popupAnchor: [0, -12]
@@ -171,16 +171,21 @@ document.querySelector('#taxiresults').addEventListener('click', function () {
   }
 })
 
+async function loadData(){
+  let hawkers=await axios.get('geojson-files/hawker-centres.geojson');
+  let hotels= await axios.get('geojson-files/hotels.geojson');
+  return {hawkers,hotels}
+}
 
 
 // extract geojson from gov website for hawker centers
 let hawkerGroup = L.layerGroup()
 async function getHawkers() {
-  let response = await axios.get('geojson-files/hawker-centres.geojson');
+  let {hawkers} = await loadData();
   // Created a cluster group for hawker centers
   let cluster = L.markerClusterGroup()
 
-  for (let points of response.data.features) {
+  for (let points of hawkers.data.features) {
     let lng = points.geometry.coordinates[0]
     let lat = points.geometry.coordinates[1]
     let hawkerActualCoordinates = [lat, lng]
@@ -197,8 +202,9 @@ async function getHawkers() {
 
     marker.addTo(cluster);
     cluster.addTo(hawkerGroup)
+    
     // Editing the inner html of geojson data of hawker centers
-    let hawkerLayer = L.geoJson(response.data, {
+    let hawkerLayer = L.geoJson(hawkers.data, {
       onEachFeature: function (feature, layer) {
         let newdoc = document.createElement('div');
 
@@ -222,11 +228,11 @@ getHawkers()
 // extract geojson from gov website for all hotels
 let hotelGroup = L.layerGroup()
 async function getHotels() {
-  let response = await axios.get('geojson-files/hotels.geojson');
+  let {hotels} = await loadData();
   // Create a cluster group for hotels
   let cluster = L.markerClusterGroup()
 
-  response.data.features.map((points)=>{
+  hotels.data.features.map((points)=>{
     let lng = points.geometry.coordinates[0]
     let lat = points.geometry.coordinates[1]
     let hotelsActualCoordinates = [lat, lng]
@@ -286,7 +292,7 @@ let baseLayers = {
 let overlay = {
   'Hotels': hotelGroup,
   'Taxi locations': taxiGroup,
-  'Hawker centers': hawkerGroup
+  'Hawker centers': hawkerGroup,
 }
 
 L.control.layers(baseLayers, overlay).addTo(map)
@@ -479,7 +485,7 @@ document.querySelector('#gardensAttraction').addEventListener('click', async fun
   marker.addTo(map);
   // Gardens by the Bay popup details
   map.flyTo([1.2816, 103.8636])
-  marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><a href="https://ticket.gardensbythebay.com.sg/product/listing" target="_blank"><img src="images/thegardens-info.jpeg" height="100px" width="200px"/></a></center>`, {
+  marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><a href="https://ticket.gardensbythebay.com.sg/product/listing" target="_blank"><img src="images/theGardensInfo.png" height="100px" width="200px"/></a></center>`, {
     maxWidth: "auto"
     
   })
@@ -489,7 +495,7 @@ document.querySelector('#gardensAttraction').addEventListener('click', async fun
 // Marina Bay Sands dropdown button
 document.querySelector('#mbsAttraction').addEventListener('click', async function () {
   let mbsIcon = L.icon({
-    iconUrl: 'images/mbs-marker.png',
+    iconUrl: 'images/mbsMarker.png',
     iconSize: [50, 50],
     className: 'mbsIcon',
 
@@ -501,7 +507,7 @@ document.querySelector('#mbsAttraction').addEventListener('click', async functio
   marker.addTo(map);
   // Marina Bay Sands popup details
   map.flyTo([1.2847, 103.8610])
-  marker.bindPopup(`<center><h4>Marina Bay Sands</h4>Marina Bay Sands® is a destination for those who appreciate luxury. An integrated resort notable for transforming Singapore’s city skyline, it comprises three 55-storey towers of extravagant hotel rooms and luxury suites with personal butler services. In addition, its architecture is made complete with the Sands SkyPark® which crowns the three towers. </center></br><center><a href="https://www.marinabaysands.com/" target="_blank"><img src="images/mbs-info-image.jpg" height="100px" width="200px"/></a></center>`, {
+  marker.bindPopup(`<center><h4>Marina Bay Sands</h4>Marina Bay Sands® is a destination for those who appreciate luxury. An integrated resort notable for transforming Singapore’s city skyline, it comprises three 55-storey towers of extravagant hotel rooms and luxury suites with personal butler services. In addition, its architecture is made complete with the Sands SkyPark® which crowns the three towers. </center></br><center><a href="https://www.marinabaysands.com/" target="_blank"><img src="images/mbsInfoImage.jpg" height="100px" width="200px"/></a></center>`, {
     maxHeight: "fit",
     maxWidth: "fit"
   })
@@ -511,7 +517,7 @@ document.querySelector('#mbsAttraction').addEventListener('click', async functio
 // Universal Studios Singapore dropdown button
 document.querySelector('#universalAttraction').addEventListener('click',async function () {
   let universalStudiosIcon = L.icon({
-    iconUrl: 'images/universal-studios-singapore-marker.png',
+    iconUrl: 'images/universalStudiosSingaporeMarker.png',
     iconSize: [100, 50],
     className: 'universalStudiosIcon',
 
@@ -525,7 +531,7 @@ document.querySelector('#universalAttraction').addEventListener('click',async fu
   
   // Universal Studios Singapore popup details
   map.flyTo([1.2540, 103.8238])
-  marker.bindPopup(`<center><h4>Universal Studios Singapore</h4>As Southeast Asia’s first movie-themed park, Universal Studios Singapore offers a slew of exciting attractions, including 24 movie-themed rides, a festive walk, water park, marine life park and maritime experiential museum and aquarium. Opened in 2011 with director Steven Spielberg as a creative consultant, the kid-friendly park takes inspiration from some of Hollywood’s biggest hits, including Transformers, The Lost World, and Madagascar. </center></br><center><a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/tickets" target="_blank"><img src="images/universalstudios-info-image.jpg" height="100px" width="200px"/></a></center>`, {
+  marker.bindPopup(`<center><h4>Universal Studios Singapore</h4>As Southeast Asia’s first movie-themed park, Universal Studios Singapore offers a slew of exciting attractions, including 24 movie-themed rides, a festive walk, water park, marine life park and maritime experiential museum and aquarium. Opened in 2011 with director Steven Spielberg as a creative consultant, the kid-friendly park takes inspiration from some of Hollywood’s biggest hits, including Transformers, The Lost World, and Madagascar. </center></br><center><a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/tickets" target="_blank"><img src="images/universalStudiosInfoImage.png" height="100px" width="200px"/></a></center>`, {
     maxHeight: "fit",
     maxWidth: "fit"
   })
