@@ -105,13 +105,23 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
 }).addTo(map);
 
+
+// asynchronous function calls in parallel
+async function loadData(){
+  let hawkers=await axios.get('geojson-files/hawker-centres.geojson');
+  let hotels= await axios.get('geojson-files/hotels.geojson');
+  let taxis= await axios.get('https://api.data.gov.sg/v1/transport/taxi-availability');
+  return {hawkers,hotels,taxis}
+}
+
+
 // consume 1st API from gov website for taxicoordinates
 
 let taxiGroup = L.layerGroup()
 async function gettaxi() {
 
-  let response = await axios.get('https://api.data.gov.sg/v1/transport/taxi-availability')
-  let coordinates = response.data.features[0].geometry.coordinates
+  let {taxis} = await loadData();
+  let coordinates = taxis.data.features[0].geometry.coordinates
   // create a cluster of markers for taxi coordinates
 
   let cluster = L.markerClusterGroup()
@@ -124,8 +134,8 @@ async function gettaxi() {
     popupAnchor: [0, -100]
   });
 
-  // extract out each taxi coordinates
-  for (let points of coordinates) {
+  // extract out each taxi coordinates by array mapping
+  coordinates.map((points)=>{
     let lng = points[0]
     let lat = points[1]
     let actualcoordinates = [lat, lng]
@@ -151,7 +161,7 @@ async function gettaxi() {
     })
     marker.addTo(cluster)
     cluster.addTo(taxiGroup);
-  }
+  })
   // Refresh the real time taxi-coordinates every 2 minutes to get latest taxi locations
   setInterval(() => gettaxi(), 120000)
 }
@@ -171,12 +181,6 @@ document.querySelector('#taxiresults').addEventListener('click', function () {
   }
 })
 
-async function loadData(){
-  let hawkers=await axios.get('geojson-files/hawker-centres.geojson');
-  let hotels= await axios.get('geojson-files/hotels.geojson');
-  return {hawkers,hotels}
-}
-
 
 // extract geojson from gov website for hawker centers
 let hawkerGroup = L.layerGroup()
@@ -185,6 +189,7 @@ async function getHawkers() {
   // Created a cluster group for hawker centers
   let cluster = L.markerClusterGroup()
 
+  // array transversal
   for (let points of hawkers.data.features) {
     let lng = points.geometry.coordinates[0]
     let lat = points.geometry.coordinates[1]
@@ -232,6 +237,7 @@ async function getHotels() {
   // Create a cluster group for hotels
   let cluster = L.markerClusterGroup()
 
+  // array mapping transformation
   hotels.data.features.map((points)=>{
     let lng = points.geometry.coordinates[0]
     let lat = points.geometry.coordinates[1]
@@ -255,31 +261,6 @@ async function getHotels() {
     marker.bindPopup(`<h3>Name of Hotel: ${hotelName}</h3><h3>Total Rooms: ${totalRooms}</h3><h3>Address: ${address}</h3>`);
   
   })
-
-
-  // for (let points of response.data.features) {
-  //   let lng = points.geometry.coordinates[0]
-  //   let lat = points.geometry.coordinates[1]
-  //   let hotelsActualCoordinates = [lat, lng]
-  //   let hotelName = points.properties.Name
-  //   let totalRooms = points.properties.TOTALROOMS
-  //   let address = points.properties.ADDRESS
-  //   // Create custom hotel markers
-  //   let allhotelIcon = L.divIcon({
-  //     html: "<span class='fa-stack fa-lg'><i class='fas fa-square fa-stack-2x fa-inverse'></i><i class='fas fa-hotel fa-stack-1x'></i></span>",
-  //     className: 'allhotelsIcon'
-  //   });
-
-  //   let marker = L.marker(hotelsActualCoordinates, {
-  //     icon: allhotelIcon,
-  //   })
-  //   marker.addTo(cluster)
-  //   cluster.addTo(hotelGroup)
-
-  //   // Details of popup of the hotels
-  //   marker.bindPopup(`<h3>Name of Hotel: ${hotelName}</h3><h3>Total Rooms: ${totalRooms}</h3><h3>Address: ${address}</h3>`);
-  // }
-
 }
 
 getHotels()
