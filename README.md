@@ -39,13 +39,13 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 | User wants to slide the info bar away| There is a toggle button on the bottom right of the screen to allow the user to slide the infobar in and out of the screen for easier viewing of the map.|
 
 #### Bonus Scoring
- Feature/Item | Eligibility | Max Score Accorded
-| ------ | ------ | ------ |
-| Each extra feature| * Use of geocoding to find address of any clicked location of map * Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates | 15 |
-| Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button to redirect the user to the interactive map | 15 | 
+ Feature/Item | Eligibility | 
+| ------ | ------ |
+| Each extra feature| 1) Use of geocoding to find address of any clicked location of map 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates 6) Use of array transversal 7) Use of asynchronous function calls in parallel 8) Use of array mapping transformation |
+| Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button to redirect the user to the interactive map | 
 
 ## 2. UX/UI
-This project is a professional website intended for tourists in Singapore to locate attractions, hotels, eateries and taxis. Hence, the fonts selected for the project focuses on readability and a relatively large font-szie. The colours chosen are also adhering to the professional theme with no dark colours. instead using bright colours.
+This project is a professional website intended for tourists in Singapore to locate attractions, hotels, eateries and taxis. Hence, the fonts selected for the project focuses on readability and a relatively large font-szie. The colours chosen are also adhering to the professional theme with no dark colours, instead using bright colours.
 
 #### (i) Design
 * The bootstrap plugin was used in for the front-end development of the website as it allows for better visual design of buttons, an information tab and also an easy grid layout. 
