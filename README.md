@@ -31,11 +31,11 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 | User wants to locate current location on map| When starting the map, user can allow the device to locate current location and display user's current marker location on map. |
 | User wants to locate nearby accommodation from current location | Map displays all recommended accommodation locations with name,address and category of accommodation within a 2km radius from current user's location.|
 | User wants to locate all hotels in Singapore| On the top right corner of the screen, User is able to toggle on and off the location, name, address and number of rooms of all hotels in Singapore.|
-| User wants to locate all taxis in Singapore or around his current location| User is able to toggle on and off all avaliable taxis markers in the middle Navtab and their respective address name and also locate all taxis nearby his location. |
+| User wants to locate all taxis in Singapore or around his current location| On the top right corner of the screen, User is able to toggle on and off all avaliable taxis coordinates and addresses in Singapore. |
 | User wants to locate all nearby eateries from any clicked location on map| User can double tap anywhere on map and all eateries within a 1km radius from tapped location will appear with their name, address and category of eatery.|
 | User wants to search for a recommended category or place in Singapore.| User can enter in keywords in the search bar and all recommended venues containing the keywords will appear in the search results. Clicking on the results will bring the user to the location on the map and why it is recommended.|
-|User wants to explore the top 3 attractions in Singapore| Clicking on the top 3 attractions button on the right side of the map will bring down a drop-bar with the top 3 attractions based on traveller visits on Google. The popup will show a description and image of each attraction and clicking on the image will bring the user to the ticket booking of that attraction.|
-| User wants to locate all the hawkers centers| Clicking on the toggle button under the right tab of the Navtab will show all hawker center locations.|
+|User wants to explore the top 3 attractions in Singapore| Clicking on any of the top 3 attractions in the 'Top 3 attractions' of the infotab will bring up the respective attraction popup with a description. The popup will show a description and image of each attraction and clicking on the image will bring the user to the ticket booking of that attraction.|
+| User wants to locate all the hawkers centers| On the top right corner of the screen, User is able to toggle on and off all hawker centers in Singapore.|
 | User wants to slide the info bar away| There is a toggle button on the bottom right of the screen to allow the user to slide the infobar in and out of the screen for easier viewing of the map.|
 
 #### Bonus Scoring
