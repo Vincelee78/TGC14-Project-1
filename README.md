@@ -15,16 +15,16 @@ Many of my overseas friends have commmented that Singapore is small and there is
 ![Image](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639721848/images_hntzgp.jpg "Image")
 
 ## Index:
-1. Project Strategy
-2. UX/UI
-3. Technologies used
-4. Future features to implement
-5. Testing
-6. Deployment
-7. Credits and Acknowledgement
+1. Project Strategy(#a)
+2. UX/UI(#b)
+3. Technologies used(#c)
+4. Future features to implement(#d)
+5. Testing(#e)
+6. Deployment(#f)
+7. Credits and Acknowledgement(#g)
 
  
-## 1. Project Strategy
+## <a name="a">1. Project Strategy
 Based on the user's needs and objectives, these are the guidelines for the features that were implemented.
 | User Stories| Features|
 | ------ | ------ |
@@ -44,7 +44,7 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 | Each extra feature| 1) Use of geocoding to find address of any clicked location of map 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates 6) Use of array transversal 7) Use of asynchronous function calls in parallel 8) Use of array mapping transformation |
 | Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button to redirect the user to the interactive map | 
 
-## 2. UX/UI
+## <a name="b">2. UX/UI
 This project is a professional website intended for tourists in Singapore to locate attractions, hotels, eateries and taxis. Hence, the fonts selected for the project focuses on readability and a relatively large font-szie. The colours chosen are also adhering to the professional theme with no dark colours, instead using bright colours.
 
 #### (i) Design
@@ -70,7 +70,7 @@ This project is a professional website intended for tourists in Singapore to loc
 The project skeleton and structure (wireframes) can be found [here](https://docs.google.com/presentation/d/1GqyhQLMf-A_-2YCcyQbgSmhdlelVVPVr/edit?usp=sharing&ouid=100349503230330665538&rtpof=true&sd=true) 
 
 
-## 3. Technologies Used
+## <a name="c">3. Technologies Used
 * [HTML 5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 <br> This project uses HTML5 to structure the content and to insert buttons and images.
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -90,11 +90,11 @@ The project skeleton and structure (wireframes) can be found [here](https://docs
 * [Axios 0.21.1](https://www.npmjs.com/package/axios/v/0.21.1) 
 <br> This project uses the axios plugin for Promise based HTTP client for the browser and make requests to an API, return data from the API.
 
-## 4. Future Features To Implement
+## <a name="d">4. Future Features To Implement
 - A feature for users to view a short video in the popup of the place/venue they have clicked on.
 - A feature that allows users to jump to the search result based on voice input.
 
-## 5. Testing
+## <a name="e">5. Testing
 | Test Case Number| Test Case Description| Results|
 | ------ | ------ | ------ |
 | 1 | On the landing page, user should see a Carousel feature with images and a button 'Get started' and asking the user to locate his location | Pass |
@@ -120,11 +120,11 @@ The project skeleton and structure (wireframes) can be found [here](https://docs
 #### (ii) Known Bugs
 - The current location marker of the user is sometimes not that accurate on a PC as the exact location of user depends on the IP address of the browser.
 
-## 6. Deployment
+## <a name="f">6. Deployment
 The live website is currently deployed on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
 
 
-## 7. Credits and Acknowledgement
+## <a name="g">7. Credits and Acknowledgement
 - Credits to https://data.gov.sg/ for the geojson files used to locate hawkers and hotels.
 - Credits to  https://developer.foursquare.com/, https://nominatim.org/ for data on eateries, hotels and geocoding for taxi coordinates.
 - Credits to 
