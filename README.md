@@ -41,7 +41,7 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 #### Bonus Scoring
  Feature/Item | Eligibility | Max Score Accorded
 | ------ | ------ | ------ |
-| Each extra feature| 1) Use of geocoding to find address of any clicked location of map, 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates | 15 |
+| Each extra feature| * Use of geocoding to find address of any clicked location of map * Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates | 15 |
 | Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button to redirect the user to the interactive map | 15 | 
 
 ## 2. UX/UI
