@@ -15,13 +15,13 @@ Many of my overseas friends have commmented that Singapore is small and there is
 ![Image](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639721848/images_hntzgp.jpg "Image")
 
 ## Index:
-1. Project Strategy(#a)
-2. UX/UI(#b)
-3. Technologies used(#c)
-4. Future features to implement(#d)
-5. Testing(#e)
-6. Deployment(#f)
-7. Credits and Acknowledgement(#g)
+1. [Project Strategy](#a)
+2. [UX/UI](#b)
+3. [Technologies used](#c)
+4. [Future features to implement](#d)
+5. [Testing](#e)
+6. [Deployment](#f)
+7. [Credits and Acknowledgement](#g)
 
  
 ## <a name="a">1. Project Strategy
