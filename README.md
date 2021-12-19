@@ -59,12 +59,16 @@ This project is a professional website intended for tourists in Singapore to loc
 * For a better user experience for mobile devices, I repositioned the buttons so that it will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out for less obstruction of the map.
 
 #### Primary font:
-* font-family: 'sans-serif';
-* font-size: 1 rem;
-* font-weight: 400;
+* font-family: 'sans-serif'
+* font-size: 1 rem
+* font-weight: 400
 
 #### Prominent colours:
-* mediumslateblue, grey, white, green, orangered
+* mediumslateblue
+* grey
+* white
+* green
+* orangered
 
 ### (ii) Project Scope
 The project skeleton and structure (wireframes) can be found [here](https://docs.google.com/presentation/d/1GqyhQLMf-A_-2YCcyQbgSmhdlelVVPVr/edit?usp=sharing&ouid=100349503230330665538&rtpof=true&sd=true) 
