@@ -112,15 +112,15 @@
       <div id='map'></div>
 
       <!-- button for sliding the info and search table in and out  -->
-      <button class='rounded' id="toggle-info">Toggle the info tab in and out</button>
+      <button class='rounded' id="toggle-info">Toggle the info tab</button>
 
       <!-- info and search table -->
-      <div id="info-tab" class="slide-in slide-in-content ms-2 mb-2">
+      <div id="info-tab" class="slide-in slide-in-content ms-2 me-1">
         <ul class="nav nav-tabs purple-text pr-3 rounded bg-light" id="myTab" role="tablist">
           <li class="nav-item">
-            <button class="nav-link py-3 px-1 ps-2 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-              type="button" role="tab" aria-controls="nav-home" aria-selected="true">Search Results<i
-                class="fas fa-search" aria-hidden="true"></i></button>
+            <button class="nav-link py-3 px-1 ps-2 active" id="nav-home-tab" data-bs-toggle="tab"
+              data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Search
+              Results<i class="fas fa-search" aria-hidden="true"></i></button>
           </li>
           <li class="nav-item">
             <button class="nav-link py-3 px-2 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
@@ -161,12 +161,13 @@
           <div class="tab-pane fade col" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
             <div id="taxiTitleTabText" class="">
-              <a class="dropdown-item " id='gardensAttraction'><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Gardens_by_the_Bay_logo.svg/1200px-Gardens_by_the_Bay_logo.svg.png" alt="..."
-                    style= "height:80px"></a>
+              <a class="dropdown-item " id='gardensAttraction'><img
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Gardens_by_the_Bay_logo.svg/1200px-Gardens_by_the_Bay_logo.svg.png"
+                  alt="..." style="height:80px"></a>
               <a class="dropdown-item" id='mbsAttraction'><img src="images/marinaBaySandsLogo.png" alt="..."
-                    style= "height:80px"></a>
+                  style="height:80px"></a>
               <a class="dropdown-item" id='universalAttraction'><img src="images/universalLogo.png" alt="..."
-                    style=" height:80px;"></a>
+                  style=" height:80px;"></a>
             </div>
 
             <div id="taxibutton" class="px-5">
@@ -189,10 +190,15 @@
       </div>
 
       <!-- button and text container for keying in search recommendations-->
-      <div id='search-container'>
-        <button id='searchContainerbutton' class="btn btn-success">Search Recommendations!</button>
-        <input type='text' id='textinput' placeholder='Enter keywords' />
-      </div>
+      <span id='search-container' class="input-group mb-3">
+        <!-- <button id='searchContainerbutton' class="btn btn-success">Search</button> -->
+        <input type="text" class="form-control rounded-3" id='textinput' placeholder='Search Attractions' />
+        <div class="input-group-append">
+          <button class="input-group-text blue dark-3 rounded-right border-grey" id='searchContainerbutton'><i
+              class="fas fa-search text-shadow"></i></button>
+        </div>
+      </span>
+
 
       <!-- button to remove eateries icons on double click on the map-->
       <!-- <button id='remove-georesturants' class="btn btn-warning border-danger border-3 ">Remove Eateries</button> -->

@@ -45,6 +45,9 @@
   background-color: rgb(8, 99, 117);
 }
 
+.form-control{
+  height:40px
+}
 /* #container {
   position: relative;
   
@@ -87,6 +90,8 @@
 
 .input-group-text {
   color: mediumslateblue;
+  border: 1px solid gray;
+  padding: 0.7rem 0.7em;
 }
 
 .nav-link {
@@ -177,7 +182,7 @@
 }
 
 #textinput {
-  width: 212px;
+  
   border: 2px solid black;
 }
 
@@ -218,7 +223,7 @@
   border: 1px solid mediumpurple;
 }
 
-@media only screen and (min-width: 321px) and (max-width: 376px) {
+@media only screen and (min-width: 321px) and (max-width: 414px) {
   #search-container {
     position: absolute;
     z-index: 314159;
@@ -235,7 +240,7 @@
     z-index: 315000;
     bottom: 5px;
     /* left: 20px; */
-    right: 15px;
+    right: 10px;
   }
 
 
@@ -281,13 +286,13 @@
   #info-tab {
     position: absolute;
     z-index: 315000;
-    bottom: 5px;
-    left: 1px;
-    right: 10px;
+    bottom: 0 !important;
+     /* left: 1px; */
+    right: 3px;
   }
 
   #textinput {
-    width: 212px;
+    
     border: 2px solid black;
   }
 
