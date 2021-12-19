@@ -1,8 +1,8 @@
 ## TGC14 Project 1
 To create an interactive map guide for tourists in Singapore.
 
-## Summary/User objectives: 
-The project is aimed at tourists in Singapore aged from 12 to 79 years old who is on a free and easy tour here to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability to locate nearby taxis.
+## Summary/Target audience: 
+The project is aimed at tourists in Singapore with demographics aged from 12 to 79 years old who is on a free and easy tour here to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability to locate nearby taxis.
 
 ## My goal/motivation for creating this project:
 To provide tourists an one stop map guide for locations around Singapore.
