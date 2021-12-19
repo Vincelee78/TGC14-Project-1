@@ -306,14 +306,11 @@
   }
 
   #container {
-    height: 100vh;
+    height: 580px;
+    width:100%;
   }
 
-  /* #map {
-    height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  } */
+ 
 
   .dropdown {
     position: absolute;
