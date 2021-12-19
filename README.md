@@ -11,42 +11,20 @@ To provide tourists an one stop map guide for locations around Singapore.
 Many of my overseas friends have commmented that Singapore is small and there is nothing to do here after a day. I created this map guide to encourage tourists to spend more time in Singapore and explore all the attractions and events Singapore has to offer despite the current COVID situation. Thus in turn, they will spend more and boost the local economy from tourism spending.
 
 ## Demo: 
-#### A screenshot of the interactive map page of the project
+#### A screenshot of the interactive map page of the project.
 ![Image](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639721848/images_hntzgp.jpg "Image")
-A live website server can be found on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
-
 
 ## Index:
-1. Project Design
+1. Project Strategy
 2. UX/UI
 3. Technologies used
-4. Use cases/ Future features to implement
+4. Future features to implement
 5. Testing
-6. Known Bugs
+6. Deployment
 7. Credits and Acknowledgement
 
-### 1. Project Complexity Matrix 
-| Feature/Item | Eligibility | Max Score Accorded
-| ------ | ------ | ------ |
-| Consume the GET endpoint of an API, or consume a CSV/JSON file | Consumed 4 GET API's and 2 geojson files (6 altogether) | 12 |
-| Adding or removing DOM elements to the display (map, DOM tree, game screen) based on user's actions |Added **1** )Search feature, **2** )Toggle hawker centres, taxi coordinates, all hotels feature, **3** )Top 3 attractions feature, **4** )Remove search results and remove eateries feature, **5** ) Slide information bar in and out feature | 20 |
-| Modifying the CSS of DOM elements based on the user's actions | **1** )Sliding in the information bar using transition and transform css,  **2** )Sliding out the information bar using transition and transform css, **3** )Displaying the map and hiding the index( landing) page using css display= block or none,  **4** )Using css style display=block or none for removing eateries and search results,  **5** )Using css style display for toggling taxi coordinates, **6** )Using css style display for collapsing search results in info tab | 12 |
-| Use of 1D traversal of array | **1** )Use of loop to extract out hotels,taxi,eateries and search coordinates within a 2km radius of current location, **2** )Use of transversal of array to extract out names, address, number of rooms, cateogories of hotels,eateries,hawkers and search coordinates, **3** )Use of loop to extract out all the resturants within a clicked location of map using geocoding, **4** )Use of transveral of array to extract out all taxi coordinates and match it with the address of the respective coordinates| 15 |
-| Each use of CSS layout technique (Bootstrap columns, flex box, grid)| **1** )Using bootstrap py, px, mt in my info-tab table, **2** )Using a display flex on my Carousel home page to align the logo, buttons and items in it, **3** )Using the position property: relative and absolute and z-index to allow the buttons and features to show up on top of map | 12 |
-| Each possible search or filtering criteria in the user interface | **1** )Use of a search bar to fiter keywords for recommendations, **2** )Use of filtering feature to show all hotels within a 2km radius of current location, **3** )Use of a filtering feature to show up all eateries within 1km of a clicked location on the map | 12 |
-| Each case of the map updating based on the user's actions | **1** )Use of a refresh of taxi API every 2 minutes to update their coordinates/ refresh of all eateries markers when the remove eateries button is clicked, **2** )Use of a refresh of searched markers whether a new search is done, **3** )Use of a refresh of markers of eateries of 1km radius whenever a new location is clicked on the map| 12 |
-| Each group of layers in the Leaflet map | There are **1** )Hotels, **2** )Taxis, **3** )Hawkers, **4** )Seached venues, **5** )Eateries, **6** )Nearby accommodation layers | 20 |
-| Each group of marker clustering | There are **1** )Taxi marker clusters, **2** )Hotel marker clusters, **3** )Hawker marker clusters | 12 |
-| Each type of custom marker (using images or custom behaviour) | There are **1** )Taxi custom markers, **2** )Hotel custom markers, **3** )Search results custom markers, **4** )Eateries custom markers, **5** )Nearby accommodation custom markers, **6** )MBS custom markers, **7** )Universal studios custom markers, **8** )RWS custom markers | 20 |
-
-### Bonus Scoring
- Feature/Item | Eligibility | Max Score Accorded
-| ------ | ------ | ------ |
-| Each extra feature| 1) Use of geocoding to find address of any clicked location of map, 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates | 15 |
-| Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button to redirect the user to the interactive map | 15 | 
-
-### 2.UX/UI 
-#### (i) Project Strategy
+ 
+## 1. Project Strategy
 Based on the user's needs and objectives, these are the guidelines for the features that were implemented.
 | User Stories| Features|
 | ------ | ------ |
@@ -60,29 +38,39 @@ Based on the user's needs and objectives, these are the guidelines for the featu
 | User wants to locate all the hawkers centers| Clicking on the toggle button under the right tab of the Navtab will show all hawker center locations.|
 | User wants to slide the info bar away| There is a toggle button on the bottom right of the screen to allow the user to slide the infobar in and out of the screen for easier viewing of the map.|
 
+#### Bonus Scoring
+ Feature/Item | Eligibility | Max Score Accorded
+| ------ | ------ | ------ |
+| Each extra feature| 1) Use of geocoding to find address of any clicked location of map, 2) Use of css transform and transition to slide in and out the info bar, 3) Use of custom popups and images which link to booking websites, 4) Use of feature to locate and display current location, 5) Use of Geocoding to display address of taxis according to their coordinates | 15 |
+| Single Page Application |Use of a landing page to showcase the project and pressing on the 'Get started' button to redirect the user to the interactive map | 15 | 
+
+## 2. UX/UI
+This project is a professional website intended for tourists in Singapore to locate attractions, hotels, eateries and taxis. Hence, the fonts selected for the project focuses on readability and a relatively large font-szie. The colours chosen are also adhering to the professional theme with no dark colours. instead using bright colours.
+
+#### (i) Design
+* The bootstrap plugin was used in for the front-end development of the website as it allows for better visual design of buttons, an information tab and also an easy grid layout. 
+* The general design of the website comprises a search bar as one of the main features and an information table which displays the search results which is easy to read and navigate. 
+* The information tab is light purple as it is visually pleasing and not too glaring.  
+* I choose the search results text colour to be black against a grey background as it is easy to be read.  
+* The markers are typically a darker colour as it is more visible on a light background on the map.  
+* The attractions button is red in colour as it directs attention to the user to notice it.  
+* The layout of the webpage is not overly complex and easy to use. Custom markers were created according to the classification of the location and to enhance the visual experience of users.  
+* Font size is relatively large and easy to read.  
+* For a better user experience for mobile devices, I repositioned the buttons so that it will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out for less obstruction of the map.
+
+#### Primary font:
+font-family: 'sans-serif';
+font-size: 1 rem;
+font-weight: 400;
+
+#### Prominent colours:
+mediumslateblue, grey, white, green, orangered
+
 #### (ii) Project Scope
 The project skeleton and structure (wireframes) can be found [here](https://docs.google.com/presentation/d/1GqyhQLMf-A_-2YCcyQbgSmhdlelVVPVr/edit?usp=sharing&ouid=100349503230330665538&rtpof=true&sd=true) 
-#### (iii) Design
-The bootstrap plugin was used in for the front-end development of the website as it allows for better visual design of buttons, an information tab and also an easy grid layout.   
 
-The general design of the website comprises a search bar as one of the main features and an information table which displays the search results which is easy to read and navigate. There are tabs beside the search result tab for easy access to display the taxi markers and hawker center markers on the map.  
 
-The colour palette consist of a green search button which colour is universally associated with success (success in finding a location).  
-The information tab is light purple as it is visually pleasing and not too glaring.  
-
-I choose the search results text colour to be black against a grey background as it is easy to be read.  
-
-The markers are typically a darker colour as it is more visible on a light background on the map.  
-
-The attractions button is red in colour as it directs attention to the user to notice it.  
-
-The layout of the webpage is not overly complex and easy to use. Custom markers were created according to the classification of the location and to enhance the visual experience of users.  
-
-Font size is relatively large and easy to read.  
-
-For a better user experience for mobile devices, I repositioned the buttons so that it will not block the viewing of the map and its features and there is a toggle button to allow the infobar to slide out for less obstruction of the map.
-
-### 3. Technologies Used
+## 3. Technologies Used
 * [HTML 5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 <br> This project uses HTML5 to structure the content and to insert buttons and images.
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -102,16 +90,11 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 * [Axios 0.21.1](https://www.npmjs.com/package/axios/v/0.21.1) 
 <br> This project uses the axios plugin for Promise based HTTP client for the browser and make requests to an API, return data from the API.
 
-# 4. Future Features To Implement
+## 4. Future Features To Implement
 - A feature for users to view a short video in the popup of the place/venue they have clicked on.
 - A feature that allows users to jump to the search result based on voice input.
 
-# 5. Testing
-#### (i) HTML and CSS Validation
-- Code from styles.css was validated on http://csslint.net/ (Pass)
-- Codes from the .html files were validated on https://www.freeformatter.com/html-validator.html (Pass)
-
-#### (ii) Manual Testing 
+## 5. Testing
 | Test Case Number| Test Case Description| Results|
 | ------ | ------ | ------ |
 | 1 | On the landing page, user should see a Carousel feature with images and a button 'Get started' and asking the user to locate his location | Pass |
@@ -126,7 +109,7 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 | 10 | Double-Clicking on anywhere on the map will produce a marker at that location with its address in the popup. Eateries icon markers will appear within 1km of the clicked location. Clicking on the eateries markers will show its details. Clicking on the yellow button 'Remove Eateries' will remove all eateries markers that were created with this feature | Pass |
 | 11 | Clicking on the 'Top 3 attractions' will show 3 images of the attractions and they can be accessed by scrolling down the dropbox. Clicking on the 'Gardens by the Bay' logo will fly to the coordinates of the attraction and generate its custom marker. The popup will open showing the attraction details. Clicking on the image of the popup of Gardens by the Bay will open an external page and bring the user to the ticket booking page of Gardens by the Bay | Pass |
 
-#### (iii) Mobile Responsiveness
+#### (i) Mobile Responsiveness
 - The test results can be found [here](https://search.google.com/test/mobile-friendly?id=1IOIWddhWmSaneCjeHk0Mw). 
 - Test results were done on 3 mobile devices
 1. [Iphone SE 2020](https://drive.google.com/file/d/1uvnKRK0U9Mm15a5ZPn83R8LfCtMNGMn2/view?usp=sharing)
@@ -134,13 +117,14 @@ For a better user experience for mobile devices, I repositioned the buttons so t
 3. [Oppo R17 pro](https://drive.google.com/file/d/1u6HLpeHFTTer1080yVeVCeD_cBut1yIH/view?usp=sharing)
 - The web application is mobile responsive.
 
-# 6. Known Bugs
-- When double clicking on the map, the automatic marker popup might occasionally not display its address. 
-- If this happens, clicking on the marker itself will display its address.
-- The current location marker of the user is sometimes not that accurate.
-- The exact location of user depends on the browser or phone location detection abilities.
+#### (ii) Known Bugs
+- The current location marker of the user is sometimes not that accurate on a PC as the exact location of user depends on the IP address of the browser.
 
-# 7. Credits and Acknowledgement
+## 6. Deployment
+The live website is currently deployed on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/)
+
+
+## 7. Credits and Acknowledgement
 - Credits to https://data.gov.sg/ for the geojson files used to locate hawkers and hotels.
 - Credits to  https://developer.foursquare.com/, https://nominatim.org/ for data on eateries, hotels and geocoding for taxi coordinates.
 - Credits to 
