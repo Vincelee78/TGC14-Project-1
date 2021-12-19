@@ -110,8 +110,7 @@ The project skeleton and structure (wireframes) can be found [here](https://docs
 | 11 | Clicking on the 'Top 3 attractions' will show 3 images of the attractions and they can be accessed by scrolling down the dropbox. Clicking on the 'Gardens by the Bay' logo will fly to the coordinates of the attraction and generate its custom marker. The popup will open showing the attraction details. Clicking on the image of the popup of Gardens by the Bay will open an external page and bring the user to the ticket booking page of Gardens by the Bay | Pass |
 
 #### (i) Mobile Responsiveness
-- The test results can be found [here](https://search.google.com/test/mobile-friendly?id=1IOIWddhWmSaneCjeHk0Mw). 
-- Test results were done on 3 mobile devices
+- Mobile responsive test results were done on 3 mobile devices
 1. [Iphone SE 2020](https://drive.google.com/file/d/1uvnKRK0U9Mm15a5ZPn83R8LfCtMNGMn2/view?usp=sharing)
 2. [Iphone7](https://drive.google.com/file/d/1fj5Tdu3Pkv3ovIwFAJPnVWCnTdWg2ow1/view?usp=sharing)
 3. [Oppo R17 pro](https://drive.google.com/file/d/1u6HLpeHFTTer1080yVeVCeD_cBut1yIH/view?usp=sharing)
