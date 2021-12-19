@@ -39,9 +39,9 @@
 }
 
 
-#singaporelogo {
+/* #singaporelogo {
   background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 #btn-search-home:hover {
   background-color: rgb(8, 99, 117);
@@ -239,15 +239,16 @@
     position: absolute;
     z-index: 315000;
     bottom: 5px;
-    left: 20px;
+    /* left: 20px; */
+    right:20px;
   }
 
-  #remove-georesturants {
+  /* #remove-georesturants {
     position: absolute;
     z-index: 315000;
     top: 60px;
     right: 5px;
-  }
+  } */
 
   .dropdown {
     position: absolute;

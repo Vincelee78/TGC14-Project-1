@@ -107,6 +107,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 // asynchronous function calls in parallel
+
 async function loadData(){
   let hawkers=await axios.get('geojson-files/hawker-centres.geojson');
   let hotels= await axios.get('geojson-files/hotels.geojson');
