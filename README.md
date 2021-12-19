@@ -114,7 +114,6 @@ The project skeleton and structure (wireframes) can be found [here](https://docs
 1. [Iphone SE 2020](https://drive.google.com/file/d/1uvnKRK0U9Mm15a5ZPn83R8LfCtMNGMn2/view?usp=sharing)
 2. [Iphone7](https://drive.google.com/file/d/1fj5Tdu3Pkv3ovIwFAJPnVWCnTdWg2ow1/view?usp=sharing)
 3. [Oppo R17 pro](https://drive.google.com/file/d/1u6HLpeHFTTer1080yVeVCeD_cBut1yIH/view?usp=sharing)
-- The web application is mobile responsive.
 
 #### (ii) Known Bugs
 - The current location marker of the user is sometimes not that accurate on a PC as the exact location of user depends on the IP address of the browser.
@@ -139,5 +138,3 @@ The live website is currently deployed on the [Netlify server](https://awesome-b
 10. https://seeklogo.com/vector-logo/258502/universal-studios-singapore
 11. http://getdrawings.com/get-icon#map-pin-icon-png-67.png
 for their images, icons and logos
-
-
