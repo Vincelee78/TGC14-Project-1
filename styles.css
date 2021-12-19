@@ -319,10 +319,10 @@
     max-height: 200px;
   } */
 
-    #container{
+    #map{
       height: 100%;
     }
-    
+
   .dropdown {
     position: absolute;
     z-index: 315000;
