@@ -313,10 +313,14 @@
     max-height: 200px;
   } */
 
+  #container{
+    height: 100vh;
+  }
+  
   #map {
     height: 100vh;
-    border: 1px solid black;
-    position: relative;
+    /* border: 1px solid black;
+    position: relative; */
   }
 
   .dropdown {
