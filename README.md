@@ -1,5 +1,5 @@
-## TGC14 Project 1
-To create an interactive map guide for tourists in Singapore.
+## TGC14 Project 1-SGTouristMapGuide
+This project is called SGTouristMapGuide and it is an interactive map guide for tourists in Singapore.
 
 ## Summary/Target audience: 
 The project is aimed at tourists in Singapore with demographics aged from 12 to 79 years old who is on a free and easy tour here to locate nearby hotels, eateries, hawkers, attractions from their current location and display real time taxi availability to locate nearby taxis.
