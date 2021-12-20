@@ -116,7 +116,7 @@ The project skeleton and structure (wireframes) can be found [here](https://docs
 
 #### 5(i) Mobile Responsiveness
 - Mobile responsive test results were done on 3 mobile devices.
-1. [Iphone SE 2020](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639968560/IMG_6076_fmhlxd.png "Iphone SE 2020")
+![IphoneSE2020](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639968560/IMG_6076_fmhlxd.png "IphoneSE2020")
 2. [Oppo R17 pro](https://drive.google.com/file/d/1u6HLpeHFTTer1080yVeVCeD_cBut1yIH/view?usp=sharing "Oppo R17 pro")
 3. [Iphone7](https://drive.google.com/file/d/1fj5Tdu3Pkv3ovIwFAJPnVWCnTdWg2ow1/view?usp=sharing "Iphone7")
 
