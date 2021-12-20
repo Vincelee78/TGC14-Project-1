@@ -116,9 +116,9 @@ The project skeleton and structure (wireframes) can be found [here](https://docs
 
 #### 5(i) Mobile Responsiveness
 - Mobile responsive test results were done on 3 mobile devices.
-![IphoneSE2020](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639968560/IMG_6076_fmhlxd.png "IphoneSE2020")
-2. [Oppo R17 pro](https://drive.google.com/file/d/1u6HLpeHFTTer1080yVeVCeD_cBut1yIH/view?usp=sharing "Oppo R17 pro")
-3. [Iphone7](https://drive.google.com/file/d/1fj5Tdu3Pkv3ovIwFAJPnVWCnTdWg2ow1/view?usp=sharing "Iphone7")
+1. [IphoneSE2020](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639968560/IMG_6076_fmhlxd.png)
+2. [Oppo R17 pro](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639968731/d8c95a4e-c9d5-40c0-9ea7-8bf653c59654_cdeixb.jpg)
+3. [Iphone7](https://res.cloudinary.com/dtrwtlldr/image/upload/v1639968754/IMG_6075_x2wehb.png)
 
 #### 5(ii) Known Bugs
 - The current location marker of the user is sometimes not that accurate on a PC as the exact location of user depends on the IP address of the browser.
