@@ -66,8 +66,6 @@ This project is a professional website intended for tourists in Singapore to loc
 
 #### Prominent colours:
 * mediumslateblue
-* grey
-* white
 * green
 * orangered
 
