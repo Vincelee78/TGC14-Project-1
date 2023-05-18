@@ -18,6 +18,7 @@ let singapore = [1.29, 103.85];
 let map = L.map('map').setView(singapore, 13);
 
 
+
 // Allow map to locate current location
 map.locate({ setView: true, maxZoom: 12 })
 
@@ -94,16 +95,6 @@ function onLocationFound(e) {
 // Display the marker of the current location of user on map 
 map.on('locationfound', onLocationFound);
 
-
-// setup the tile layers from leaflet
-// L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-//   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
-//   maxZoom: 18,
-//   id: 'mapbox/streets-v11',
-//   tileSize: 512,
-//   zoomOffset: -1,
-//   accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw' //demo access token
-// }).addTo(map);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -216,6 +207,7 @@ async function getHawkers() {
     })
 
     marker.addTo(cluster);
+    // hawkerLayer.addTo(cluster);
     cluster.addTo(hawkerGroup)
     
     // Editing the inner html of geojson data of hawker centers
@@ -310,6 +302,8 @@ async function search(query) {
 
 }
 
+
+
 // Search result locations layer
 let searchCluster = L.layerGroup()
 document.querySelector('#searchContainerbutton').addEventListener('click', async function () {
@@ -388,6 +382,84 @@ document.querySelector('#toggle-info').addEventListener('click', function () {
   }
 })
 
+
+
+
+// Gardens by the Bay dropdown button
+document.querySelector('#gardensAttraction').addEventListener('click', async function () {
+  // Custom gardens by the bay icon
+  console.log("a");
+  let gardensIcon = L.icon({
+    iconUrl: 'images/gardensicon.png',
+    iconSize: [50, 50],
+    className: 'gardensIcon',
+    
+  })
+  // Create Gardens by the Bay marker location
+  let marker = L.marker([1.2816, 103.8636], {
+    icon: gardensIcon,
+  })
+  marker.addTo(map);
+  // Gardens by the Bay popup details
+  map.flyTo([1.2816, 103.8636])
+  marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><a href="https://ticket.gardensbythebay.com.sg/product/listing" target="_blank"><img src="images/theGardensInfo.png" height="100px" width="200px"/></a></center>`, {
+    maxWidth: "auto"
+    
+  })
+  marker.openPopup();
+
+})
+// Marina Bay Sands dropdown button
+document.querySelector('#mbsAttraction').addEventListener('click', async function () {
+  let mbsIcon = L.icon({
+    iconUrl: 'images/mbsMarker.png',
+    iconSize: [50, 50],
+    className: 'mbsIcon',
+
+  })
+  // Create Marina Bay Sands marker location
+  let marker = L.marker([1.2847, 103.8610], {
+    icon: mbsIcon,
+  })
+  marker.addTo(map);
+  // Marina Bay Sands popup details
+  map.flyTo([1.2847, 103.8610])
+  marker.bindPopup(`<center><h4>Marina Bay Sands</h4>Marina Bay Sands® is a destination for those who appreciate luxury. An integrated resort notable for transforming Singapore’s city skyline, it comprises three 55-storey towers of extravagant hotel rooms and luxury suites with personal butler services. In addition, its architecture is made complete with the Sands SkyPark® which crowns the three towers. </center></br><center><a href="https://www.marinabaysands.com/" target="_blank"><img src="images/mbsInfoImage.jpg" height="100px" width="200px"/></a></center>`, {
+    maxHeight: "fit",
+    maxWidth: "fit"
+  })
+  marker.openPopup()
+
+})
+// Universal Studios Singapore dropdown button
+document.querySelector('#universalAttraction').addEventListener('click',async function () {
+  let universalStudiosIcon = L.icon({
+    iconUrl: 'images/universalStudiosSingaporeMarker.png',
+    iconSize: [100, 50],
+    className: 'universalStudiosIcon',
+
+  })
+  // Create Universal Studios Singapore marker location
+  let marker = L.marker([1.2540, 103.8238], {
+    icon: universalStudiosIcon,
+    
+  })
+  marker.addTo(map);
+  
+  // Universal Studios Singapore popup details
+  map.flyTo([1.2540, 103.8238])
+  marker.bindPopup(`<center><h4>Universal Studios Singapore</h4>As Southeast Asia’s first movie-themed park, Universal Studios Singapore offers a slew of exciting attractions, including 24 movie-themed rides, a festive walk, water park, marine life park and maritime experiential museum and aquarium. Opened in 2011 with director Steven Spielberg as a creative consultant, the kid-friendly park takes inspiration from some of Hollywood’s biggest hits, including Transformers, The Lost World, and Madagascar. </center></br><center><a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/tickets" target="_blank"><img src="images/universalStudiosInfoImage.png" height="100px" width="200px"/></a></center>`, {
+    maxHeight: "fit",
+    maxWidth: "fit"
+  })
+
+  
+  marker.openPopup()
+})
+  
+
+
+
 // ESRI Leaflet API Token
 let apiToken = 'AAPKa44cc3d9e4ae4facae3db37598891536u8VcocjPLyXxxaguleDVkZdePzQo7nEOjYWuzaKIfZfzB0QumPr6svIIJ-IBz8b8'
 
@@ -459,76 +531,6 @@ map.on('dblclick', function (e) {
     getresturants()
 
   });
-});
-// Gardens by the Bay dropdown button
-document.querySelector('#gardensAttraction').addEventListener('click', async function () {
-  // Custom gardens by the bay icon
-  let gardensIcon = L.icon({
-    iconUrl: 'images/gardensicon.png',
-    iconSize: [50, 50],
-    className: 'gardensIcon',
-
-  })
-  // Create Gardens by the Bay marker location
-  let marker = L.marker([1.2816, 103.8636], {
-    icon: gardensIcon,
-  })
-  marker.addTo(map);
-  // Gardens by the Bay popup details
-  map.flyTo([1.2816, 103.8636])
-  marker.bindPopup(`<center><h4>Gardens By The Bay</h4>A national garden and premier horticultural attraction for local and international visitors, Gardens by the Bay is a showpiece of horticulture and garden artistry that presents the plant kingdom in a whole new way, entertaining while educating visitors with plants seldom seen in this part of the world, ranging from species in cool, temperate climates to tropical forests and habitats. </center></br><center><a href="https://ticket.gardensbythebay.com.sg/product/listing" target="_blank"><img src="images/theGardensInfo.png" height="100px" width="200px"/></a></center>`, {
-    maxWidth: "auto"
-    
-  })
-  marker.openPopup();
-
 })
-// Marina Bay Sands dropdown button
-document.querySelector('#mbsAttraction').addEventListener('click', async function () {
-  let mbsIcon = L.icon({
-    iconUrl: 'images/mbsMarker.png',
-    iconSize: [50, 50],
-    className: 'mbsIcon',
 
-  })
-  // Create Marina Bay Sands marker location
-  let marker = L.marker([1.2847, 103.8610], {
-    icon: mbsIcon,
-  })
-  marker.addTo(map);
-  // Marina Bay Sands popup details
-  map.flyTo([1.2847, 103.8610])
-  marker.bindPopup(`<center><h4>Marina Bay Sands</h4>Marina Bay Sands® is a destination for those who appreciate luxury. An integrated resort notable for transforming Singapore’s city skyline, it comprises three 55-storey towers of extravagant hotel rooms and luxury suites with personal butler services. In addition, its architecture is made complete with the Sands SkyPark® which crowns the three towers. </center></br><center><a href="https://www.marinabaysands.com/" target="_blank"><img src="images/mbsInfoImage.jpg" height="100px" width="200px"/></a></center>`, {
-    maxHeight: "fit",
-    maxWidth: "fit"
-  })
-  marker.openPopup()
-
-})
-// Universal Studios Singapore dropdown button
-document.querySelector('#universalAttraction').addEventListener('click',async function () {
-  let universalStudiosIcon = L.icon({
-    iconUrl: 'images/universalStudiosSingaporeMarker.png',
-    iconSize: [100, 50],
-    className: 'universalStudiosIcon',
-
-  })
-  // Create Universal Studios Singapore marker location
-  let marker = L.marker([1.2540, 103.8238], {
-    icon: universalStudiosIcon,
-    
-  })
-  marker.addTo(map);
-  
-  // Universal Studios Singapore popup details
-  map.flyTo([1.2540, 103.8238])
-  marker.bindPopup(`<center><h4>Universal Studios Singapore</h4>As Southeast Asia’s first movie-themed park, Universal Studios Singapore offers a slew of exciting attractions, including 24 movie-themed rides, a festive walk, water park, marine life park and maritime experiential museum and aquarium. Opened in 2011 with director Steven Spielberg as a creative consultant, the kid-friendly park takes inspiration from some of Hollywood’s biggest hits, including Transformers, The Lost World, and Madagascar. </center></br><center><a href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore/tickets" target="_blank"><img src="images/universalStudiosInfoImage.png" height="100px" width="200px"/></a></center>`, {
-    maxHeight: "fit",
-    maxWidth: "fit"
-  })
-
-  
-  marker.openPopup()
-  
-})
 
