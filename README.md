@@ -122,7 +122,7 @@ The project skeleton and structure (wireframes) can be found [here](https://docs
 - The current location marker of the user is sometimes not that accurate on a PC as the exact location of user depends on the IP address of the browser.
 
 ## <a name="f">6. Deployment
-The live website is currently deployed on the [Netlify server](https://awesome-brattain-2464a9.netlify.app/).
+The live website is currently deployed on the [Netlify server](https://touristappguide-vincent.netlify.app/).
 
 
 ## <a name="g">7. Credits and Acknowledgement
